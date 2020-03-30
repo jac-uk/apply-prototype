@@ -1,0 +1,31 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - You might not be eligible{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<form action="#" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<span class="govuk-caption-xl">042 Recorder</span>
+			<h1 class="govuk-heading-xl">You might not be eligible</h2>
+			<p class="govuk-body">It looks like you do not meet all the eligibility requirements for this role.</p>
+			<p class="govuk-body">This is because you:</p>
+			<ul class="govuk-list govuk-list--bullet">
+				<li>do not have the required legal qualification, or experience</li>
+				<li>could have character issues that mean you're not suitable for this role</li>
+				<li>cannot work for the required number of years before retirement age</li>
+				<li>are not a citizen of an eligible country</li>
+			</ul>
+			<h2 class="govuk-heading-m">If you think you're eligible</h2>
+			<p class="govuk-body">If you think you're eligible for this role, you can continue to apply, but it might be unlikely that you'll be offered a position.</p>
+			<p class="govuk-body">You'll need to <a class="govuk-link" href="sign-in">sign in</a> or <a class="govuk-link" href="create-account">create an account</a> to apply.</p>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Back to JAC homepage</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

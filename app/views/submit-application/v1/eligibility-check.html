@@ -1,0 +1,98 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Complete eligibility checklist{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<form action="eligibility-yes" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<span class="govuk-caption-xl">042 Recorder</span>
+			<h1 class="govuk-heading-xl">Complete eligibility checklist</h2>
+			<p class="govuk-body-l govuk-!-margin-bottom-8">If you cannot meet all the requirements, you can still apply but it could mean you’re unlikely to be offered a position.</p>
+			
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading">Qualifications and experience</h2>
+					</legend>
+					<p class="govuk-body govuk-!-font-weight-bold_">Are you a UK-qualified advocate (Scotland), barrister, fellow of CILEx or solicitor with at least 5 years of <a class="govuk-link" href="https://www.judicialappointments.gov.uk/eligibility-legally-qualified-candidates" target="_blank">post-qualification law-related work experience</a>?</p>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="qualified-experience-yes" name="qualified-experience" type="radio" value="yes">
+					  		<label class="govuk-label govuk-radios__label" for="qualified-experience-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="qualified-experience-no" name="qualified-experience" type="radio" value="no">
+					  		<label class="govuk-label govuk-radios__label" for="qualified-experience-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group govuk-!-margin-top-8">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading">Character</h2>
+					</legend>
+					<p class="govuk-body govuk-!-font-weight-bold_">With reference to our <a class="govuk-link" href="https://www.judicialappointments.gov.uk/good-character" target="_blank">character guidance</a>, are there any issues about your character that could affect your suitability for this role?</p>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="character-yes" name="character" type="radio" value="yes">
+					  		<label class="govuk-label govuk-radios__label" for="character-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="character-no" name="character" type="radio" value="no">
+					  		<label class="govuk-label govuk-radios__label" for="character-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group govuk-!-margin-top-8">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading">Working years before retirement</h2>
+					</legend>
+					<p class="govuk-body">Can you work for at least 4 years before reaching the retirement age of 70?</p>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="retirement-yes" name="retirement" type="radio" value="yes">
+					  		<label class="govuk-label govuk-radios__label" for="retirement-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="retirement-no" name="retirement" type="radio" value="no">
+					  		<label class="govuk-label govuk-radios__label" for="retirement-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group govuk-!-margin-top-8">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading">Citizenship</h2>
+					</legend>
+					<p class="govuk-body">Are you a citizen of the UK, the Republic of Ireland or another Commonwealth country?</p>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="citizenship-yes" name="citizenship" type="radio" value="yes">
+					  		<label class="govuk-label govuk-radios__label" for="citizenship-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="citizenship-no" name="citizenship" type="radio" value="no">
+					  		<label class="govuk-label govuk-radios__label" for="citizenship-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
