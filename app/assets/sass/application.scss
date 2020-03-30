@@ -19,7 +19,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-.panel {
+.vacancy-list li, 
+.sidebar-list li {
+    margin-bottom: 20px;
+}
+
+/* .panel {
     background: #f3f2f1;
     padding: 20px;
 }
@@ -69,7 +74,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 .exercise-table-cell {
     vertical-align: top;
-}
+} */
 
 .clearfix {
     clear: both;

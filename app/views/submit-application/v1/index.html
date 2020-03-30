@@ -1,24 +1,88 @@
 {% extends "layout_unbranded.html" %}
 
-{% block pageTitle %}Judical Appointments Commission - Submit an application - Recorder{% endblock %}
+{% block pageTitle %}Judical Appointments Commission - Submit an application - 042 Recorder{% endblock %}
 
 {% block content %}
 {% include "includes/header.html" %}
-<form action="#" method="post">
-	
+<form action="eligibility-check" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
-			<h2 class="govuk-heading-xl">042 Recorder</h2>
-			<p class="govuk-body-l">This is a lead paragraph inside a two-thirds wide column</p>
-			<p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
-
-			<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-9">
-			<button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Complete eligibility checklist and apply</button>
-			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">TBC</button>
+			<h1 class="govuk-heading-xl">042 Recorder</h2>
+			<ul class="govuk-list vacancy-list">
+				<li><strong>Closing date:</strong> 13:00 Wednesday 11 October 2019</li>
+				<li><strong>Number of vacancies:</strong> 62</li>
+				<li><strong>Location:</strong> Across England, Scotland and Wales</li>
+				<li><strong>Fee:</strong> £519.70 a day in London. £501.52 a day in all other locations.</li>
+				<li><strong>Contact:</strong> <a class="govuk-link" href="#">114@jac.gov.uk</a></li>
+			</ul>
+			<h2 class="govuk-heading-l">Timeline</h2>
+			<div class="moj-timeline clearfix">
+				<div class="moj-timeline__item">
+					<div class="moj-timeline__header">
+						<h2 class="moj-timeline__title">Application deadline</h2>
+					</div>
+					<p class="moj-timeline__date govuk-!-font-size-19">11 October 2019 by 1pm</p>
+				</div>
+				<div class="moj-timeline__item">
+					<div class="moj-timeline__header">
+						<h2 class="moj-timeline__title">Situational judgement and critical analysis qualifying tests</h2>
+					</div>
+					<p class="moj-timeline__date govuk-!-font-size-19">2 November 2019</p>
+				</div>
+				<div class="moj-timeline__item">
+					<div class="moj-timeline__header">
+						<h2 class="moj-timeline__title">Information about scenario test</h2>
+					</div>
+					<p class="moj-timeline__date govuk-!-font-size-19">24 November 2019</p>
+				</div>
+				<div class="moj-timeline__item">
+					<div class="moj-timeline__header">
+						<h2 class="moj-timeline__title">Scenario test</h2>
+					</div>
+					<p class="moj-timeline__date govuk-!-font-size-19">2 December 2019</p>
+				</div>
+				<div class="moj-timeline__item">
+					<div class="moj-timeline__header">
+						<h2 class="moj-timeline__title">Selection day</h2>
+					</div>
+					<p class="moj-timeline__date govuk-!-font-size-19">22 to 24 December 2019, London. 28 to 30 November 2019, Birmingham</p>
+				</div>
+				<div class="moj-timeline__item">
+					<div class="moj-timeline__header">
+						<h2 class="moj-timeline__title">Candidates notified about appointment decision</h2>
+					</div>
+					<p class="moj-timeline__date govuk-!-font-size-19">February 2020</p>
+				</div>
+			</div>
+			<h2 class="govuk-heading-l govuk-!-margin-top-8">Overview of the role</h2>
+			<p class="govuk-body">The jurisdiction of a Recorder is broadly similar to that of a Circuit Judge.</p>
+			<p class="govuk-body">Recorders are required to read and assimilate case papers before a hearing or trial commences and play an active role in case management.</p>
+			<p class="govuk-body">Recorders must control the manner in which cases are conducted and decide issues of law and procedure that may arise during a case and provide reasons for any ruling. Recorders are expected to keep abreast of legal developments; this entails a substantial amount of reading not directly connected with the cases which they are trying.</p>
+			<ul class="govuk-list">
+				<li class="govuk-!-margin-bottom-4"><a class="govuk-link" href="#">Download 042 Recorder job description</a></li>
+				<li><a class="govuk-link" href="#">Download 042 Recorder terms and conditions</a></li>
+			</ul>
+			<h2 class="govuk-heading-l govuk-!-margin-top-6">Eligibility requirements</h2>
+			<p class="govuk-body">The eligibility requirements for this role are contained in an eligibility checklist. This is the first stage of the application process.</p>
+			<p class="govuk-body">The questions in the checklist are based on the specific requirements for this role only. You should read each question carefully, even if you’ve applied for roles with the JAC before.</p>
+			<p class="govuk-body">Your answers will give you an idea of whether you're eligible - they're not a confirmation that you are or are not.</p>
+			<button class="govuk-button" data-module="govuk-button">Complete eligibility checklist and apply</button>
+			<p class="govuk-body"><a class="govuk-link" href="#">Or get email updates about this role</a></p>
 		</div>
 		<div class="govuk-grid-column-one-third govuk-!-margin-top-8">
 			<h3 class="govuk-heading-m">Related content</h3>
-			<p class="govuk-body">This is a paragraph inside a one-third wide column</p>
+			<ul class="govuk-list sidebar-list govuk-!-margin-bottom-8">
+				<li><a class="govuk-link" href="#">Learn about qualifying tests</a></li>
+				<li><a class="govuk-link" href="#">How to write your self-assessment competency statements</a></li>
+				<li><a class="govuk-link" href="#">How to choose your independent assessors</a></li>
+			</ul>
+			<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-8">
+			<h3 class="govuk-heading-m">Pension information</h3>
+			<ul class="govuk-list sidebar-list">
+				<li><a class="govuk-link" href="#">Smart Pension scheme booklet</a></li>
+				<li><a class="govuk-link" href="#">Smart Pension enrollment</a></li>
+				<li><a class="govuk-link" href="#">Smart Pension Investment Report</a></li>
+			</ul>
 		</div>
 	</div>
 
