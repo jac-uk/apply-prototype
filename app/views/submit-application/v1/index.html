@@ -1,0 +1,30 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Recorder{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<form action="#" method="post">
+	
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h2 class="govuk-heading-xl">042 Recorder</h2>
+			<p class="govuk-body-l">This is a lead paragraph inside a two-thirds wide column</p>
+			<p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
+
+			<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-9">
+			<button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Complete eligibility checklist and apply</button>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">TBC</button>
+		</div>
+		<div class="govuk-grid-column-one-third govuk-!-margin-top-8">
+			<h3 class="govuk-heading-m">Related content</h3>
+			<p class="govuk-body">This is a paragraph inside a one-third wide column</p>
+		</div>
+	</div>
+
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

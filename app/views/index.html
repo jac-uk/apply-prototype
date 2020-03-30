@@ -1,0 +1,53 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-one-half">
+		<h1 class="govuk-heading-l govuk-!-margin-top-7">Submit an application</h1>
+		<h2 class="govuk-heading-m">Current version in progress</h2>
+		<details class="govuk-details" data-module="govuk-details">
+			<summary class="govuk-details__summary">
+				<span class="govuk-details__summary-text">Version 1</span>
+			</summary>
+			<div class="govuk-details__text">
+				<p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-4"><a href="/submit-application/v1/" class="govuk-link">View prototype</a></p>
+				<!-- <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Different states</h3>
+				<h4 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-font-weight-regular">Overview</h4>
+				<ul class="govuk-list">
+					<li><a class="govuk-link" href="/view-an-exercise/v1/overview-draft">Draft</a></li>
+					<li><a class="govuk-link" href="/view-an-exercise/v1/overview-draft-completed">Draft (completed)</a></li>
+					<li><a class="govuk-link" href="/view-an-exercise/v1/overview-pending-approval">Pending approval</a></li>
+					<li><a class="govuk-link" href="/view-an-exercise/v1/overview-approved">Approved</a></li>
+				</ul>
+				<h4 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-font-weight-regular">Timeline</h4>
+				<ul class="govuk-list">
+					<li><a class="govuk-link" href="/view-an-exercise/v1/timeline-progress">Current and past dates</a></li>
+				</ul> -->
+			</div>
+		</details>
+	</div>
+	<div class="govuk-grid-column-one-half">
+		<img src="/public/images/submit-application-index-page.png" class="img-border govuk-!-margin-top-8" />
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-one-half">
+		<h2 class="govuk-heading-l govuk-!-margin-top-4">Archive</h2>
+		<ul class="govuk-list">
+			<li><a href="https://jac-candidate.herokuapp.com">Previous candidate prototype</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

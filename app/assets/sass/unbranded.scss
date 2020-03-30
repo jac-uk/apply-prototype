@@ -1,0 +1,67 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+// Override the govuk-frontend font stack
+$govuk-font-family: "Khula",
+"HelveticaNeue",
+"Helvetica Neue",
+"Arial",
+"Helvetica",
+sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+
+// JAC branding
+
+.govuk-main-wrapper {
+	padding-top: 0 !important;
+}
+
+.header-background {
+    background-color: #f7f7f7;
+    padding: 40px 10px 0 10px;
+	border-bottom: 1px solid #b1b4b6;
+	margin-top: 0 !important;
+}
+
+.header-background h1 a {
+	color: #753880 !important;
+	text-decoration: none;
+}
+
+.header-background h1 a:hover {
+	text-decoration: underline;
+}
+
+.govuk-phase-banner {
+	border-bottom: 0;
+}
+
+.img-border {
+	border: 1px solid #0b0c0c;
+	width: 350px;
+	/* margin-top: 60px; */
+	margin-bottom: 30px;
+	float: right;
+}
+
+.govuk-footer {
+	border-top: 0;
+	background-color: #753880 !important;
+	color: #fff;
+}
+
+.govuk-footer a,
+.govuk-footer .govuk-footer__link {
+	color: #fff;
+}
