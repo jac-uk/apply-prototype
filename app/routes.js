@@ -3,47 +3,18 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-router.post('/submit-application/v1/eligibility-yes', function (req, res) {
-
-	let qualifiedEligible = req.session.data['qualified']
-	
-		if (qualifiedEligible === 'false') {
-			res.redirect('/submit-application/v1/eligibility-no')
+router.post('/submit-application/v1/eligibility-router', function (req, res) {
+	if (
+		(req.session.data['qualified'] && (req.session.data['qualified'] == "no")) || 
+		(req.session.data['character'] && (req.session.data['character'] == "no")) ||  
+		(req.session.data['retirement'] && (req.session.data['retirement'] == "no")) ||  
+		(req.session.data['citizenship'] && (req.session.data['citizenship'] == "no") 
+  		) 
+	){
+	res.redirect('/submit-application/v1/eligibility-no')
 		} else {
-			res.redirect('/submit-application/v1/eligibility-yes')
-		}
-	})
-
-router.post('/submit-application/v1/eligibility-yes', function (req, res) {
-
-	let characterEligible = req.session.data['character']
-	
-		if (characterEligible === 'false') {
-			res.redirect('/submit-application/v1/eligibility-no')
-		} else {
-			res.redirect('/submit-application/v1/eligibility-yes')
-		}
-	})
-
-router.post('/submit-application/v1/eligibility-yes', function (req, res) {
-
-	let retirementEligible = req.session.data['retirement']
-	
-		if (retirementEligible === 'false') {
-			res.redirect('/submit-application/v1/eligibility-no')
-		} else {
-			res.redirect('/submit-application/v1/eligibility-yes')
-		}
-	})
-
-router.post('/submit-application/v1/eligibility-yes', function (req, res) {
-
-	let citizenshipEligible = req.session.data['citizenship']
-
-		if (citizenshipEligible === 'false') {
-			res.redirect('/submit-application/v1/eligibility-no')
-		} else {
-			res.redirect('/submit-application/v1/eligibility-yes')
+    	// everything is either blank or yes
+		res.redirect('/submit-application/v1/eligibility-yes')
 		}
 	})
 
