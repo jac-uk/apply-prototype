@@ -1,0 +1,37 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Sign in to your account{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Sign in to your account</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="email-address">Email address</label>
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="password">Password</label>
+					<input class="govuk-input" id="password" name="password" type="password">
+				</div>
+			</fieldset>
+			<button class="govuk-button" data-module="govuk-button">Sign in</button>
+			<p class="govuk-body">Or <a class="govuk-link" href="create-account">create an account</a> if you do not have one.</p>
+			<h2 class="govuk-heading-m govuk-!-margin-top-8">Problems signing in</h2>
+			<ul class="govuk-list">
+				<li><a class="govuk-link" href="#">I forgot my password</a></li>
+				<li><a class="govuk-link" href="#">I forgot my email address</a></li>
+			</ul>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

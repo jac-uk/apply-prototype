@@ -1,0 +1,75 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Apply for the role{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+		<span class="govuk-caption-xl">042 Recorder</span>
+		<h1 class="govuk-heading-xl">Apply for the role</h1>
+		<ol class="app-task-list govuk-!-margin-top-7">
+			<li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Eligibility
+                </h2>
+			    <ul class="app-task-list__items">
+                    <!-- Complete eligibility checklist -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="eligibility-check" aria-describedby="eligibility-completed">Complete eligibility checklist</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="eligibility-completed">Completed</strong>            
+					</li>
+				</ul>
+            </li>
+			<li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Account profile
+                </h2>
+			    <ul class="app-task-list__items">
+					<!-- Add personal details -->
+					<li class="app-task-list__item">
+                        <span class="app-task-list__task-name"><a href="personal-details">Add personal details</a></span>
+					</li>
+					<!-- Declare character information -->
+					<li class="app-task-list__item">
+                        <span class="app-task-list__task-name"><a href="character-information">Declare character information</a></span>
+					</li>
+					<!-- Take the equality and diversity survey -->
+					<li class="app-task-list__item">
+                        <span class="app-task-list__task-name"><a href="equality-diversity">Take the equality and diversity survey</a></span>
+                    </li>
+                </ul>
+			</li>
+			<li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Working preferences
+                </h2>
+                <ul class="app-task-list__items"> 
+					<!-- Set part-time working preferences -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name"><a href="part-time">Set part-time working preferences</a></span>
+                    </li>
+                </ul>
+            </li>
+			
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">6. </span> Review application
+                </h2>
+                <ul class="app-task-list__items"> 
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Check your answers</span>
+                    </li>
+                </ul>
+            </li>
+		</ol>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
