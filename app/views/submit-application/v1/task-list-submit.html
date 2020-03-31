@@ -1,0 +1,140 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Apply for the role{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<form action="application-submitted" method="post">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+            <span class="govuk-caption-xl">042 Recorder</span>
+            <h1 class="govuk-heading-xl">Apply for the role</h1>
+            <ol class="app-task-list govuk-!-margin-top-7">
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">1. </span> Eligibility
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <!-- Complete eligibility checklist -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="eligibility-check" aria-describedby="eligibility-check-completed">Complete eligibility checklist</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="eligibility-check-completed">Completed</strong>            
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">2. </span> Account profile
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <!-- Add personal details -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="personal-details" aria-describedby="personal-details-completed">Add personal details</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="personal-details-completed">Completed</strong>            
+                        </li>
+                        <!-- Declare character information -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="character-information" aria-describedby="character-information-completed">Declare character information</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="character-information-completed">Completed</strong>            
+                        </li>
+                        <!-- Take the equality and diversity survey -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="equality-diversity" aria-describedby="equality-diversity-completed">Take the equality and diversity survey</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="equality-diversity-completed">Completed</strong>            
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">3. </span> Working preferences
+                    </h2>
+                    <ul class="app-task-list__items"> 
+                        <!-- Set part-time working preferences -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="part-time" aria-describedby="part-time-completed">Set part-time working preferences</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="part-time-completed">Completed</strong>            
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">4. </span> Qualifications and experience
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <!-- Add relevant qualifications -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="qualifications" aria-describedby="qualifications-completed">Add relevant qualifications</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="qualifications-completed">Completed</strong>            
+                        </li>
+                        <!-- Add post-qualification experience -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="post-qualification" aria-describedby="post-qualification-completed">Add post-qualification experience</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="post-qualification-completed">Completed</strong>            
+                        </li>
+                        <!-- Add judicial experience -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="judicial-experience" aria-describedby="judicial-experience-completed">Add judicial experience</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="judicial-experience-completed">Completed</strong>            
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">5. </span> Assessments
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <!-- Give independent assessors' details -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="independent-assessors" aria-describedby="independent-assessors-completed">Give independent assessors' details</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="independent-assessors-completed">Completed</strong>            
+                        </li>
+                        <!-- Upload self-assessment competencies -->
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="self-assessment" aria-describedby="self-assessment-completed">Upload self-assessment competencies</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="self-assessment-completed">Completed</strong>            
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">6. </span> Review application
+                    </h2>
+                    <ul class="app-task-list__items"> 
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="check-answers" aria-describedby="check-answers-completed">Check your answers</a>
+                            </span>  
+                            <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="check-answers-completed">Completed</strong>            
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <button class="govuk-button" data-module="govuk-button">Submit application</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

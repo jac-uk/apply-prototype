@@ -7,10 +7,10 @@ const router = express.Router()
 router.post('/submit-application/v1/eligibility-router', function (req, res) {
 	if (
 		// if the session data called 'qualified' has a value (i.e. it exists) AND the session data called 'qualified' has a value of "no"
-		(req.session.data['qualified'] && (req.session.data['qualified'] == "no")) || 
-		(req.session.data['character'] && (req.session.data['character'] == "no")) ||  
-		(req.session.data['retirement'] && (req.session.data['retirement'] == "no")) ||  
-		(req.session.data['citizenship'] && (req.session.data['citizenship'] == "no") 
+		(req.session.data['qualified-check'] && (req.session.data['qualified-check'] == "no")) || 
+		(req.session.data['character-check'] && (req.session.data['character-check'] == "no")) ||  
+		(req.session.data['retirement-check'] && (req.session.data['retirement-check'] == "no")) ||  
+		(req.session.data['citizenship-check'] && (req.session.data['citizenship-check'] == "no") 
   		) 
 	){
 	res.redirect('/submit-application/v1/eligibility-no')

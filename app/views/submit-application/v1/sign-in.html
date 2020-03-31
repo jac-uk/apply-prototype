@@ -12,12 +12,12 @@
 					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Sign in to your account</h1>
 				</legend>
 				<div class="govuk-form-group">
-					<label class="govuk-label" for="email-address">Email address</label>
-					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false">
+					<label class="govuk-label govuk-label--m" for="email-address">Email address</label>
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] }}">
 				</div>
 				<div class="govuk-form-group">
-					<label class="govuk-label" for="password">Password</label>
-					<input class="govuk-input" id="password" name="password" type="password">
+					<label class="govuk-label govuk-label--m" for="password">Password</label>
+					<input class="govuk-input" id="password" name="password" type="password" value="{{ data['password'] }}">
 				</div>
 			</fieldset>
 			<button class="govuk-button" data-module="govuk-button">Sign in</button>
