@@ -30,6 +30,11 @@ $govuk-assets-path: '/govuk/assets/';
     color:	#626a6e !important;
 }
 
+.govuk-tag-not-done {
+    background: #f3f2f1;
+    color: #6f777b;
+}
+
 /* .panel {
     background: #f3f2f1;
     padding: 20px;
@@ -61,11 +66,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .app-task-list__items {
     padding-left: 0;
-}
-
-.govuk-tag-not-done {
-    background: #f3f2f1;
-    color: #6f777b;
 }
 
 .past-timeline .moj-timeline__item:before,

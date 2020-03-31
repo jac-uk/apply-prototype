@@ -30,12 +30,18 @@
 			    <ul class="app-task-list__items">
 					<!-- Add personal details -->
 					<li class="app-task-list__item">
-                        <span class="app-task-list__task-name"><a href="personal-details">Add personal details</a></span>
+                        <span class="app-task-list__task-name">
+                            <a href="personal-details" aria-describedby="personal-details-in-progress">Add personal details</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="personal-details-in-progress">In progress</strong>            
 					</li>
-					<!-- Declare character information -->
-					<li class="app-task-list__item">
-                        <span class="app-task-list__task-name"><a href="character-information">Declare character information</a></span>
-					</li>
+                    <!-- Declare character information -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="character-information" aria-describedby="character-information-completed">Declare character information</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="character-information-completed">Completed</strong>            
+                    </li>
 					<!-- Take the equality and diversity survey -->
 					<li class="app-task-list__item">
                         <span class="app-task-list__task-name"><a href="equality-diversity">Take the equality and diversity survey</a></span>
@@ -47,9 +53,12 @@
                     <span class="app-task-list__section-number">3. </span> Working preferences
                 </h2>
                 <ul class="app-task-list__items"> 
-					<!-- Set part-time working preferences -->
+                    <!-- Set part-time working preferences -->
                     <li class="app-task-list__item">
-                        <span class="app-task-list__task-name"><a href="part-time">Set part-time working preferences</a></span>
+                        <span class="app-task-list__task-name">
+                            <a href="part-time" aria-describedby="part-time-completed">Set part-time working preferences</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="part-time-completed">Completed</strong>            
                     </li>
                 </ul>
 			</li>
@@ -57,7 +66,7 @@
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">4. </span> Qualifications and experience
                 </h2>
-                <ul class="app-task-list__items"> 
+			    <ul class="app-task-list__items">
 					<!-- Add relevant qualifications -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name"><a href="qualifications">Add relevant qualifications</a></span>
@@ -67,16 +76,19 @@
                         <span class="app-task-list__task-name"><a href="post-qualification">Add post-qualification experience</a></span>
 					</li>
 					<!-- Add judicial experience -->
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name"><a href="judicial-experience">Add judicial experience</a></span>
-                    </li>
+					<li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="judicial-experience" aria-describedby="judicial-experience-in-progress">Add judicial experience</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="judicial-experience-in-progress">In progress</strong>            
+					</li>
                 </ul>
 			</li>
 			<li>
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">5. </span> Assessments
                 </h2>
-                <ul class="app-task-list__items"> 
+			    <ul class="app-task-list__items">
 					<!-- Give independent assessors' details -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name"><a href="independent-assessors">Give independent assessors' details</a></span>
