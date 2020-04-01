@@ -15,11 +15,19 @@
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="full-name">Full name</label>
 					<span id="full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">You do not need to include any titles.</span>
-					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="{{ data['full-name'] | default('Sharon Schmidt') }}">
+					{% if data['full-name'] %}
+					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="{{ data['full-name'] }}">
+					{% else %}
+					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="Sharon Schmidt">
+					{% endif %}
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m" for="email-address">Email address</label>
-					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] | default('sharon.schmidt@example.com') }}">
+					{% if data['email-address'] %}
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] }}">
+					{% else %}
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="sharon.schmidt@example.com">
+					{% endif %}
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
@@ -50,33 +58,32 @@
 					<span id="nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
 					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] }}">
 				</div>
-
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="citizenship">Citizenship</label>
 					<span id="citizenship-hint" class="govuk-hint">Select which countries you're a citizen of.</span>
 					<div class="govuk-checkboxes">
 						<div class="govuk-checkboxes__item">
-							<input class="govuk-checkboxes__input" id="citizenship-uk" name="citizenship" type="checkbox" value="uk" {{ checked("citizenship", "uk") }}>
+							<input class="govuk-checkboxes__input" id="citizenship-uk" name="citizenship" type="checkbox" value="UK" {{ checked("citizenship", "UK") }}>
 						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-uk">UK</label>
 						</div>
 						<div class="govuk-checkboxes__item">
-						  	<input class="govuk-checkboxes__input" id="citizenship-roi" name="citizenship" type="checkbox" value="roi" {{ checked("citizenship", "roi") }}>
+						  	<input class="govuk-checkboxes__input" id="citizenship-roi" name="citizenship" type="checkbox" value="Republic of Ireland" {{ checked("citizenship", "Republic of Ireland") }}>
 						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-roi">Republic of Ireland</label>
 						</div>
 						<div class="govuk-checkboxes__item">
-						  	<input class="govuk-checkboxes__input" id="citizenship-commonwealth" name="citizenship" type="checkbox" value="commonwealth" {{ checked("citizenship", "commonwealth") }}>
+						  	<input class="govuk-checkboxes__input" id="citizenship-commonwealth" name="citizenship" type="checkbox" value="Another Commonwealth country" {{ checked("citizenship", "Another Commonwealth country") }}>
 						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-commonwealth">Another Commonwealth country</label>
 						</div>
 						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 							<div class="govuk-checkboxes__item">
-								<input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizenship" type="checkbox" value="other" data-aria-controls="conditional-citizenship-conditional">
+								<input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizenship" type="checkbox" value="Other"  {{ checked("citizenship", "Other") }} data-aria-controls="conditional-citizenship-conditional">
 							  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">Other</label>
 							</div>
 							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
 							  	<div class="govuk-form-group">
 									<label class="govuk-label" for="other-citizenship">Add the countries you're a citizen of
 									</label>
-									<!-- <input class="govuk-input" id="other-citizenship" name="other-citizenship" type="text" spellcheck="false"> -->
+									<!-- <input class="govuk-input" id="other-citizenship" name="other-citizenship" type="text" spellcheck="false"  value="{{ data['other-citizenship'] }}> -->
 									<textarea class="govuk-textarea govuk-!-width-two-thirds" id="other-citizenship" name="other-citizenship" rows="5"></textarea>
 								</div>
 							</div>

@@ -11,32 +11,56 @@
 		<div class="float-right">
             <a class="govuk-link govuk-!-font-size-19" href="personal-details">Change<span class="govuk-visually-hidden"> personal details</span></a>
         </div>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key">Full name</dt>
-            	<dd class="govuk-summary-list__value">{{ data['full-name'] | default('Sharon Schmidt') }}</dd>
-			  </div>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
+				{% if data['full-name'] %}
+				<dd class="govuk-summary-list__value">{{ data['full-name'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Sharon Schmidt</dd>
+				{% endif %}
+			</div>
 			<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key">Email address</dt>
-            	<dd class="govuk-summary-list__value">{{ data['email-address'] | default('sharon.schmidt@example.com') }}</dd>
+				<dt class="govuk-summary-list__key">Email address</dt>
+				{% if data['email-address'] %}
+				<dd class="govuk-summary-list__value">{{ data['email-address'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">sharon.schmidt@example.com</dd>
+				{% endif %}
 			</div>
           	<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key">Date of birth</dt>
-            	<dd class="govuk-summary-list__value">{{data['dob-day']}} {{data['dob-month'] | toMonth }} {{data['dob-year']}}</dd>
+				<dt class="govuk-summary-list__key">Date of birth</dt>
+				<dd class="govuk-summary-list__value">{{ data['dob-day'] | default('1') }} {{ data['dob-month'] | default('1') | toMonth }} {{ data['dob-year'] | default('1970') }}</dd>
 			</div>
 			<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key">National Insurance number</dt>
-            	<dd class="govuk-summary-list__value">{{ data['nino'] | default('QQ 12 34 56 C') }}</dd>
+				<dt class="govuk-summary-list__key">National Insurance number</dt>
+				{% if data['nino'] %}
+				<dd class="govuk-summary-list__value">{{ data['nino'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">QQ 12 34 56 C</dd>
+				{% endif %}
           	</div>
-          	
           	<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key">Citizenship</dt>
+            	<dd class="govuk-summary-list__value">
+					<ul class="govuk-list govuk-list--bullet">
+						{% for country in data['citizenship'] %}
+						<li>{{ country }}</li>
+						{% else %}
+						<li>No countries selected</li>
+						{% endfor %}
+					</ul>
+            	</dd>
+			</div>
+
+			<!-- <div class="govuk-summary-list__row">
             	<dt class="govuk-summary-list__key">Citizenship</dt>
             	<dd class="govuk-summary-list__value">
               		<p class="govuk-body">07700 900457</p>
               		<p class="govuk-body">sarah.phillips@example.com</p>
             	</dd>
             	</dd>
-          	</div>
+          	</div> -->
 		</dl>
 		<form action="task-list-submit" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
