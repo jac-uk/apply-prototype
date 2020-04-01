@@ -43,13 +43,17 @@
           	<div class="govuk-summary-list__row">
             	<dt class="govuk-summary-list__key">Citizenship</dt>
             	<dd class="govuk-summary-list__value">
+					{% if data['citizenship'] %}
 					<ul class="govuk-list govuk-list--bullet">
 						{% for country in data['citizenship'] %}
 						<li>{{ country }}</li>
-						{% else %}
-						<li>No countries selected</li>
 						{% endfor %}
 					</ul>
+					{% else %}
+					<ul class="govuk-list govuk-list--bullet">
+						<li>UK</li>
+					</ul>
+					{% endif %}
             	</dd>
 			</div>
 
