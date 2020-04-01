@@ -1,0 +1,54 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Declare character information{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Declare character information</h1>
+			<p class="govuk-body-l">You must tell us about any character issues that could affect your suitability for this role.</p>
+			<p class="govuk-body-l govuk-!-margin-bottom-8">Read the <a class="govuk-link" href="https://www.judicialappointments.gov.uk/good-character" target="_blank">character guidance</a> for detailed information.</p>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading">Criminal offences</h2>
+					</legend>
+					<p class="govuk-body govuk-!-margin-bottom-0">Have you ever been cautioned or convicted of a criminal offence?</p>
+					<span class="govuk-hint govuk-!-margin-bottom-2">This includes spent convictions.</span>
+					<div class="govuk-radios">
+						<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="criminal-offences-conditional-yes" name="criminal-offences" type="radio" value="yes" {{ checked("criminal-offences", "yes") }}" data-aria-controls="conditional-criminal-offences-conditional">
+							  	<label class="govuk-label govuk-radios__label" for="criminal-offences-conditional-yes">Yes</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-criminal-offences-conditional">
+								<div class="govuk-form-group">
+									Something goes here
+							  	</div>
+							</div>
+						</div>
+
+						<!-- <div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="criminal-offences-yes" name="criminal-offences" type="radio" value="yes" {{ checked("criminal-offences", "yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="criminal-offences-yes">Yes</label>
+						</div> -->
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="criminal-offences-no" name="criminal-offences" type="radio" value="no" {{ checked("criminal-offences", "no") }}>
+					  		<label class="govuk-label govuk-radios__label" for="criminal-offences-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
