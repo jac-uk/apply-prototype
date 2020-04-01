@@ -1,0 +1,51 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Check your answers{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full govuk-!-margin-top-8">
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+		<h2 class="govuk-heading-l float-left">Personal details</h2>
+		<div class="float-right">
+            <a class="govuk-link govuk-!-font-size-19" href="personal-details">Change<span class="govuk-visually-hidden"> personal details</span></a>
+        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        	<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key">Full name</dt>
+            	<dd class="govuk-summary-list__value">{{ data['full-name'] | default('Sharon Schmidt') }}</dd>
+			  </div>
+			<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key">Email address</dt>
+            	<dd class="govuk-summary-list__value">{{ data['email-address'] | default('sharon.schmidt@example.com') }}</dd>
+			</div>
+          	<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key">Date of birth</dt>
+            	<dd class="govuk-summary-list__value">{{data['dob-day']}} {{data['dob-month'] | toMonth }} {{data['dob-year']}}</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key">National Insurance number</dt>
+            	<dd class="govuk-summary-list__value">{{ data['nino'] | default('QQ 12 34 56 C') }}</dd>
+          	</div>
+          	
+          	<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key">Citizenship</dt>
+            	<dd class="govuk-summary-list__value">
+              		<p class="govuk-body">07700 900457</p>
+              		<p class="govuk-body">sarah.phillips@example.com</p>
+            	</dd>
+            	</dd>
+          	</div>
+		</dl>
+		<form action="task-list-submit" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
