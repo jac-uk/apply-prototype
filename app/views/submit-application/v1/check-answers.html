@@ -21,7 +21,7 @@
 				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Email address</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Email address</dt>
 				{% if data['email-address'] %}
 				<dd class="govuk-summary-list__value">{{ data['email-address'] }}</dd>
 				{% else %}
@@ -29,7 +29,7 @@
 				{% endif %}
 			</div>
           	<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Date of birth</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date of birth</dt>
 				{% if data['dob-day'] and ['dob-month'] and ['dob-year'] %}
 				<dd class="govuk-summary-list__value">{{ data['dob-day'] }} {{ data['dob-month'] | toMonth }} {{ data['dob-year'] }}</dd>
 				{% else %}
@@ -37,7 +37,7 @@
 				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">National Insurance number</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">National Insurance number</dt>
 				{% if data['nino'] %}
 				<dd class="govuk-summary-list__value">{{ data['nino'] }}</dd>
 				{% else %}
@@ -45,7 +45,7 @@
 				{% endif %}
           	</div>
           	<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key">Citizenship</dt>
+            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
             	<dd class="govuk-summary-list__value">
 					{% if data['citizenship'] %}
 					<ul class="govuk-list govuk-list--bullet">
@@ -62,7 +62,7 @@
 			</div>
 
 			<!-- <div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key">Citizenship</dt>
+            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
             	<dd class="govuk-summary-list__value">
               		<p class="govuk-body">07700 900457</p>
               		<p class="govuk-body">sarah.phillips@example.com</p>
@@ -77,7 +77,7 @@
         </div>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Part-time</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Part-time</dt>
 				{% if data['part-time'] %}
 				<dd class="govuk-summary-list__value">{{ data['part-time'] }}</dd>
 				{% else %}
@@ -93,7 +93,7 @@
 		<h3 class="govuk-heading-m clearfix">First independent assessor</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Full name</dt>
 				{% if data['full-name-first'] %}
 				<dd class="govuk-summary-list__value">{{ data['full-name-first'] }}</dd>
 				{% else %}
@@ -101,7 +101,7 @@
 				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Email address</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Email address</dt>
 				{% if data['email-address-first'] %}
 				<dd class="govuk-summary-list__value">{{ data['email-address-first'] }}</dd>
 				{% else %}
@@ -109,7 +109,7 @@
 				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Phone</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Phone</dt>
 				{% if data['phone-first'] %}
 				<dd class="govuk-summary-list__value">{{ data['phone-first'] }}</dd>
 				{% else %}
@@ -120,7 +120,7 @@
 		<h3 class="govuk-heading-m clearfix">Second independent assessor</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Full name</dt>
 				{% if data['full-name-second'] %}
 				<dd class="govuk-summary-list__value">{{ data['full-name-second'] }}</dd>
 				{% else %}
@@ -128,7 +128,7 @@
 				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Email address</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Email address</dt>
 				{% if data['email-address-second'] %}
 				<dd class="govuk-summary-list__value">{{ data['email-address-second'] }}</dd>
 				{% else %}
@@ -136,13 +136,24 @@
 				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Phone</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Phone</dt>
 				{% if data['phone-second'] %}
 				<dd class="govuk-summary-list__value">{{ data['phone-second'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">020 7450 4000</dd>
 				{% endif %}
 			</div>
+		</dl>
+
+		<h2 class="govuk-heading-l float-left">Self-assessment competencies</h2>
+		<div class="float-right">
+            <a class="govuk-link govuk-!-font-size-19" href="self-assessment">Change<span class="govuk-visually-hidden"> self-assessment competencies</span></a>
+        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Finished statements</dt>
+				<dd class="govuk-summary-list__value"><a href="#" class="govuk-link">sharonschmidt-assessments.doc</a></dd>
+          	</div>
 		</dl>
 		<form action="task-list-submit" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">

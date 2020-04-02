@@ -1,0 +1,28 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Self-assessment competencies{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Self-assessment competencies</h1>
+			<p class="govuk-body-l">Download the template on this page to complete your self-assessment competency statements. It details the specific skills and experience you'll need to demonstrate for this role.</p>
+			<p class="govuk-body govuk-!-margin-bottom-8">Come back to this page to upload your finished statements.</p>
+			<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Download assessments template</h2>
+			<p class="govuk-body"><a href="#" class="govuk-link">assessments-template.doc</a></p>
+			<div class="govuk-form-group govuk-!-margin-top-8">
+				<label class="govuk-label govuk-label--m" for="file-upload">Upload finished assessments</label>
+				<input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
