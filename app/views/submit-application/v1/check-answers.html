@@ -30,7 +30,11 @@
 			</div>
           	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">Date of birth</dt>
-				<dd class="govuk-summary-list__value">{{ data['dob-day'] | default('1') }} {{ data['dob-month'] | default('1') | toMonth }} {{ data['dob-year'] | default('1970') }}</dd>
+				{% if data['dob-day'] and ['dob-month'] and ['dob-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['dob-day'] }} {{ data['dob-month'] | toMonth }} {{ data['dob-year'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">1 January 1969</dd>
+				{% endif %}
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">National Insurance number</dt>
@@ -65,6 +69,80 @@
             	</dd>
             	</dd>
           	</div> -->
+		</dl>
+
+		<h2 class="govuk-heading-l float-left">Working preference</h2>
+		<div class="float-right">
+            <a class="govuk-link govuk-!-font-size-19" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
+        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Part-time</dt>
+				{% if data['part-time'] %}
+				<dd class="govuk-summary-list__value">{{ data['part-time'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Yes</dd>
+				{% endif %}
+          	</div>
+		</dl>
+
+		<h2 class="govuk-heading-l float-left">Independent assessors</h2>
+		<div class="float-right">
+            <a class="govuk-link govuk-!-font-size-19" href="independent-assessors">Change<span class="govuk-visually-hidden"> Independent assessors</span></a>
+		</div>
+		<h3 class="govuk-heading-m clearfix">First independent assessor</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
+				{% if data['full-name-first'] %}
+				<dd class="govuk-summary-list__value">{{ data['full-name-first'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Henry Brady</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Email address</dt>
+				{% if data['email-address-first'] %}
+				<dd class="govuk-summary-list__value">{{ data['email-address-first'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">henry.brady@example.com</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Phone</dt>
+				{% if data['phone-first'] %}
+				<dd class="govuk-summary-list__value">{{ data['phone-first'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">07771 900 900</dd>
+				{% endif %}
+			</div>
+		</dl>
+		<h3 class="govuk-heading-m clearfix">Second independent assessor</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
+				{% if data['full-name-second'] %}
+				<dd class="govuk-summary-list__value">{{ data['full-name-second'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Kiera Watts</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Email address</dt>
+				{% if data['email-address-second'] %}
+				<dd class="govuk-summary-list__value">{{ data['email-address-second'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">kiera.watts@example.com</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Phone</dt>
+				{% if data['phone-second'] %}
+				<dd class="govuk-summary-list__value">{{ data['phone-second'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">020 7450 4000</dd>
+				{% endif %}
+			</div>
 		</dl>
 		<form action="task-list-submit" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">

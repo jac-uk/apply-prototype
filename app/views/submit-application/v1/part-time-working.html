@@ -1,0 +1,38 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Set part-time working preferences{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Set part-time working preferences</h1>
+			<p class="govuk-body-l govuk-!-margin-bottom-8">Part-time working is offered for some salaried roles. When it is offered, details will be discussed at selection day.</p>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h2 class="govuk-fieldset__heading">Are you interested in part-time working?</h2>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="part-time-yes" name="part-time" type="radio" value="Yes" {{ checked("part-time", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="part-time-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="part-time-no" name="part-time" type="radio" value="No" {{ checked("part-time", "No") }}>
+					  		<label class="govuk-label govuk-radios__label" for="part-time-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
