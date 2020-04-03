@@ -30,7 +30,7 @@
 			</div>
           	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date of birth</dt>
-				{% if data['dob-day'] and ['dob-month'] and ['dob-year'] %}
+				{% if data['dob-day'] and data['dob-month'] and data['dob-year'] %}
 				<dd class="govuk-summary-list__value">{{ data['dob-day'] }} {{ data['dob-month'] | toMonth }} {{ data['dob-year'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">1 January 1969</dd>
@@ -62,6 +62,21 @@
 			</div>
 		</dl>
 
+		<h2 class="govuk-heading-l float-left">Equality and diversity information</h2>
+		<div class="float-right">
+            <a class="govuk-link govuk-!-font-size-19" href="equality-diversity">Change<span class="govuk-visually-hidden"> equality and diversity information</span></a>
+        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Participated in the PAJE programme</dt>
+				{% if data['take-part'] %}
+				<dd class="govuk-summary-list__value">{{ data['take-part'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% endif %}
+          	</div>
+		</dl>
+
 		<h2 class="govuk-heading-l float-left">Working preference</h2>
 		<div class="float-right">
             <a class="govuk-link govuk-!-font-size-19" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
@@ -75,6 +90,61 @@
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
           	</div>
+		</dl>
+
+		<h2 class="govuk-heading-l float-left">Post-qualification experience</h2>
+		<div class="float-right">
+            <a class="govuk-link govuk-!-font-size-19" href="post-qualification">Change<span class="govuk-visually-hidden"> post-qualification experience</span></a>
+        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+        	<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Job title</dt>
+				{% if data['job-title'] %}
+				<dd class="govuk-summary-list__value">{{ data['job-title'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Junior counsel</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Organisation or business name</dt>
+				{% if data['organisation-business'] %}
+				<dd class="govuk-summary-list__value">{{ data['organisation-business'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Naughton Court Chambers</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Start date</dt>
+				{% if data['start-month'] and data['start-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['start-month'] | toMonth }} {{ data['start-year'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">March 2016</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">End date</dt>
+				{% if data['end-month'] and data['end-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['end-month'] | toMonth }} {{ data['end-year'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">February 2020</dd>
+				{% endif %}
+			</div>
+			<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Law-related tasks in this role</dt>
+            	<dd class="govuk-summary-list__value">
+					{% if data['law-tasks'] %}
+					<ul class="govuk-list govuk-list--bullet">
+						{% for tasks in data['law-tasks'] %}
+						<li>{{ tasks }}</li>
+						{% endfor %}
+					</ul>
+					{% else %}
+					<ul class="govuk-list govuk-list--bullet">
+						<li>The carrying-out of judicial functions of any court or tribunal</li>
+					</ul>
+					{% endif %}
+            	</dd>
+			</div>
 		</dl>
 
 		<h2 class="govuk-heading-l float-left">Independent assessors</h2>

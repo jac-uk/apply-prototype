@@ -13,6 +13,7 @@
 					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Post-qualification experience</h1>
 				</legend>
 				<p class="govuk-body-l govuk-!-margin-bottom-8">Add details of how you've gained the required amount of <a href="https://www.judicialappointments.gov.uk/eligibility-legally-qualified-candidates" class="govuk-link" target="_blank">law-related work experience</a> since qualifying, starting with your most recent.</p>
+				<h2 class="govuk-heading-l">Role</h2>
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m" for="job-title">Job title</label>
 					<input class="govuk-input" id="job-title" name="job-title" type="text" spellcheck="false" value="{{ data['job-title'] }}">
@@ -21,7 +22,6 @@
 					<label class="govuk-label govuk-label--m" for="organisation-business">Organisation or business name</label>
 					<input class="govuk-input" id="organisation-business" name="organisation-business" type="text" spellcheck="false" value="{{ data['organisation-business'] }}">
 				</div>
-				
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m" for="start">Start date</label>
 					<div class="govuk-date-input" id="start">
@@ -57,9 +57,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="law-tasks">Law-related tasks in this role</label>
 					<span id="law-tasks-hint" class="govuk-hint">Select all tasks you do in this role. These are defined in the <a href="http://www.legislation.gov.uk/ukpga/2007/15/section/52" class="govuk-link" target="_blank">Tribunals, Courts and Enforcement Act 2007</a>.</span>
@@ -96,10 +93,6 @@
 							<input class="govuk-checkboxes__input" id="law-tasks-8" name="law-tasks" type="checkbox" value="Teaching or researching law" {{ checked("law-tasks", "Teaching or researching law") }}>
 							<label class="govuk-label govuk-checkboxes__label" for="law-tasks-8">Teaching or researching law</label>
 				  		</div>
-
-
-
-
 						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 							<div class="govuk-checkboxes__item">
 								<input class="govuk-checkboxes__input" id="law-tasks-conditional" name="law-tasks" type="checkbox" value="None of the above - Any activity that, in the relevant decision-maker's opinion, is of a broadly similar nature to those listed above" {{ checked("law-tasks", "None of the above - Any activity that, in the relevant decision-maker's opinion, is of a broadly similar nature to those listed above") }} data-aria-controls="conditional-law-tasks-conditional">
@@ -115,7 +108,8 @@
 				  	</div>
 				</div>
 			</fieldset>
-			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another role</button><br />
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>	
 		</div>
 	</div>
 </form>

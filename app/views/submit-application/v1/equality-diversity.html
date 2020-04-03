@@ -1,0 +1,22 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Equality and diversity information{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="equality-diversity-1" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Equality and diversity information</h1>
+			<p class="govuk-body-l">Giving this information means we can apply our <a class="govuk-link" href="https://www.judicialappointments.gov.uk/equal-merit" target="_blank">equal merit rules</a> in appropriate circumstances.</p>
+			<p class="govuk-body-l">This helps us meet <a class="govuk-link" href="https://www.judicialappointments.gov.uk/providing-diversity-information-jac" target="_blank">our commitment to equality and diversity</a>.</p>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
