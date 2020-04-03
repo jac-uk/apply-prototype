@@ -1,0 +1,39 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Criminal offences{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="criminal-offences-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<span class="govuk-caption-xl">Declare character information</span>
+			<h1 class="govuk-heading-xl">Criminal offences</h1>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h2 class="govuk-fieldset__heading">Have you ever been cautioned or convicted of a criminal offence?</h2>
+					</legend>
+					<span id="convictions-hint" class="govuk-hint">This includes spent convictions.</span>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="caution-conviction-yes" name="caution-conviction" type="radio" value="Yes" {{ checked("caution-conviction", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="caution-conviction-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="caution-conviction-no" name="caution-conviction" type="radio" value="No" {{ checked("caution-conviction", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="caution-conviction-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

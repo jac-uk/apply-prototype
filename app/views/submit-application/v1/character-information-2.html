@@ -1,0 +1,22 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Declare character information{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="criminal-offences" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Declare character information</h1>
+			<p class="govuk-body-l">You must tell us about any character issues that could affect your suitability for this role.</p>
+			<p class="govuk-body-l govuk-!-margin-bottom-8">Read the <a class="govuk-link" href="https://www.judicialappointments.gov.uk/good-character" target="_blank">character guidance</a> for detailed information.</p>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

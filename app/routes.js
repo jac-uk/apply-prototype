@@ -20,5 +20,19 @@ router.post('/submit-application/v1/eligibility-router', function (req, res) {
 		}
 	})
 
+router.post('/submit-application/v1/criminal-offences-router', function (req, res) {
+	// Get the answer from session data
+	// The name between the quotes is the same as the 'name' attribute on the input elements
+	// However in JavaScript we can't use hyphens in variable names
+	
+	let cautionConviction = req.session.data['caution-conviction']
+	
+	if (cautionConviction === 'Yes') {
+		res.redirect('/submit-application/v1/task-list')
+	} else {
+		res.redirect('/submit-application/v1/fixed-penalty')
+	}
+})
+
 module.exports = router
 
