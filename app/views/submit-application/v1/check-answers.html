@@ -7,10 +7,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full govuk-!-margin-top-8">
 		<h1 class="govuk-heading-l">Check your answers</h1>
-		<h2 class="govuk-heading-m float-left">Personal details</h2>
-		<div class="float-right">
-            <a class="govuk-link govuk-!-font-size-19" href="personal-details">Change<span class="govuk-visually-hidden"> personal details</span></a>
-        </div>
+		<h2 class="govuk-heading-m">Personal details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
@@ -19,6 +16,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">Sharon Schmidt</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> full name</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Email address</dt>
@@ -27,6 +27,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">sharon.schmidt@example.com</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> email address</span></a>
+				</dd>
 			</div>
           	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date of birth</dt>
@@ -35,6 +38,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">1 January 1969</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">National Insurance number</dt>
@@ -43,6 +49,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">QQ 12 34 56 C</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> national insurance number</span></a>
+				</dd>
           	</div>
           	<div class="govuk-summary-list__row">
             	<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
@@ -58,14 +67,14 @@
 						<li>UK</li>
 					</ul>
 					{% endif %}
-            	</dd>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> citizenship</span></a>
+				</dd>
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m float-left">Equality and diversity information</h2>
-		<div class="float-right">
-            <a class="govuk-link govuk-!-font-size-19" href="equality-diversity">Change<span class="govuk-visually-hidden"> equality and diversity information</span></a>
-        </div>
+		<h2 class="govuk-heading-m">Equality and diversity information</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Participated in the PAJE programme</dt>
@@ -74,13 +83,13 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="equality-diversity-1">Change<span class="govuk-visually-hidden"> participation in PAJE programme</span></a>
+				</dd>
           	</div>
 		</dl>
 
-		<h2 class="govuk-heading-m float-left">Working preference</h2>
-		<div class="float-right">
-            <a class="govuk-link govuk-!-font-size-19" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
-        </div>
+		<h2 class="govuk-heading-m">Working preference</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Part-time</dt>
@@ -89,13 +98,13 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
+				</dd>
           	</div>
 		</dl>
 
-		<h2 class="govuk-heading-m float-left">Post-qualification experience</h2>
-		<div class="float-right">
-            <a class="govuk-link govuk-!-font-size-19" href="post-qualification">Change<span class="govuk-visually-hidden"> post-qualification experience</span></a>
-        </div>
+		<h2 class="govuk-heading-m">Post-qualification experience</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Job title</dt>
@@ -104,6 +113,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">Junior counsel</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> job title</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Organisation or business name</dt>
@@ -112,6 +124,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">Naughton Court Chambers</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> organisation or business name</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Start date</dt>
@@ -120,6 +135,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">March 2016</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> start date</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">End date</dt>
@@ -128,6 +146,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">February 2020</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> end date</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
             	<dt class="govuk-summary-list__key govuk-!-width-one-third">Law-related tasks in this role</dt>
@@ -143,14 +164,14 @@
 						<li>The carrying-out of judicial functions of any court or tribunal</li>
 					</ul>
 					{% endif %}
-            	</dd>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
+				</dd>
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m float-left">Independent assessors</h2>
-		<div class="float-right">
-            <a class="govuk-link govuk-!-font-size-19" href="independent-assessors">Change<span class="govuk-visually-hidden"> Independent assessors</span></a>
-		</div>
+		<h2 class="govuk-heading-m">Independent assessors</h2>
 		<h3 class="govuk-heading-s clearfix">First independent assessor</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
@@ -160,6 +181,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">Henry Brady</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> full name</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Email address</dt>
@@ -168,6 +192,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">henry.brady@example.com</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> email address</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Phone</dt>
@@ -176,6 +203,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">07771 900 900</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> phone number</span></a>
+				</dd>
 			</div>
 		</dl>
 		<h3 class="govuk-heading-s clearfix">Second independent assessor</h3>
@@ -187,6 +217,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">Kiera Watts</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> full name</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Email address</dt>
@@ -195,6 +228,9 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">kiera.watts@example.com</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> email address</span></a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Phone</dt>
@@ -203,17 +239,20 @@
 				{% else %}
 				<dd class="govuk-summary-list__value">020 7450 4000</dd>
 				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> phone number</span></a>
+				</dd>
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m float-left">Self-assessment competencies</h2>
-		<div class="float-right">
-            <a class="govuk-link govuk-!-font-size-19" href="self-assessment">Change<span class="govuk-visually-hidden"> self-assessment competencies</span></a>
-        </div>
+		<h2 class="govuk-heading-m">Self-assessment competencies</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Finished statements</dt>
 				<dd class="govuk-summary-list__value"><a href="#" class="govuk-link">sharonschmidt-assessments.doc</a></dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="self-assessment">Change<span class="govuk-visually-hidden"> finished assessment statement</span></a>
+				</dd>
           	</div>
 		</dl>
 		<form action="task-list-submit" method="post" novalidate>
