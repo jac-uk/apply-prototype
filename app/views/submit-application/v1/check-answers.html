@@ -220,23 +220,39 @@
 					<a class="govuk-link" href="paje-programme">Change<span class="govuk-visually-hidden"> participation in PAJE programme</span></a>
 				</dd>
 			</div>
+			
+			{% if data['ethnic-group'] == "Asian or Asian British" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
-				{% if data['ethnic-group'] %}
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
-				{% else %}
-				<dd class="govuk-summary-list__value">White</dd>
-				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
-			{% if data['ethnic-group-asian'] %}  
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Asian or Asian British background</dt>
+				{% if data['ethnic-group-asian'] != "Another Asian background" %}  
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group-asian'] }}</dd>
+				{% elseif data['ethnic-group-asian'] == "Another Asian background" %}
+				<dd class="govuk-summary-list__value">{{ data['ethnicity-asian-other'] }}</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="ethnic-group-asian">Change<span class="govuk-visually-hidden"> asian or asian british background</span></a>
+				</dd>
+			</div>
+			{% else %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				<dd class="govuk-summary-list__value">White</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">White background</dt>
+				<dd class="govuk-summary-list__value">British, English, Northern Irish, Scottish, or Welsh</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group-white">Change<span class="govuk-visually-hidden"> white background</span></a>
 				</dd>
 			</div>
 			{% endif %}
