@@ -20,7 +20,7 @@ router.post('/submit-application/v1/eligibility-router', function (req, res) {
 		}
 	})
 
-router.post('/submit-application/v1/criminal-offences-router', function (req, res) {
+router.post('/submit-application/v1/caution-conviction-router', function (req, res) {
 	// Get the answer from session data
 	// The name between the quotes is the same as the 'name' attribute on the input elements
 	// However in JavaScript we can't use hyphens in variable names
@@ -28,9 +28,23 @@ router.post('/submit-application/v1/criminal-offences-router', function (req, re
 	let cautionConviction = req.session.data['caution-conviction']
 	
 	if (cautionConviction === 'Yes') {
-		res.redirect('/submit-application/v1/task-list')
+		res.redirect('/submit-application/v1/caution-conviction-details')
 	} else {
 		res.redirect('/submit-application/v1/fixed-penalty')
+	}
+})
+
+router.post('/submit-application/v1/fixed-penalty-router', function (req, res) {
+	// Get the answer from session data
+	// The name between the quotes is the same as the 'name' attribute on the input elements
+	// However in JavaScript we can't use hyphens in variable names
+	
+	let penaltyNotice = req.session.data['penalty-notice']
+	
+	if (penaltyNotice === 'Yes') {
+		res.redirect('/submit-application/v1/fixed-penalty-details')
+	} else {
+		res.redirect('/submit-application/v1/driving-offences')
 	}
 })
 
