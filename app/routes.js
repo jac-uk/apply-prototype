@@ -20,6 +20,35 @@ router.post('/submit-application/v1/eligibility-router', function (req, res) {
 		}
 	})
 
+
+router.post('/submit-application/v1/ethnic-group-router', function (req, res) {
+
+	let ethnicGroup = req.session.data['ethnic-group']
+	
+	if (ethnicGroup === 'Asian or Asian British') {
+		res.redirect('/submit-application/v1/ethnic-group-asian')
+	}
+	else if (ethnicGroup === 'Black, African, Black British or Caribbean') {
+		res.redirect('/submit-application/v1/ethnic-group-black')
+	}
+	else if (ethnicGroup === 'Mixed or multiple ethnic groups') {
+		res.redirect('/submit-application/v1/ethnic-group-mixed')
+	}
+	else if (ethnicGroup === 'White') {
+		res.redirect('/submit-application/v1/ethnic-group-white')
+	} 
+	else if (ethnicGroup === 'Another ethnic group') {
+		res.redirect('/submit-application/v1/ethnic-group-another')
+	} else {
+		res.redirect('/submit-application/v1/religion-faith')
+	}
+})
+
+
+
+
+
+
 router.post('/submit-application/v1/caution-conviction-router', function (req, res) {
 	
 	let cautionConviction = req.session.data['caution-conviction']

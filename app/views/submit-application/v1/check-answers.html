@@ -217,9 +217,29 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="equality-diversity-1">Change<span class="govuk-visually-hidden"> participation in PAJE programme</span></a>
+					<a class="govuk-link" href="paje-programme">Change<span class="govuk-visually-hidden"> participation in PAJE programme</span></a>
 				</dd>
-          	</div>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				{% if data['ethnic-group'] %}
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">White</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+				</dd>
+			</div>
+			{% if data['ethnic-group-asian'] %}  
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Asian or Asian British background</dt>
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group-asian'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group-asian">Change<span class="govuk-visually-hidden"> asian or asian british background</span></a>
+				</dd>
+			</div>
+			{% endif %}
 		</dl>
 
 		<h2 class="govuk-heading-m">Working preference</h2>

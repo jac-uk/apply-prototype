@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="task-list" method="post">
+<form action="ethnic-group" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -23,6 +23,7 @@
 					  		<input class="govuk-radios__input" id="take-part-no" name="take-part" type="radio" value="No" {{ checked("take-part", "No") }}>
 					  		<label class="govuk-label govuk-radios__label" for="take-part-no">No</label>
 						</div>
+						<div class="govuk-radios__divider">or</div>
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="take-part-no" name="take-part" type="radio" value="Prefer not to say" {{ checked("take-part", "Prefer not to say") }}>
 							<label class="govuk-label govuk-radios__label" for="take-part-no">Prefer not to say</label>
