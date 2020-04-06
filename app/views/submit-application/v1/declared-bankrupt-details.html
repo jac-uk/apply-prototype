@@ -1,0 +1,54 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Details of bankruptcy or IVA{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="late-returns" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Details of bankruptcy or IVA</h1>
+				</legend>
+				<h2 class="govuk-heading-m">Bankruptcy or IVA</h2>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="bankrupt-date">Date</label>
+					<span id="bankrupt-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+					<div class="govuk-date-input" id="bankrupt-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="bankrupt-date-day">Day</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bankrupt-date-day" name="bankrupt-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['bankrupt-date-day'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="bankrupt-date-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bankrupt-date-month" name="bankrupt-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['bankrupt-date-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="bankrupt-date-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bankrupt-date-year" name="bankrupt-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['bankrupt-date-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s" for="bankrupt-summary">Summary</label>
+					<textarea class="govuk-textarea" id="bankrupt-summary" name="bankrupt-summary" rows="5">{{ data['bankrupt-summary'] }}</textarea>
+				</div>		
+			</fieldset>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another bankruptcy or IVA</button><br />
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>	
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
