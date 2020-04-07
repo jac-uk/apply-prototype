@@ -40,7 +40,7 @@ router.post('/submit-application/v1/ethnic-group-router', function (req, res) {
 	else if (ethnicGroup === 'Another ethnic group') {
 		res.redirect('/submit-application/v1/ethnic-group-another')
 	} else {
-		res.redirect('/submit-application/v1/religion-faith')
+		res.redirect('/submit-application/v1/gender')
 	}
 })
 

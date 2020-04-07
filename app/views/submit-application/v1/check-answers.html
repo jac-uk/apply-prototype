@@ -301,7 +301,6 @@
 				</dd>
 			</div>
 
-
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Attended university</dt>
 				{% if data['first-university'] %}
@@ -451,32 +450,6 @@
 			</div>
 			{% endif %}
 
-			{% if data['religion-faith'] %}
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
-				{% if data['religion-faith'] != "Other" %}
-				<dd class="govuk-summary-list__value">{{ data['religion-faith'] }}</dd>
-				{% elseif data['religion-faith'] == "Other" %}
-					{% if data['religion-faith-other'] %}
-					<dd class="govuk-summary-list__value">Other - {{ data['religion-faith-other'] }}</dd>
-					{% else %}
-					<dd class="govuk-summary-list__value">Other - Rastafarian</dd>
-					{% endif %}
-				{% endif %}
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
-				</dd>
-			</div>
-			{% else %}
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
-				<dd class="govuk-summary-list__value">Christian</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
-				</dd>
-			</div>
-			{% endif %}
-
 			{% if data['gender'] %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender</dt>
@@ -504,14 +477,14 @@
 			{% endif %}
 
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender change</dt>
-				{% if data['gender-change'] %}
-				<dd class="govuk-summary-list__value">{{ data['gender-change'] }}</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender identity</dt>
+				{% if data['gender-identity'] %}
+				<dd class="govuk-summary-list__value">{{ data['gender-identity'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gender-change">Change<span class="govuk-visually-hidden"> gender change</span></a>
+					<a class="govuk-link" href="gender-identity">Change<span class="govuk-visually-hidden"> gender identity</span></a>
 				</dd>
 			</div>
 
@@ -566,6 +539,44 @@
 				</dd>
 			</div>
 			{% endif %}
+
+			{% if data['religion-faith'] %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
+				{% if data['religion-faith'] != "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['religion-faith'] }}</dd>
+				{% elseif data['religion-faith'] == "Other" %}
+					{% if data['religion-faith-other'] %}
+					<dd class="govuk-summary-list__value">Other - {{ data['religion-faith-other'] }}</dd>
+					{% else %}
+					<dd class="govuk-summary-list__value">Other - Rastafarian</dd>
+					{% endif %}
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+				</dd>
+			</div>
+			{% else %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
+				<dd class="govuk-summary-list__value">Christian</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+				</dd>
+			</div>
+			{% endif %}
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Attended an outreach event on JAC selection exercises</dt>
+				{% if data['outreach-event'] %}
+				<dd class="govuk-summary-list__value">{{ data['outreach-event'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="outreach-event">Change<span class="govuk-visually-hidden"> attended an outreach event on JAC selection exercises</span></a>
+				</dd>
+			</div>
 		</dl>
 
 		<h2 class="govuk-heading-m">Working preference</h2>
