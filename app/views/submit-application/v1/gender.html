@@ -26,10 +26,20 @@
 						  	<input class="govuk-radios__input" id="gender-3" name="gender" type="radio" value="Gender neutral" {{ checked("gender", "Gender neutral") }}>
 						  	<label class="govuk-label govuk-radios__label" for="gender-3">Gender neutral</label>
 						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="gender-4" name="gender" type="radio" value="Other" data-aria-controls="conditional-gender-4" {{ checked("gender", "Other") }}>
+							<label class="govuk-label govuk-radios__label" for="gender-4">Other</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gender-4">
+								<div class="govuk-form-group">
+								<label class="govuk-label" for="gender-other">Gender</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="gender-other" name="gender-other" type="text" value="{{ data['gender-other'] }}">
+							</div>
+						</div>
 						<div class="govuk-radios__divider">or</div>
 						<div class="govuk-radios__item">
-						  	<input class="govuk-radios__input" id="gender-4" name="gender" type="radio" value="Prefer not to say" {{ checked("gender", "Prefer not to say") }}>
-						  	<label class="govuk-label govuk-radios__label govuk-label" for="gender-4">Prefer not to say</label>
+						  	<input class="govuk-radios__input" id="gender-5" name="gender" type="radio" value="Prefer not to say" {{ checked("gender", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label" for="gender-5">Prefer not to say</label>
 						</div>
 					</div>
 				</fieldset>

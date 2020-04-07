@@ -43,6 +43,17 @@ $govuk-assets-path: '/govuk/assets/';
     color: #fff !important;
 }
 
+.govuk-checkboxes__divider {
+    font-family: "Khula", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.25;
+    color: #0b0c0c;
+    width: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 /* .panel {
     background: #f3f2f1;
     padding: 20px;

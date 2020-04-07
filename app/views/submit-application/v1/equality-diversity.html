@@ -5,13 +5,31 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="paje-programme" method="post">
+<form action="professional-background" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<h1 class="govuk-heading-l">Equality and diversity information</h1>
-			<p class="govuk-body">Giving this information means we can apply our <a class="govuk-link" href="https://www.judicialappointments.gov.uk/equal-merit" target="_blank">equal merit rules</a> in appropriate circumstances.</p>
-			<p class="govuk-body">This helps us meet <a class="govuk-link" href="https://www.judicialappointments.gov.uk/providing-diversity-information-jac" target="_blank">our commitment to equality and diversity</a>.</p>
-			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+			<p class="govuk-body">The JAC is committed to equality and diversity and monitors selection processes to ensure that they are fair. If you do not want to disclose your diversity data in any given area, please select ‘Prefer not to say’ for the relevant question.</p>
+			<p class="govuk-body">The JAC will use the information you provide in two ways: where the <a class="govuk-link" href="https://www.judicialappointments.gov.uk/equal-merit" target="_blank">Equal Merit approach</a> applies, and to monitor the selection process. Other than for the purposes of Equal Merit, your diversity monitoring information will not play any part in the selection process.</p>
+			<p class="govuk-body govuk-!-margin-bottom-8">If you are recommended for an appointment we will also share your information with the Ministry of Justice, Judicial Office and Her Majesty's Courts and Tribunal Service.</p>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h2 class="govuk-fieldset__heading">You can opt out if you do not wish to share your data with MoJ, HMCTS, and Judicial Office.</h2>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="opt-out-share" name="opt-out" type="radio" value="Share" {{ checked("opt-out", "Share") }}>
+					  		<label class="govuk-label govuk-radios__label" for="opt-out-share">Share</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="opt-out-no-share" name="opt-out" type="radio" value="Do not share" {{ checked("opt-out", "Do not share") }}>
+					  		<label class="govuk-label govuk-radios__label" for="opt-out-no-share">Do not share</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
 		</div>
 	</div>
 </form>
