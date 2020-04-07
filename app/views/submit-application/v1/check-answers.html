@@ -355,6 +355,8 @@
 				</dd>
 			</div>
 			{% endif %}
+
+			{% if data['religion-faith'] %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
 				{% if data['religion-faith'] != "Other" %}
@@ -365,13 +367,21 @@
 					{% else %}
 					<dd class="govuk-summary-list__value">Rastafarian</dd>
 					{% endif %}
-				{% else %}
-				<dd class="govuk-summary-list__value">Christian</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
+			{% else %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
+				<dd class="govuk-summary-list__value">Christian</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+				</dd>
+			</div>
+			{% endif %}
+
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender</dt>
 				{% if data['gender'] %}
@@ -395,6 +405,7 @@
 				</dd>
 			</div>
 
+			{% if data['sexual-orientation'] %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sexual orientation</dt>
 				{% if data['sexual-orientation'] != "Other" %}
@@ -405,17 +416,20 @@
 					{% else %}
 					<dd class="govuk-summary-list__value">Pansexual</dd>
 					{% endif %}
-				{% else %}
-				<dd class="govuk-summary-list__value">Heterosexual or straight</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="sexual-orientation">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
 				</dd>
 			</div>
-
-
-
-
+			{% else %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sexual orientation</dt>
+				<dd class="govuk-summary-list__value">Heterosexual or straight</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="sexual-orientation">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
+				</dd>
+			</div>
+			{% endif %}
 		</dl>
 
 		<h2 class="govuk-heading-m">Working preference</h2>
