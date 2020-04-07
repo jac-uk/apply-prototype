@@ -220,7 +220,7 @@
 					<a class="govuk-link" href="paje-programme">Change<span class="govuk-visually-hidden"> participation in PAJE programme</span></a>
 				</dd>
 			</div>
-			
+			<!-- Asian or Asian British -->
 			{% if data['ethnic-group'] == "Asian or Asian British" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
@@ -229,17 +229,117 @@
 					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Asian or Asian British background</dt>
-				{% if data['ethnic-group-asian'] != "Another Asian background" %}  
-				<dd class="govuk-summary-list__value">{{ data['ethnic-group-asian'] }}</dd>
-				{% elseif data['ethnic-group-asian'] == "Another Asian background" %}
-				<dd class="govuk-summary-list__value">{{ data['ethnicity-asian-other'] }}</dd>
+				{% if data['ethnic-group-asian'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">Asian or Asian British background</dt>
+					{% if data['ethnic-group-asian'] != "Another Asian background" %}  
+					<dd class="govuk-summary-list__value">{{ data['ethnic-group-asian'] }}</dd>
+					{% elseif data['ethnic-group-asian'] == "Another Asian background" %}
+					<dd class="govuk-summary-list__value">{{ data['ethnicity-asian-other'] }}</dd>
+					{% endif %}
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="ethnic-group-asian">Change<span class="govuk-visually-hidden"> asian or asian british background</span></a>
+					</dd>
+				</div>
 				{% endif %}
+			<!-- Black, African, Black British or Caribbean -->
+			{% elseif data['ethnic-group'] == "Black, African, Black British or Caribbean" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group-asian">Change<span class="govuk-visually-hidden"> asian or asian british background</span></a>
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
+				{% if data['ethnic-group-black'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">Black, African, Black British or Caribbean background</dt>
+					{% if data['ethnic-group-black'] != "Another Black background" %}  
+					<dd class="govuk-summary-list__value">{{ data['ethnic-group-black'] }}</dd>
+					{% elseif data['ethnic-group-black'] == "Another Black background" %}
+					<dd class="govuk-summary-list__value">{{ data['ethnicity-black-other'] }}</dd>
+					{% endif %}
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="ethnic-group-black">Change<span class="govuk-visually-hidden"> black, african, black british or caribbean  background</span></a>
+					</dd>
+				</div>
+				{% endif %}
+			<!-- Mixed or multiple ethnic groups -->
+			{% elseif data['ethnic-group'] == "Mixed or multiple ethnic groups" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+				</dd>
+			</div>
+				{% if data['ethnic-group-mixed'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">Mixed or multiple ethnic groups background</dt>
+					{% if data['ethnic-group-mixed'] != "Another Mixed background" %}  
+					<dd class="govuk-summary-list__value">{{ data['ethnic-group-mixed'] }}</dd>
+					{% elseif data['ethnic-group-mixed'] == "Another Mixed background" %}
+					<dd class="govuk-summary-list__value">{{ data['ethnicity-mixed-other'] }}</dd>
+					{% endif %}
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="ethnic-group-mixed">Change<span class="govuk-visually-hidden"> mixed or multiple ethnic groups background</span></a>
+					</dd>
+				</div>
+				{% endif %}
+			<!-- White -->
+			{% elseif data['ethnic-group'] == "White" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+				</dd>
+			</div>
+				{% if data['ethnic-group-white'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">White background</dt>
+					{% if data['ethnic-group-white'] != "Another White background" %}  
+					<dd class="govuk-summary-list__value">{{ data['ethnic-group-white'] }}</dd>
+					{% elseif data['ethnic-group-white'] == "Another White background" %}
+					<dd class="govuk-summary-list__value">{{ data['ethnicity-white-other'] }}</dd>
+					{% endif %}
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="ethnic-group-white">Change<span class="govuk-visually-hidden"> white background</span></a>
+					</dd>
+				</div>
+				{% endif %}
+			<!-- Another ethnic group -->
+			{% elseif data['ethnic-group'] == "Another ethnic group" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+				</dd>
+			</div>
+				{% if data['ethnic-group-another'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">Another ethnic group background</dt>
+					{% if data['ethnic-group-another'] != "Another ethnic background" %}  
+					<dd class="govuk-summary-list__value">{{ data['ethnic-group-another'] }}</dd>
+					{% elseif data['ethnic-group-another'] == "Another ethnic background" %}
+					<dd class="govuk-summary-list__value">{{ data['ethnicity-another-other'] }}</dd>
+					{% endif %}
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="ethnic-group-another">Change<span class="govuk-visually-hidden"> another ethnic group background</span></a>
+					</dd>
+				</div>
+				{% endif %}
+			<!-- Prefer not to say -->
+			{% elseif data['ethnic-group'] == "Prefer not to say" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
+				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+				</dd>
+			</div>
+			<!-- Default: If no ethnic background is chosen -->
 			{% else %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
