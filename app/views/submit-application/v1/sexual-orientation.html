@@ -1,0 +1,59 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - How would you describe your sexual orientation?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="disability" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">How would you describe your sexual orientation?</h1>
+					</legend>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="sexual-orientation" name="sexual-orientation" type="radio" value="Bisexual" {{ checked("sexual-orientation", "Bisexual") }}>
+						  	<label class="govuk-label govuk-radios__label" for="sexual-orientation">Bisexual</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="sexual-orientation-2" name="sexual-orientation" type="radio" value="Gay man" {{ checked("sexual-orientation", "Gay man") }}>
+							<label class="govuk-label govuk-radios__label" for="sexual-orientation-2">Gay man</label>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="sexual-orientation-3" name="sexual-orientation" type="radio" value="Gay woman or lesbian" {{ checked("sexual-orientation", "Gay woman or lesbian") }}>
+						  	<label class="govuk-label govuk-radios__label" for="sexual-orientation-3">Gay woman or lesbian</label>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="sexual-orientation-4" name="sexual-orientation" type="radio" value="Heterosexual or straight" {{ checked("sexual-orientation", "Heterosexual or straight") }}>
+						  	<label class="govuk-label govuk-radios__label" for="sexual-orientation-4">Heterosexual or straight</label>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="sexual-orientation-5" name="sexual-orientation" type="radio" value="Other" data-aria-controls="conditional-sexual-orientation-5" {{ checked("sexual-orientation", "Other") }}>
+						  	<label class="govuk-label govuk-radios__label" for="sexual-orientation-5">Other</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-sexual-orientation-5">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label" for="sexual-orientation-other">Sexual orientation</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="sexual-orientation-other" name="sexual-orientation-other" type="text" value="{{ data['sexual-orientation-other'] }}">
+						 	</div>
+						</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="sexual-orientation-6" name="sexual-orientation" type="radio" value="Prefer not to say" {{ checked("sexual-orientation", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label" for="sexual-orientation-6">Prefer not to say</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

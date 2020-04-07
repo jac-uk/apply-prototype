@@ -127,7 +127,6 @@
 			</div>
 			{% endif %}
 
-
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Been disqualified from driving, or convicted for driving under the influence of drink or drugs</dt>
 				{% if data['driving-conviction'] %}
@@ -140,7 +139,7 @@
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Have any endorsements on your licence, or received any motoring fixed-penalty notices</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Any endorsements on your licence, or received any motoring fixed-penalty notices</dt>
 				{% if data['endorsement-notice'] %}
 				<dd class="govuk-summary-list__value">{{ data['endorsement-notice'] }}</dd>
 				{% else %}
@@ -195,7 +194,7 @@
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Have any other issues that you think we should know about when considering your character</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Any other issues that you think we should know about when considering your character</dt>
 				{% if data['other-issues'] %}
 				<dd class="govuk-summary-list__value">{{ data['other-issues'] }}</dd>
 				{% else %}
@@ -356,6 +355,67 @@
 				</dd>
 			</div>
 			{% endif %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
+				{% if data['religion-faith'] != "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['religion-faith'] }}</dd>
+				{% elseif data['religion-faith'] == "Other" %}
+					{% if data['religion-faith-other'] %}
+					<dd class="govuk-summary-list__value">{{ data['religion-faith-other'] }}</dd>
+					{% else %}
+					<dd class="govuk-summary-list__value">Rastafarian</dd>
+					{% endif %}
+				{% else %}
+				<dd class="govuk-summary-list__value">Christian</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender</dt>
+				{% if data['gender'] %}
+				<dd class="govuk-summary-list__value">{{ data['gender'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Male</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="gender">Change<span class="govuk-visually-hidden"> gender</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender change</dt>
+				{% if data['gender-change'] %}
+				<dd class="govuk-summary-list__value">{{ data['gender-change'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="gender-change">Change<span class="govuk-visually-hidden"> gender change</span></a>
+				</dd>
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sexual orientation</dt>
+				{% if data['sexual-orientation'] != "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['sexual-orientation'] }}</dd>
+				{% elseif data['sexual-orientation'] == "Other" %}
+					{% if data['sexual-orientation-other'] %}
+					<dd class="govuk-summary-list__value">{{ data['sexual-orientation-other'] }}</dd>
+					{% else %}
+					<dd class="govuk-summary-list__value">Pansexual</dd>
+					{% endif %}
+				{% else %}
+				<dd class="govuk-summary-list__value">Heterosexual or straight</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="sexual-orientation">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
+				</dd>
+			</div>
+
+
+
+
 		</dl>
 
 		<h2 class="govuk-heading-m">Working preference</h2>
