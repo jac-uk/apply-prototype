@@ -35,6 +35,10 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 	margin-top: 0 !important;
 }
 
+.index-page .header-background {
+	padding: 20px 20px 10px 20px;
+}
+
 .header-background h1 a {
 	color: #753880 !important;
 	text-decoration: none;
@@ -42,6 +46,10 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 .header-background h1 a:hover {
 	text-decoration: underline;
+}
+
+.header-background span {
+	color: #753880 !important;
 }
 
 .govuk-phase-banner {
