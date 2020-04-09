@@ -38,17 +38,37 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 	padding: 20px 20px 10px 20px;
 }
 
-.header-background h1 a {
+.header-background h1 a,
+.header-content a {
 	color: #753880 !important;
 	text-decoration: none;
 }
 
-.header-background h1 a:hover {
+.header-background h1 a:hover,
+.header-content a:hover {
 	text-decoration: underline;
 }
 
 .header-background span {
 	color: #753880 !important;
+}
+
+.header-logo {
+	width: 33.33%;
+    // padding-right: 15px;
+    float: left;
+	vertical-align: top;
+}
+
+.header-logo img {
+	display: inline-block;
+}
+
+.header-content {
+	width: 66.66%;
+    // padding-left: 15px;
+	overflow: hidden;
+	padding-bottom: 5px;
 }
 
 .img-border {

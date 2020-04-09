@@ -3,7 +3,16 @@
 {% block pageTitle %}Judical Appointments Commission - Submit an application - 042 Recorder{% endblock %}
 
 {% block content %}
-{% include "includes/header.html" %}
+{# include "includes/header.html" #}
+<div class="header-background">
+	<a href="/"><img src="/public/images/jac-logo.svg" width="197" height="66" /></a>
+</div>
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+		<span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.</span>
+	</p>
+</div>
 <form action="eligibility-check" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
