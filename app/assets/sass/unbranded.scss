@@ -72,7 +72,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .img-border {
-	border: 1px solid #0b0c0c;
+	border: 1px solid govuk-colour("black");
 	width: 350px;
 	/* margin-top: 60px; */
 	margin-bottom: 30px;
@@ -82,12 +82,12 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 .govuk-footer {
 	border-top: 0;
 	background-color: #753880 !important;
-	color: #fff;
+	color: govuk-colour("white");
 }
 
 .govuk-footer a,
 .govuk-footer .govuk-footer__link {
-	color: #fff;
+	color: govuk-colour("white");
 }
 
 .top-border {

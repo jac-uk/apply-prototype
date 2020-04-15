@@ -27,12 +27,12 @@ $govuk-assets-path: '/govuk/assets/';
 .prototype-proceed {
     margin-top: 100px;
     display: inline-block;
-    color:	#626a6e !important;
+    color: govuk-colour("dark-grey") !important;
 }
 
 .govuk-tag-not-done {
-    background: #f3f2f1;
-    color: #6f777b;
+    background: govuk-colour("light-grey");
+    color: govuk-colour("dark-grey");
 }
 
 .govuk-panel--confirmation {
@@ -40,7 +40,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .govuk-panel--confirmation p {
-    color: #fff !important;
+    color: govuk-colour("white") !important;
 }
 
 .govuk-checkboxes__divider {
@@ -48,7 +48,7 @@ $govuk-assets-path: '/govuk/assets/';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.25;
-    color: #0b0c0c;
+    color: govuk-colour("black");
     width: 40px;
     margin-bottom: 10px;
     text-align: center;
