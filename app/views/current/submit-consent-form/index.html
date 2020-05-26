@@ -8,10 +8,8 @@
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<h1 class="govuk-heading-xl">Good character checks</h1>
-			<div class="govuk-inset-text">
-				<p class="govuk-body">Information on this page has been partially pre-populated from your last submitted application (TBC).</p>
-				<p class="govuk-body">You can edit the information if they are not correct (TBC).</p>
-			</div>
+			<p class="govuk-body">Information on this page has been partially pre-populated from your last submitted application (TBC).</p>
+			<p class="govuk-body">You can edit the information if they are not correct (TBC).</p>
 			
 			<!-- Personal information -->
 			<fieldset class="govuk-fieldset">
@@ -147,8 +145,8 @@
 				</div>
 				<!-- Previous address -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
-					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="address">Previous address (optional)</label>
-					<span id="previous-address-hint" class="govuk-hint govuk-!-margin-bottom-2">If moved within last 5 years</span>
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="address">Previous address</label>
+					<span id="previous-address-hint" class="govuk-hint govuk-!-margin-bottom-2">If moved within the last 5 years</span>
 					<label class="govuk-label" for="previous-address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
 					<input class="govuk-input" id="previous-address-line-1" name="previous-address-line-1" type="text" autocomplete="previous-address-line-1" value="{{ data['previous-address-line-1'] | default('321 Street Name') }}">
 				</div>
