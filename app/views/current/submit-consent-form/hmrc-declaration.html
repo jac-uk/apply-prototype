@@ -1,0 +1,49 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit consent form - HMRC{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
+<form action="form-submitted" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">HMRC</h1>
+				</legend>
+				<!-- VAT registration number -->
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="vat">VAT registration number</label>
+					<input class="govuk-input govuk-input--width-10" id="vat" name="vat" type="text" spellcheck="false" value="{{ data['vat'] | default('123456789') }}">
+				</div>
+			</fieldset>
+			<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-9">
+			<h2 class="govuk-heading-l govuk-!-margin-top-6">Declaration</h2>
+			<p class="govuk-body">I consent to HM Revenue and Customs (HMRC) disclosing to the Judicial Appointments Commission (JAC) in strict confidence, any information regarding the following, whether or not held on a computer system, and including where I act as trustee or personal representative:</p>
+			<ul class="govuk-list govuk-list--bullet">
+				<li>disclosing details of any outstanding, or late submitted, personal returns of tax or duties and penalties or surcharges raised thereon</li>
+				<li>disclosing details of any  outstanding debts of personal tax or duties and time to pay arrangements</li>
+				<li>disclosing details of any on-going enquiry into my personal returns of tax or duties</li>
+				<li>where I am a partner, disclosing whether there is any on going enquiry into a partnership return of tax or duties</li>
+				<li>disclosing details of any record relating to HMRC Border controls in regard to departure and arrivals in the UK, for example, excise, prohibitions and restrictions</li>
+			</ul>
+			<div class="govuk-radios">
+				<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="hmrc-declaration-yes" name="hmrc-declaration" type="radio" value="Yes, I understand and agree" {{ checked("hmrc-declaration", "Yes, I understand and agree") }}>
+					  <label class="govuk-label govuk-radios__label" for="hmrc-declaration-yes">Yes, I understand and agree</label>
+				</div>
+				<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="hmrc-declaration-no" name="hmrc-declaration" type="radio" value="No" {{ checked("hmrc-declaration", "No") }}>
+					  <label class="govuk-label govuk-radios__label" for="hmrc-declaration-no">No</label>
+				</div>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Submit</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

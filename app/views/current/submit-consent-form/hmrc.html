@@ -1,0 +1,30 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit consent form - HMRC{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
+<form action="check-answers" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">HMRC</h1>
+				</legend>
+				<!-- VAT registration number -->
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="vat">VAT registration number</label>
+					<span id="vat-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, ‘123456789’.</span>
+					<input class="govuk-input govuk-input--width-10" id="vat" name="vat" type="text" spellcheck="false" aria-describedby="vat-hint" value="{{ data['vat'] | default('123456789') }}">
+				</div>
+			</fieldset>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

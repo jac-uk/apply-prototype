@@ -1,0 +1,57 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit consent form - Professional bodies{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
+<form action="hmrc" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4_">Professional bodies</h1>
+				</legend>
+				<!-- Professional body checks -->
+				<div class="govuk-form-group">
+					<!-- <label class="govuk-label govuk-label--xl" for="professional-background">Professional body checks</label> -->
+					<span id="waste-hint" class="govuk-hint">Select all that apply.</span>
+					<!-- Barrister -->
+					<div class="govuk-checkboxes">
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-background-conditional" name="professional-background" type="checkbox" value="If a Barrister" {{ checked("professional-background", "If a Barrister") }} data-aria-controls="conditional-professional-background-conditional" checked>
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-background-conditional">If a Barrister</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-background-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="barrister-professional-background">Bar membership number</label>
+									<input class="govuk-input" id="barrister-professional-background" name="barrister-professional-background" type="text" spellcheck="false"  value="{{ data['barrister-professional-background'] | default('AB1234C') }}">
+								</div>
+							</div>
+						</div>
+						<!-- Solicitor -->
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-background-conditional-2" name="professional-background" type="checkbox" value="If a Solicitor" {{ checked("professional-background", "If a Solicitor") }} data-aria-controls="conditional-professional-background-conditional-2">
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-background-conditional-2">If a Solicitor</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-background-conditional-2">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="solicitor-professional-background">Solicitors Regulation Authority number</label>
+									<input class="govuk-input" id="solicitor-professional-background" name="solicitor-professional-background" type="text" spellcheck="false"  value="{{ data['solicitor-professional-background'] }}">
+								</div>
+							</div>
+						</div>
+				  	</div>
+				</div>	
+			</fieldset>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

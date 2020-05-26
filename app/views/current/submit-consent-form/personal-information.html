@@ -5,20 +5,13 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
-<form action="declaration" method="post">
+<form action="professional-body" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
-			<h1 class="govuk-heading-xl">Good character checks</h1>
-			<p class="govuk-body">Information on the following pages has been partially pre-populated from your last submitted application (TBC).</p>
-			<p class="govuk-body">You can edit the information if they are not correct (TBC).</p>
 			<fieldset class="govuk-fieldset">
-				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
 					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Personal information</h1>
 				</legend>
-				<!-- <div class="govuk-inset-text">
-					<p class="govuk-body">Information on this page has been partially pre-populated from your last submitted application (TBC).</p>
-					<p class="govuk-body">You can edit the information if they are not correct. (TBC).</p>
-				</div> -->
 				<!-- Title -->
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m" for="title">Title</label>
@@ -52,22 +45,22 @@
 					</div>
 				</div>
 				<!-- Full name -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="full-name">Full name</label>
 					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" value="{{ data['full-name'] | default('Max Talbot') }}">
 				</div>
 				<!-- Other names -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="other-name">Other names (optional)</label>
 					<input class="govuk-input" id="other-name" name="other-name" type="text" spellcheck="false" value="{{ data['other-name'] }}">
 				</div>
 				<!-- Suffix -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="suffix">Suffix (optional)</label>
 					<input class="govuk-input" id="suffix" name="suffix" type="text" spellcheck="false" value="{{ data['suffix'] }}">
 				</div>
 				<!-- Gender -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m" for="gender">Gender</label>
 					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
@@ -95,7 +88,7 @@
 					</div>
 				</div>
 				<!-- Date of birth-->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
 					<span id="dob-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 27 3 1964</span>
 					<div class="govuk-date-input" id="dob">
@@ -120,15 +113,13 @@
 					</div>
 				</div>
 				<!-- Place of birth -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="place-birth">Place of birth</label>
 					<input class="govuk-input" id="place-birth" name="place-birth" type="text" spellcheck="false" value="{{ data['place-birth'] | default('New York, USA') }}">
 				</div>
-
-				<!-- Address -->
-				<div class="govuk-form-group">
-					<label class="govuk-label govuk-label--m" for="address">Address</label>
-
+				<!-- Current address -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
+					<label class="govuk-label govuk-label--m" for="address">Current address</label>
 					<label class="govuk-label" for="address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
 					<input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line-1" value="{{ data['address-line-1'] | default('123 Street Name') }}">
 				</div>
@@ -148,22 +139,42 @@
 					<label class="govuk-label" for="address-postcode">Postcode</label>
 					<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="{{ data['address-postcode'] | default('AA1 1AA') }}">
 				</div>
-
-
-
-				<!-- National Insurance number -->
+				<!-- Previous address -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="address">Previous address</label>
+					<span id="previous-address-hint" class="govuk-hint govuk-!-margin-bottom-2">If moved within the last 5 years</span>
+					<label class="govuk-label" for="previous-address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
+					<input class="govuk-input" id="previous-address-line-1" name="previous-address-line-1" type="text" autocomplete="previous-address-line-1" value="{{ data['previous-address-line-1'] | default('321 Street Name') }}">
+				</div>
 				<div class="govuk-form-group">
+					<label class="govuk-label" for="previous-address-line-2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label>
+					<input class="govuk-input" id="previous-address-line-2" name="previous-address-line-2" type="text" autocomplete="previous-address-line-2">
+				</div>
+				  <div class="govuk-form-group">
+					<label class="govuk-label" for="previous-address-town">Town or city</label>
+					<input class="govuk-input govuk-!-width-two-thirds" id="previous-address-town" name="previous-address-town" type="text" autocomplete="address-level-2" value="{{ data['previous-address-town'] | default('London') }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="previous-address-county">County</label>
+					<input class="govuk-input govuk-!-width-two-thirds" id="previous-address-county" name="previous-address-county" type="text">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="previous-address-postcode">Postcode</label>
+					<input class="govuk-input govuk-input--width-10" id="previous-address-postcode" name="previous-address-postcode" type="text" autocomplete="postal-code" value="{{ data['previous-address-postcode'] | default('BB1 1BB') }}">
+				</div>
+				<!-- National Insurance number -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nino">National Insurance number</label>
 					<span id="nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
 					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] | default('QQ 12 34 56 C') }}">
 				</div>
 				<!-- Nationality -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nationality">Nationality</label>
 					<input class="govuk-input" id="nationality" name="nationality" type="text" spellcheck="false" value="{{ data['nationality'] | default('American') }}">
 				</div>
 				<!-- Occupation -->
-				<div class="govuk-form-group">
+				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="occupation">Occupation</label>
 					<input class="govuk-input" id="occupation" name="occupation" type="text" spellcheck="false" value="{{ data['occupation'] | default('Barrister') }}">
 				</div>

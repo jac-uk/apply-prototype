@@ -1,0 +1,87 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit consent form - Declaration{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
+<form action="form-submitted" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Declaration</h1>			
+			<h2 class="govuk-heading-l">Professional body</h2>
+			<!-- <p class="govuk-body">I consent to such persons and/or professional bodies as may be required for the purposes of my application disclosing to the JAC, in strict confidence, information relating to my conduct and professional reputation, including:</p> -->
+			<div class="govuk-checkboxes">
+				<div class="govuk-checkboxes__item">
+				  	<input class="govuk-checkboxes__input" id="professional-body" name="professional-body" type="checkbox" value="consent-professional-body">
+				  	<label class="govuk-label govuk-checkboxes__label" for="professional-body">I consent to such persons and/or professional bodies as may be required for the purposes of my application disclosing to the JAC, in strict confidence, information relating to my conduct and professional reputation, including:</label>
+				</div>
+				<div class="govuk-checkboxes__item govuk-!-margin-left-8_">
+				  	<input class="govuk-checkboxes__input" id="professional-body-2" name="professional-body" type="checkbox" value="complaints-upheld">
+				  	<label class="govuk-label govuk-checkboxes__label" for="professional-body-2">the disclosure of the details of any complaints upheld (relating to professional misconduct or inadequate professional service)</label>
+				</div>
+				<div class="govuk-checkboxes__item govuk-!-margin-left-8_">
+				  	<input class="govuk-checkboxes__input" id="professional-body-3" name="professional-body" type="checkbox" value="outstanding-complaints">
+				  	<label class="govuk-label govuk-checkboxes__label" for="professional-body-3">the disclosure of the details of any outstanding complaints that have not yet been determined or resolved relating to professional misconduct or inadequate professional service</label>
+				</div>
+			</div>
+			<!-- <ul class="govuk-list govuk-list--bullet">
+				<li>the disclosure of the details of any complaints upheld (relating to professional misconduct or inadequate professional service)</li>
+				<li>the disclosure of the details of any outstanding complaints that have not yet been determined or resolved relating to professional misconduct or inadequate professional service</li>
+			</ul> -->
+			<h2 class="govuk-heading-l govuk-!-margin-top-8">HMRC</h2>
+			<!-- <p class="govuk-body">I consent to HM Revenue and Customs (HMRC) disclosing to the Judicial Appointments Commission (JAC) in strict confidence, any information regarding the following, whether or not held on a computer system, and including where I act as trustee or personal representative:</p> -->
+			<div class="govuk-checkboxes">
+				<div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="hmrc" name="hmrc" type="checkbox" value="consent-hmrc">
+					<label class="govuk-label govuk-checkboxes__label" for="hmrc">I consent to HM Revenue and Customs (HMRC) disclosing to the Judicial Appointments Commission (JAC) in strict confidence, any information regarding the following, whether or not held on a computer system, and including where I act as trustee or personal representative:</label>
+			  	</div>
+				<div class="govuk-checkboxes__item">
+				  	<input class="govuk-checkboxes__input" id="hmrc-2" name="hmrc" type="checkbox" value="outstanding-tax-penalties">
+				  	<label class="govuk-label govuk-checkboxes__label" for="hmrc-2">disclosing details of any outstanding, or late submitted, personal returns of tax or duties and penalties or surcharges raised thereon</label>
+				</div>
+				<div class="govuk-checkboxes__item">
+				  	<input class="govuk-checkboxes__input" id="hmrc-3" name="hmrc" type="checkbox" value="outstanding-tax-arrangements">
+				  	<label class="govuk-label govuk-checkboxes__label" for="hmrc-3">disclosing details of any outstanding debts of personal tax or duties and time to pay arrangements</label>
+				</div>
+				<div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="hmrc-4" name="hmrc" type="checkbox" value="on-going-tax">
+					<label class="govuk-label govuk-checkboxes__label" for="hmrc-4">disclosing details of any on-going enquiry into my personal returns of tax or duties</label>
+				</div>
+				<div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="hmrc-5" name="hmrc" type="checkbox" value="partner-tax">
+					<label class="govuk-label govuk-checkboxes__label" for="hmrc-5">where I am a partner, disclosing whether there is any on going enquiry into a partnership return of tax or duties</label>
+				</div>
+				<div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="hmrc-6" name="hmrc" type="checkbox" value="tax-hmrc-border">
+					<label class="govuk-label govuk-checkboxes__label" for="hmrc-6">disclosing details of any record relating to HMRC Border controls in regard to departure and arrivals in the UK, for example, excise, prohibitions and restrictions</label>
+			  </div>
+			</div>
+			<!-- <ul class="govuk-list govuk-list--bullet">
+				<li>disclosing details of any outstanding, or late submitted, personal returns of tax or duties and penalties or surcharges raised thereon</li>
+				<li>disclosing details of any  outstanding debts of personal tax or duties and time to pay arrangements</li>
+				<li>disclosing details of any on-going enquiry into my personal returns of tax or duties</li>
+				<li>where I am a partner, disclosing whether there is any on going enquiry into a partnership return of tax or duties</li>
+				<li>disclosing details of any record relating to HMRC Border controls in regard to departure and arrivals in the UK, for example, excise, prohibitions and restrictions</li>
+			</ul> -->
+			<h2 class="govuk-heading-l govuk-!-margin-top-8">Criminal checks</h2>
+			<div class="govuk-checkboxes">
+				<div class="govuk-checkboxes__item">
+				  	<input class="govuk-checkboxes__input" id="criminal" name="criminal" type="checkbox" value="acro">
+				  	<label class="govuk-label govuk-checkboxes__label" for="criminal">I further consent that the Association of Chief Police Officers Criminal Records Office (ACRO) may, in strict confidence, disclose to the JAC any offence of which I have been convicted in relation to a criminal matter or infringement of the law and any caution administered to me at any time, unless the conviction, infringement or caution falls to be disregarded under the terms of the Rehabilitation of Offenders Act 1974.</label>
+				</div>
+			</div>
+			<!-- <p class="govuk-body">I further consent that the Association of Chief Police Officers Criminal Records Office (ACRO) may, in strict confidence, disclose to the JAC any offence of which I have been convicted in relation to a criminal matter or infringement of the law and any caution administered to me at any time, unless the conviction, infringement or caution falls to be disregarded under the terms of the Rehabilitation of Offenders Act 1974.</p> -->
+			<div class="govuk-warning-text govuk-!-margin-top-4">
+				<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+				<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>Providing incomplete or inaccurate information may adversely affect your application.</strong>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Agree and submit</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
