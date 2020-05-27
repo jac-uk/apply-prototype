@@ -14,9 +14,24 @@
 				</legend>
 				<!-- VAT registration number -->
 				<div class="govuk-form-group">
-					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="vat">VAT registration number</label>
-					<span id="vat-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, ‘123456789’.</span>
-					<input class="govuk-input govuk-input--width-10" id="vat" name="vat" type="text" spellcheck="false" aria-describedby="vat-hint" value="{{ data['vat'] | default('123456789') }}">
+					<label class="govuk-label govuk-label--m" for="vat">Do you have a VAT registration number?</label>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="Yes" data-aria-controls="conditional-vat-yes" {{ checked("vat-yes", "Yes") }} checked>
+							<label class="govuk-label govuk-radios__label" for="vat-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-vat-yes">
+								<div class="govuk-form-group">
+								<label class="govuk-label" for="vat-reg">VAT registration number</label>
+								<span id="vat-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, ‘123456789’.</span>
+								<input class="govuk-input govuk-!-width-two-thirds" id="vat-reg" name="vat-reg" type="text" aria-describedby="vat-hint" value="{{ data['vat-reg'] | default('123456789') }}">
+							</div>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="No" {{ checked("vat-no", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="vat-no">No</label>
+						</div>
+					</div>
 				</div>
 			</fieldset>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>

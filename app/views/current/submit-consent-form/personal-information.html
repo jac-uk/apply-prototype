@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
-<form action="professional-body" method="post">
+<form action="professional-bodies" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<fieldset class="govuk-fieldset">
@@ -59,34 +59,6 @@
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="suffix">Suffix (optional)</label>
 					<input class="govuk-input" id="suffix" name="suffix" type="text" spellcheck="false" value="{{ data['suffix'] }}">
 				</div>
-				<!-- Gender 
-				<div class="govuk-form-group govuk-!-margin-top-7">
-					<label class="govuk-label govuk-label--m" for="gender">Gender</label>
-					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="gender" name="gender" type="radio" value="Female" {{ checked("gender", "Female") }}>
-							<label class="govuk-label govuk-radios__label" for="gender">Female</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="gender-2" name="gender" type="radio" value="Male" {{ checked("gender", "Male") }} checked>
-							<label class="govuk-label govuk-radios__label" for="gender-2">Male</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="gender-3" name="gender" type="radio" value="Gender neutral" {{ checked("gender", "Gender neutral") }}>
-							<label class="govuk-label govuk-radios__label" for="gender-3">Gender neutral</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="gender-4" name="gender" type="radio" value="Other" data-aria-controls="conditional-gender-4" {{ checked("gender", "Other") }}>
-							<label class="govuk-label govuk-radios__label" for="gender-4">Other</label>
-						</div>
-						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gender-4">
-								<div class="govuk-form-group">
-								<label class="govuk-label" for="gender-other">Gender</label>
-								<input class="govuk-input govuk-!-width-two-thirds" id="gender-other" name="gender-other" type="text" value="{{ data['gender-other'] }}">
-							</div>
-						</div>
-					</div>
-				</div> -->
 				<!-- Date of birth-->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
@@ -139,7 +111,48 @@
 					<label class="govuk-label" for="address-postcode">Postcode</label>
 					<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="{{ data['address-postcode'] }}">
 				</div>
-				<!-- Previous address -->
+				<!-- Conditional reveal address if less than 5 years -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
+					<label class="govuk-label govuk-label--m" for="address-lived">Have you lived at this address for more than 5 years?</label>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="address-lived-yes" name="address-lived" type="radio" value="Yes" {{ checked("address-lived-yes", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="address-lived-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="address-lived-no" name="address-lived" type="radio" value="No" data-aria-controls="conditional-address-lived-no" {{ checked("address-lived-no", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="address-lived-no">No</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-address-lived-no">
+							<!-- <div class="govuk-form-group">
+								<label class="govuk-label" for="address-lived-details">address-lived registration number</label>
+								<span id="address-lived-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, ‘123456789’.</span>
+								<input class="govuk-input govuk-!-width-two-thirds" id="address-lived-details" name="address-lived-details" type="text" aria-describedby="address-lived-hint" value="{{ data['address-lived-details'] | default('123456789') }}">
+							</div> -->
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="previous-address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
+								<input class="govuk-input" id="previous-address-line-1" name="previous-address-line-1" type="text" autocomplete="previous-address-line-1" value="{{ data['previous-address-line-1'] }}">
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="previous-address-line-2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label>
+								<input class="govuk-input" id="previous-address-line-2" name="previous-address-line-2" type="text" autocomplete="previous-address-line-2">
+							</div>
+							  <div class="govuk-form-group">
+								<label class="govuk-label" for="previous-address-town">Town or city</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="previous-address-town" name="previous-address-town" type="text" autocomplete="address-level-2" value="{{ data['previous-address-town'] }}">
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="previous-address-county">County</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="previous-address-county" name="previous-address-county" type="text">
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="previous-address-postcode">Postcode</label>
+								<input class="govuk-input govuk-input--width-10" id="previous-address-postcode" name="previous-address-postcode" type="text" autocomplete="postal-code" value="{{ data['previous-address-postcode'] }}">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Previous address
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="address">Previous address</label>
 					<span id="previous-address-hint" class="govuk-hint govuk-!-margin-bottom-2">If moved within the last 5 years</span>
@@ -161,7 +174,7 @@
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="previous-address-postcode">Postcode</label>
 					<input class="govuk-input govuk-input--width-10" id="previous-address-postcode" name="previous-address-postcode" type="text" autocomplete="postal-code" value="{{ data['previous-address-postcode'] }}">
-				</div>
+				</div> -->
 				<!-- National Insurance number -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nino">National Insurance number</label>
