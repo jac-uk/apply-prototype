@@ -31,16 +31,21 @@
 				<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>TBC</strong>
 			</div>
 			<div class="govuk-radios">
-				<div class="govuk-radios__item">
-					  <input class="govuk-radios__input" id="declaration-yes" name="declaration" type="radio" value="Yes, I understand and agree" {{ checked("declaration", "Yes, I understand and agree") }}>
-					  <label class="govuk-label govuk-radios__label" for="declaration-yes">Yes, I understand and agree</label>
-				</div>
-				<div class="govuk-radios__item">
-					  <input class="govuk-radios__input" id="declaration-no" name="declaration" type="radio" value="No" {{ checked("declaration", "No") }}>
-					  <label class="govuk-label govuk-radios__label" for="declaration-no">No</label>
+				<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="declaration-yes" name="declaration" type="radio" value="Yes, I understand and agree" {{ checked("declaration", "Yes, I understand and agree") }}>
+						<label class="govuk-label govuk-radios__label" for="declaration-yes">Yes, I understand and agree</label>
+					</div>
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="declaration-no" name="declaration" type="radio" value="No" data-aria-controls="conditional-title" {{ checked("declaration", "No") }}>
+						<label class="govuk-label govuk-radios__label" for="declaration-no">No</label>
+					</div>
+					<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-title">
+						<p class="govuk-body">TBC</p>
+					</div>
 				</div>
 			</div>
-			<button class="govuk-button govuk-!-margin-top-8" data-module="govuk-button">Submit</button>
+			<button class="govuk-button govuk-!-margin-top-7" data-module="govuk-button">Submit</button>
 		</div>
 	</div>
 </form>
