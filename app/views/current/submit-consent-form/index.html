@@ -1,18 +1,23 @@
 {% extends "layout_unbranded.html" %}
 
-{% block pageTitle %}Judical Appointments Commission - Good character checks - Tasks{% endblock %}
+{% block pageTitle %}Judical Appointments Commission - Tasks - Consent to character checks{% endblock %}
 
 {% block content %}
 {% include "includes/header.html" %}
 <form action="personal-information" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
-			<h1 class="govuk-heading-xl">Good character checks</h1>
-			<p class="govuk-body">Information on the following pages has been partially pre-populated from your last submitted application (TBC).</p>
-			<p class="govuk-body">You can edit the information if they are not correct (TBC).</p>
-			<div class="govuk-warning-text govuk-!-margin-top-4">
+			<h1 class="govuk-heading-xl">Consent to character checks</h1>
+			<p class="govuk-body">You must grant consent for the Commission to undertake character checks before you can be considered for appointment.</p>
+			<p class="govuk-body">Information on the following pages has been partially completed from your last submitted application.</p>
+			<p class="govuk-body">If your circumstances change subsquent to completing this form please notify the selection exercise team.</p>
+			<!-- <div class="govuk-warning-text govuk-!-margin-top-4">
 				<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 				<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>Providing incomplete or inaccurate information may adversely affect your application.</strong>
+			</div> -->
+			<div class="govuk-warning-text govuk-!-margin-top-4">
+				<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+				<strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>Failure to declare any matters that come to light from the Commission's checks may prejudice the outcome of your application. Please read the <a href="https://prod.jacjars.org.uk/good-character" class="govuk-link" target="_blank">Good Character Guidance</a>.</strong>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
 		</div>

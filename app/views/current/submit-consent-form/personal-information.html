@@ -59,7 +59,7 @@
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="suffix">Suffix (optional)</label>
 					<input class="govuk-input" id="suffix" name="suffix" type="text" spellcheck="false" value="{{ data['suffix'] }}">
 				</div>
-				<!-- Gender -->
+				<!-- Gender 
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m" for="gender">Gender</label>
 					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- Date of birth-->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
@@ -121,7 +121,7 @@
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m" for="address">Current address</label>
 					<label class="govuk-label" for="address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
-					<input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line-1" value="{{ data['address-line-1'] | default('123 Street Name') }}">
+					<input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line-1" value="{{ data['address-line-1'] }}">
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="address-line-2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label>
@@ -129,7 +129,7 @@
 				</div>
 				  <div class="govuk-form-group">
 					<label class="govuk-label" for="address-town">Town or city</label>
-					<input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level-2" value="{{ data['address-town'] | default('London') }}">
+					<input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level-2" value="{{ data['address-town'] }}">
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="address-county">County</label>
@@ -137,14 +137,14 @@
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="address-postcode">Postcode</label>
-					<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="{{ data['address-postcode'] | default('AA1 1AA') }}">
+					<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="{{ data['address-postcode'] }}">
 				</div>
 				<!-- Previous address -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="address">Previous address</label>
 					<span id="previous-address-hint" class="govuk-hint govuk-!-margin-bottom-2">If moved within the last 5 years</span>
 					<label class="govuk-label" for="previous-address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
-					<input class="govuk-input" id="previous-address-line-1" name="previous-address-line-1" type="text" autocomplete="previous-address-line-1" value="{{ data['previous-address-line-1'] | default('321 Street Name') }}">
+					<input class="govuk-input" id="previous-address-line-1" name="previous-address-line-1" type="text" autocomplete="previous-address-line-1" value="{{ data['previous-address-line-1'] }}">
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="previous-address-line-2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label>
@@ -152,7 +152,7 @@
 				</div>
 				  <div class="govuk-form-group">
 					<label class="govuk-label" for="previous-address-town">Town or city</label>
-					<input class="govuk-input govuk-!-width-two-thirds" id="previous-address-town" name="previous-address-town" type="text" autocomplete="address-level-2" value="{{ data['previous-address-town'] | default('London') }}">
+					<input class="govuk-input govuk-!-width-two-thirds" id="previous-address-town" name="previous-address-town" type="text" autocomplete="address-level-2" value="{{ data['previous-address-town'] }}">
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="previous-address-county">County</label>
@@ -160,7 +160,7 @@
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label" for="previous-address-postcode">Postcode</label>
-					<input class="govuk-input govuk-input--width-10" id="previous-address-postcode" name="previous-address-postcode" type="text" autocomplete="postal-code" value="{{ data['previous-address-postcode'] | default('BB1 1BB') }}">
+					<input class="govuk-input govuk-input--width-10" id="previous-address-postcode" name="previous-address-postcode" type="text" autocomplete="postal-code" value="{{ data['previous-address-postcode'] }}">
 				</div>
 				<!-- National Insurance number -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
@@ -168,10 +168,10 @@
 					<span id="nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
 					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] | default('QQ 12 34 56 C') }}">
 				</div>
-				<!-- Nationality -->
+				<!-- Citizenship -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
-					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nationality">Nationality</label>
-					<input class="govuk-input" id="nationality" name="nationality" type="text" spellcheck="false" value="{{ data['nationality'] | default('American') }}">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="citizenship">Citizenship</label>
+					<input class="govuk-input" id="citizenship" name="citizenship" type="text" spellcheck="false" value="{{ data['citizenship'] | default('American') }}">
 				</div>
 				<!-- Occupation -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
