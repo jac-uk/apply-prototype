@@ -4,8 +4,9 @@
 
 {% block content %}
 {% include "includes/header.html" %}
-<a href="javascript:window.history.back()" class="govuk-back-link">Back</a> 
+<a href="/current/submit-consent-form/professional-bodies" class="govuk-back-link">Back</a> 
 <form action="check-answers" method="post">
+	<input type="hidden" value="{{ data['edit'] }}" name="edit">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<fieldset class="govuk-fieldset">
