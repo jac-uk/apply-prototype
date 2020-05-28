@@ -101,6 +101,10 @@ $govuk-assets-path: '/govuk/assets/';
     vertical-align: top;
 } */
 
+.dark-grey-text {
+    color: govuk-colour("dark-grey");
+}
+
 .clearfix {
     clear: both;
 }

@@ -148,35 +148,35 @@
 				<!-- Barrister -->
 				{% if data['professional-bodies'] == "If a Barrister" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Barrister</dt>
-				<dd class="govuk-summary-list__value">Bar membership number - {{ data['barrister-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__value">Bar membership number<br /><span class="dark-grey-text">{{ data['barrister-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
 				</dd>
 				<!-- Solicitor -->
 				{% elseif data['professional-bodies'] == "If a Solicitor" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Solicitor</dt>
-				<dd class="govuk-summary-list__value">Solicitors Regulation Authority number - {{ data['solicitor-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__value">Solicitors Regulation Authority number<br /><span class="dark-grey-text">{{ data['solicitor-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> solicitors regulation authority number</span></a>
 				</dd>
 				<!-- CILEX -->
 				{% elseif data['professional-bodies'] == "If a fellow of CILEX" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">CILEX</dt>
-				<dd class="govuk-summary-list__value">Membership number - {{ data['cilex-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__value">Membership number<br /><span class="dark-grey-text">{{ data['cilex-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> membership number</span></a>
 				</dd>
 				<!-- Other professional body -->
 				{% elseif data['professional-bodies'] == "Other professional body" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Other professional body</dt>
-				<dd class="govuk-summary-list__value">Association and membership number - {{ data['other-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__value">Association and membership number<br /><span class="dark-grey-text">{{ data['other-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> association and membership number</span></a>
 				</dd>
 				<!-- Default -->
 				{% else %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Barrister</dt>
-				<dd class="govuk-summary-list__value">Bar membership number - AB1234C</dd>
+				<dd class="govuk-summary-list__value">Bar membership number<br /><span class="dark-grey-text">AB1234C</span></dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
 				</dd>
