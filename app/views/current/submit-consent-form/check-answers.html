@@ -113,10 +113,20 @@
 			{% if data['cf-address-lived'] == "No" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Previous address</dt>
+				<!-- Address Line 1, Address Line 2, Town, County and Postcode -->
+				{% if data['cf-previous-address-line-1'] and data['cf-previous-address-line-2'] and data['cf-previous-address-town'] and data['cf-previous-address-county'] and data['cf-previous-address-postcode'] %}
 				<dd class="govuk-summary-list__value">{{ data['cf-previous-address-line-1'] }}<br />{{ data['cf-previous-address-line-2'] }}<br />{{ data['cf-previous-address-town'] }}<br />{{ data['cf-previous-address-county'] }}<br />{{ data['cf-previous-address-postcode'] }}</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> address</span></a>
 				</dd>
+
+				<!-- Address Line 1, Town, County and Postcode -->
+				{% elseif data['cf-previous-address-line-1'] and data['cf-previous-address-town'] and data['cf-previous-address-county'] and data['cf-previous-address-postcode'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-previous-address-line-1'] }}<br />{{ data['cf-previous-address-town'] }}<br />{{ data['cf-previous-address-county'] }}<br />{{ data['cf-previous-address-postcode'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> address</span></a>
+				</dd>
+				{% endif%}
 			</div>
 			{% endif %}
 			<!-- National Insurance number -->
