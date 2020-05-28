@@ -14,19 +14,18 @@
 				</legend>
 				<!-- Professional body checks -->
 				<div class="govuk-form-group">
-					<!-- <label class="govuk-label govuk-label--xl" for="professional-background">Professional body checks</label> -->
-					<span id="waste-hint" class="govuk-hint">Select all that apply.</span>
+					<span id="professional-bodies-hint" class="govuk-hint">Select all that apply.</span>
 					<!-- Barrister -->
 					<div class="govuk-checkboxes">
 						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 							<div class="govuk-checkboxes__item">
-								<input class="govuk-checkboxes__input" id="professional-bodies-conditional" name="professional-bodies" type="checkbox" value="If a Barrister" {{ checked("professional-bodies", "If a Barrister") }} data-aria-controls="conditional-professional-bodies-conditional" checked>
+								<input class="govuk-checkboxes__input" id="professional-bodies-conditional" name="professional-bodies" type="checkbox" value="If a Barrister" {{ checked("professional-bodies", "If a Barrister") }} data-aria-controls="conditional-professional-bodies-conditional">
 							  	<label class="govuk-label govuk-checkboxes__label" for="professional-bodies-conditional">If a Barrister</label>
 							</div>
 							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional">
 							  	<div class="govuk-form-group">
 									<label class="govuk-label" for="barrister-professional-bodies">Bar membership number</label>
-									<input class="govuk-input" id="barrister-professional-bodies" name="barrister-professional-bodies" type="text" spellcheck="false"  value="{{ data['barrister-professional-bodies'] | default('AB1234C') }}">
+									<input class="govuk-input" id="barrister-professional-bodies" name="barrister-professional-bodies" type="text" spellcheck="false"  value="{{ data['barrister-professional-bodies'] }}">
 								</div>
 							</div>
 						</div>
@@ -51,8 +50,8 @@
 							</div>
 							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional-3">
 							  	<div class="govuk-form-group">
-									<label class="govuk-label" for="solicitor-professional-bodies">Membership number</label>
-									<input class="govuk-input" id="solicitor-professional-bodies" name="solicitor-professional-bodies" type="text" spellcheck="false"  value="{{ data['solicitor-professional-bodies'] }}">
+									<label class="govuk-label" for="cilex-professional-bodies">Membership number</label>
+									<input class="govuk-input" id="cilex-professional-bodies" name="cilex-professional-bodies" type="text" spellcheck="false"  value="{{ data['cilex-professional-bodies'] }}">
 								</div>
 							</div>
 						</div>
@@ -65,7 +64,6 @@
 							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional-4">
 							  	<div class="govuk-form-group">
 									<label class="govuk-label" for="other-professional-bodies">Provide details of association and membership number</label>
-									<!-- <input class="govuk-input" id="solicitor-professional-bodies" name="solicitor-professional-bodies" type="text" spellcheck="false"  value="{{ data['solicitor-professional-bodies'] }}"> -->
 									<textarea class="govuk-textarea" id="other-professional-bodies" name="other-professional-bodies" rows="5" aria-describedby="other-professional-bodies">{{ data['other-professional-bodies'] }}</textarea>
 								</div>
 							</div>

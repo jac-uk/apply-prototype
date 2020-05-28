@@ -10,103 +10,193 @@
 		<h1 class="govuk-heading-xl">Check your answers</h1>
 		<h2 class="govuk-heading-l">Personal information</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<!-- Title -->
+			{% if data['cf-title'] %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Title</dt>
-				<dd class="govuk-summary-list__value">Mr</dd>
+				{% if data['cf-title'] != "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['cf-title'] }}</dd>
+				{% elseif data['cf-title'] == "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['cf-title-other'] }}</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> title</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> title</span></a>
 				</dd>
 			</div>
+			{% endif %}
+			<!-- Full name -->
         	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
+				{% if data['cf-full-name'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-full-name'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">Max Talbot</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> full name</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> full name</span></a>
 				</dd>
 			</div>
+			<!-- Other names - optional -->
+			{% if data['cf-other-name'] %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Other names</dt>
-				<dd class="govuk-summary-list__value">Maximilian Brown Talbot</dd>
+				<dd class="govuk-summary-list__value">{{ data['cf-other-name'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> other names</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> other names</span></a>
 				</dd>
 			</div>
-			<!-- <div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender</dt>
-				<dd class="govuk-summary-list__value">Male</dd>
+			{% endif %}
+			<!-- Suffix - optional -->
+			{% if data['cf-suffix'] %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Suffix</dt>
+				<dd class="govuk-summary-list__value">{{ data['cf-suffix'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gender</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> suffix</span></a>
 				</dd>
-			</div> -->
+			</div>
+			{% endif %}
+			<!-- Date of birth-->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date of birth</dt>
+				{% if data['cf-dob-day'] and data['cf-dob-month'] and data['cf-dob-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-dob-day'] }} {{ data['cf-dob-month'] | toMonth }} {{ data['cf-dob-year'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">11 June 1975</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> date of birth</span></a>
 				</dd>
 			</div>
+			<!-- Place of birth -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Place of birth</dt>
+				{% if data['cf-place-birth'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-place-birth'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">New York, USA</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> place of birth</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> place of birth</span></a>
 				</dd>
 			</div>
+			<!-- Address -->
+			{% if data['cf-address-line-1'] %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Address</dt>
+				{% if data['cf-address-line-1'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-address-line-1'] }}<br />{{ data['cf-address-line-2'] }}<br />{{ data['cf-address-town'] }}<br />{{ data['cf-address-county'] }}<br />{{ data['cf-address-postcode'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> address</span></a>
 				</dd>
 			</div>
+			{% endif %}
+			<!-- Conditional reveal address if less than 5 years -->
+			{% if data['cf-address-lived'] == "No" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Previous address</dt>
-				<dd class="govuk-summary-list__value">321 Street Name<br />London<br />BB1 1BB</dd>
+				<dd class="govuk-summary-list__value">{{ data['cf-previous-address-line-1'] }}<br />{{ data['cf-previous-address-line-2'] }}<br />{{ data['cf-previous-address-town'] }}<br />{{ data['cf-previous-address-county'] }}<br />{{ data['cf-previous-address-postcode'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous address</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> address</span></a>
 				</dd>
 			</div>
+			{% endif %}
+			<!-- National Insurance number -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">National Insurance number</dt>
+				{% if data['cf-nino'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-nino'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">QQ 12 34 56 C</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> national insurance number</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> national insurance number</span></a>
 				</dd>
 			</div>
+			<!-- Citizenship -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
+				{% if data['cf-citizenship'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-citizenship'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">American</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> citizenship</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> citizenship</span></a>
 				</dd>
 			</div>
+			<!-- Occupation -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Occupation</dt>
+				{% if data['cf-occupation'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-occupation'] }}</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">Barrister</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> occupation</span></a>
+					<a class="govuk-link" href="personal-information">Change<span class="govuk-visually-hidden"> occupation</span></a>
 				</dd>
           	</div>
 		</dl>
-
+		<!-- Professional body checks -->
 		<h2 class="govuk-heading-l">Professional bodies</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
+				<!-- Barrister -->
+				{% if data['professional-bodies'] == "If a Barrister" %}
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Barrister</dt>
+				<dd class="govuk-summary-list__value">Bar membership number - {{ data['barrister-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
+				</dd>
+				<!-- Solicitor -->
+				{% elseif data['professional-bodies'] == "If a Solicitor" %}
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Solicitor</dt>
+				<dd class="govuk-summary-list__value">Solicitors Regulation Authority number - {{ data['solicitor-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> solicitors regulation authority number</span></a>
+				</dd>
+				<!-- CILEX -->
+				{% elseif data['professional-bodies'] == "If a fellow of CILEX" %}
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">CILEX</dt>
+				<dd class="govuk-summary-list__value">Membership number - {{ data['cilex-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> membership number</span></a>
+				</dd>
+				<!-- Other professional body -->
+				{% elseif data['professional-bodies'] == "Other professional body" %}
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Other professional body</dt>
+				<dd class="govuk-summary-list__value">Association and membership number - {{ data['other-professional-bodies'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> association and membership number</span></a>
+				</dd>
+				<!-- Default -->
+				{% else %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Barrister</dt>
 				<dd class="govuk-summary-list__value">Bar membership number - AB1234C</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
+					<a class="govuk-link" href="professional-bodies">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
 				</dd>
+				{% endif %}
 			</div>
 		</dl>
-
+		<!-- VAT registration number -->
 		<h2 class="govuk-heading-l">HMRC</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-8 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">VAT registration number</dt>
+				{% if data['vat'] == "Yes" %}
+				<dd class="govuk-summary-list__value">{{ data['vat-reg'] }}</dd>
+				{% elseif data['vat'] == "No" %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% else %}
 				<dd class="govuk-summary-list__value">123456789</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> vat number</span></a>
+					<a class="govuk-link" href="hmrc">Change<span class="govuk-visually-hidden"> vat number</span></a>
 				</dd>
           	</div>
 		</dl>
