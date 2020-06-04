@@ -93,3 +93,8 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 .top-border {
 	border-top: 3px solid #753880;
 }
+
+code {
+	background: govuk-colour("light-grey");
+	padding: 2px 6px 4px 6px;
+}

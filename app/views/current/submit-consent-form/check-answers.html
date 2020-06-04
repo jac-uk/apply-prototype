@@ -236,6 +236,8 @@
 				<dd class="govuk-summary-list__value">{{ data['vat-reg'] }}</dd>
 				{% elseif data['vat'] == "No" %}
 				<dd class="govuk-summary-list__value">No</dd>
+				{% elseif data['vat'] == "Not applicable" %}
+				<dd class="govuk-summary-list__value">Not applicable</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">123456789</dd>
 				{% endif %}
