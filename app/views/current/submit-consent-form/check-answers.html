@@ -56,7 +56,19 @@
 				</dd>
 			</div>
 			{% endif %}
-			<!-- Date of birth-->
+			<!-- Gender -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender</dt>
+				{% if data['cf-gender'] %}
+				<dd class="govuk-summary-list__value">{{ data['cf-gender'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Male</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-information?edit=true">Change<span class="govuk-visually-hidden"> gender</span></a>
+				</dd>
+			</div>
+			<!-- Date of birth -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date of birth</dt>
 				{% if data['cf-dob-day'] and data['cf-dob-month'] and data['cf-dob-year'] %}
@@ -172,6 +184,10 @@
 					<a class="govuk-link" href="personal-information?edit=true">Change<span class="govuk-visually-hidden"> citizenship</span></a>
 				</dd>
 			</div>
+		</dl>
+		<!-- Profession and memberships -->
+		<h2 class="govuk-heading-l">Profession and memberships</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<!-- Occupation -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Occupation</dt>
@@ -181,13 +197,19 @@
 				<dd class="govuk-summary-list__value">Barrister</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-information?edit=true">Change<span class="govuk-visually-hidden"> occupation</span></a>
+					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> occupation</span></a>
 				</dd>
-          	</div>
-		</dl>
-		<!-- Professional body checks -->
-		<h2 class="govuk-heading-l">Professional bodies</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			</div>
+			<!-- Magistrate -->
+			{% if data['magistrate'] %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Magistrate</dt>
+				<dd class="govuk-summary-list__value">{{ data['magistrate'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> magistrate</span></a>
+				</dd>
+			</div>
+			{% endif %}
         	<div class="govuk-summary-list__row">
 				<!-- Barrister -->
 				{% if data['professional-bodies'] == "If a Barrister" %}

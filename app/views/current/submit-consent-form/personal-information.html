@@ -54,17 +54,52 @@
 				<!-- Full name -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-full-name">Full name</label>
-					<input class="govuk-input" id="cf-full-name" name="cf-full-name" type="text" spellcheck="false" value="{{ data['cf-full-name'] | default('Max Talbot') }}">
+					<span id="cf-full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">Hint text to go here</span>
+					<input class="govuk-input" id="cf-full-name" name="cf-full-name" type="text" spellcheck="false" aria-describedby="cf-full-name-hint" value="{{ data['cf-full-name'] | default('Max Talbot') }}">
 				</div>
 				<!-- Other names - optional -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-other-name">Other names (optional)</label>
-					<input class="govuk-input" id="cf-other-name" name="cf-other-name" type="text" spellcheck="false" value="{{ data['cf-other-name'] }}">
+					<span id="cf-other-name-hint" class="govuk-hint govuk-!-margin-bottom-2">Hint text to go here</span>
+					<input class="govuk-input" id="cf-other-name" name="cf-other-name" type="text" spellcheck="false" aria-describedby="cf-other-name-hint" value="{{ data['cf-other-name'] }}">
 				</div>
 				<!-- Suffix - optional -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-suffix">Suffix (optional)</label>
 					<input class="govuk-input" id="cf-suffix" name="cf-suffix" type="text" spellcheck="false" value="{{ data['cf-suffix'] }}">
+				</div>
+				<!-- Gender -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
+					<label class="govuk-label govuk-label--m" for="cf-gender">Gender</label>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="cf-gender" name="cf-gender" type="radio" value="Female" {{ checked("cf-gender", "Female") }}>
+						  	<label class="govuk-label govuk-radios__label" for="cf-gender">Female</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="cf-gender-2" name="cf-gender" type="radio" value="Male" {{ checked("cf-gender", "Male") }} checked>
+							<label class="govuk-label govuk-radios__label" for="cf-gender-2">Male</label>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="cf-gender-3" name="cf-gender" type="radio" value="Gender neutral" {{ checked("cf-gender", "Gender neutral") }}>
+						  	<label class="govuk-label govuk-radios__label" for="cf-gender-3">Gender neutral</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="cf-gender-4" name="cf-gender" type="radio" value="Other" data-aria-controls="conditional-cf-gender-4" {{ checked("cf-gender", "Other") }}>
+							<label class="govuk-label govuk-radios__label" for="cf-gender-4">Other</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-cf-gender-4">
+								<div class="govuk-form-group">
+								<label class="govuk-label" for="cf-gender-other">Gender</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="cf-gender-other" name="cf-gender-other" type="text" value="{{ data['cf-gender-other'] }}">
+							</div>
+						</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="cf-gender-5" name="cf-gender" type="radio" value="Prefer not to say" {{ checked("cf-gender", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label" for="cf-gender-5">Prefer not to say</label>
+						</div>
+					</div>
 				</div>
 				<!-- Date of birth-->
 				<div class="govuk-form-group govuk-!-margin-top-7">
@@ -98,12 +133,12 @@
 				</div>
 				<!-- Address -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
-					<label class="govuk-label govuk-label--m" for="cf-address">Address</label>
-					<label class="govuk-label" for="cf-address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
+					<label class="govuk-label govuk-label--m" for="cf-address">Home address</label>
+					<label class="govuk-label" for="cf-address-line-1">Address line 1</label>
 					<input class="govuk-input" id="cf-address-line-1" name="cf-address-line-1" type="text" value="{{ data['cf-address-line-1'] }}">
 				</div>
 				<div class="govuk-form-group">
-					<label class="govuk-label" for="cf-address-line-2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label>
+					<label class="govuk-label" for="cf-address-line-2">Address line 2 (optional)</label>
 					<input class="govuk-input" id="cf-address-line-2" name="cf-address-line-2" type="text" value="{{ data['cf-address-line-2'] }}">
 				</div>
 				  <div class="govuk-form-group">
@@ -120,7 +155,8 @@
 				</div>
 				<!-- Conditional reveal address if less than 5 years -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
-					<label class="govuk-label govuk-label--m" for="cf-address-lived">Have you lived at this address for more than 5 years?</label>
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-address-lived">Have you lived at this address for more than 5 years?</label>
+					<span id="cf-address-lived-hint" class="govuk-hint govuk-!-margin-bottom-2">Hint text to go here</span>
 					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="cf-address-lived-yes" name="cf-address-lived" type="radio" value="Yes" {{ checked("cf-address-lived", "Yes") }}>
@@ -132,15 +168,15 @@
 						</div>
 						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-cf-address-lived-no">
 							<div class="govuk-form-group">
-								<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Previous address</h2>
-								<label class="govuk-label" for="cf-previous-address-line-1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label>
+								<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Previous home address</h2>
+								<label class="govuk-label" for="cf-previous-address-line-1">Address line 1</label>
 								<input class="govuk-input" id="cf-previous-address-line-1" name="cf-previous-address-line-1" type="text" value="{{ data['cf-previous-address-line-1'] }}">
 							</div>
 							<div class="govuk-form-group">
-								<label class="govuk-label" for="cf-previous-address-line-2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label>
+								<label class="govuk-label" for="cf-previous-address-line-2">Address line 2 (optional)</label>
 								<input class="govuk-input" id="cf-previous-address-line-2" name="cf-previous-address-line-2" type="text" value="{{ data['cf-previous-address-line-2'] }}">
 							</div>
-							  <div class="govuk-form-group">
+							<div class="govuk-form-group">
 								<label class="govuk-label" for="cf-previous-address-town">Town or city</label>
 								<input class="govuk-input govuk-!-width-two-thirds" id="cf-previous-address-town" name="cf-previous-address-town" type="text" value="{{ data['cf-previous-address-town'] }}">
 							</div>
@@ -152,6 +188,60 @@
 								<label class="govuk-label" for="cf-previous-address-postcode">Postcode</label>
 								<input class="govuk-input govuk-input--width-10" id="cf-previous-address-postcode" name="cf-previous-address-postcode" type="text" value="{{ data['cf-previous-address-postcode'] }}">
 							</div>
+							<!-- <div class="govuk-form-group govuk-!-margin-top-7">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-month-year">Length of time at this address</label>
+								<input class="govuk-input" id="cf-month-year" name="cf-month-year" type="text" spellcheck="false" value="{{ data['cf-month-year'] | default('2 months and 2 years') }}">
+							</div> -->
+
+							<div class="govuk-form-group govuk-!-margin-top-7">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-address-date-from">From date (TBC)</label>
+								<span id="cf-address-date-from-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 8 6 2015 (TBC)</span>
+								<div class="govuk-date-input" id="cf-address-date-from">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="cf-address-date-from-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cf-address-date-from-day" name="cf-address-date-from-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['cf-address-date-from-day'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="cf-address-date-from-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cf-address-date-from-month" name="cf-address-date-from-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['cf-address-date-from-month'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="cf-address-date-from-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="cf-address-date-from-year" name="cf-address-date-from-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['cf-address-date-from-year'] }}">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group govuk-!-margin-top-7">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-address-date-until">Until date (TBC)</label>
+								<span id="cf-address-date-until-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 8 6 2020 (TBC)</span>
+								<div class="govuk-date-input" id="cf-address-date-until">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="cf-address-date-until-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cf-address-date-until-day" name="cf-address-date-until-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['cf-address-date-until-day'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="cf-address-date-until-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cf-address-date-until-month" name="cf-address-date-until-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['cf-address-date-until-month'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="cf-address-date-until-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="cf-address-date-until-year" name="cf-address-date-until-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['cf-address-date-until-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<button class="govuk-button govuk-button--secondary govuk-!-margin-top-7" data-module="govuk-button" formaction="#">Add another address</button>
 						</div>
 					</div>
 				</div>
@@ -167,10 +257,10 @@
 					<input class="govuk-input" id="cf-citizenship" name="cf-citizenship" type="text" spellcheck="false" value="{{ data['cf-citizenship'] | default('American') }}">
 				</div>
 				<!-- Occupation -->
-				<div class="govuk-form-group govuk-!-margin-top-7">
+				<!-- <div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-occupation">Occupation</label>
 					<input class="govuk-input" id="cf-occupation" name="cf-occupation" type="text" spellcheck="false" value="{{ data['cf-occupation'] | default('Barrister') }}">
-				</div>
+				</div> -->
 			</fieldset>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
 		</div>
