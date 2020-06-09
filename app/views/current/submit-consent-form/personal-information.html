@@ -10,7 +10,7 @@
 <form action="check-answers" method="post">
 {% else %}
 <a href="/current/submit-consent-form/" class="govuk-back-link">Back</a> 
-<form action="professional-bodies" method="post">
+<form action="professional-details" method="post">
 {% endif %}
 	<input type="hidden" value="{{ data['edit'] }}" name="edit">
 	<div class="govuk-grid-row">
@@ -54,13 +54,13 @@
 				<!-- Full name -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-full-name">Full name</label>
-					<span id="cf-full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">Hint text to go here</span>
+					<span id="cf-full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter your first name, any middle name(s) and last name as it's written on an official document like your driving licence.</span>
 					<input class="govuk-input" id="cf-full-name" name="cf-full-name" type="text" spellcheck="false" aria-describedby="cf-full-name-hint" value="{{ data['cf-full-name'] | default('Max Talbot') }}">
 				</div>
 				<!-- Other names - optional -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-other-name">Other names (optional)</label>
-					<span id="cf-other-name-hint" class="govuk-hint govuk-!-margin-bottom-2">Hint text to go here</span>
+					<span id="cf-other-name-hint" class="govuk-hint govuk-!-margin-bottom-2">Other names or professional name or maiden name.</span>
 					<input class="govuk-input" id="cf-other-name" name="cf-other-name" type="text" spellcheck="false" aria-describedby="cf-other-name-hint" value="{{ data['cf-other-name'] }}">
 				</div>
 				<!-- Suffix - optional -->
@@ -130,6 +130,12 @@
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-place-birth">Place of birth</label>
 					<input class="govuk-input" id="cf-place-birth" name="cf-place-birth" type="text" spellcheck="false" value="{{ data['cf-place-birth'] | default('New York, USA') }}">
+				</div>
+				<!-- Citizenship -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-citizenship">Citizenship</label>
+					<span id="cf-citizenship-hint" class="govuk-hint govuk-!-margin-bottom-2">A Criminal Records Office ACRO checks are required for UK nationals and other citizenships.</span>
+					<input class="govuk-input" id="cf-citizenship" name="cf-citizenship" type="text" spellcheck="false" aria-describedby="cf-citizenship-hint" value="{{ data['cf-citizenship'] | default('American') }}">
 				</div>
 				<!-- Address -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
@@ -250,11 +256,6 @@
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-nino">National Insurance number</label>
 					<span id="cf-nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
 					<input class="govuk-input govuk-input--width-10" id="cf-nino" name="cf-nino" type="text" spellcheck="false" aria-describedby="cf-nino-hint" value="{{ data['cf-nino'] | default('QQ 12 34 56 C') }}">
-				</div>
-				<!-- Citizenship -->
-				<div class="govuk-form-group govuk-!-margin-top-7">
-					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-citizenship">Citizenship</label>
-					<input class="govuk-input" id="cf-citizenship" name="cf-citizenship" type="text" spellcheck="false" value="{{ data['cf-citizenship'] | default('American') }}">
 				</div>
 				<!-- Occupation -->
 				<!-- <div class="govuk-form-group govuk-!-margin-top-7">

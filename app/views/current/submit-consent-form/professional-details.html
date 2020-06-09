@@ -1,0 +1,107 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit consent form - Professional details{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+
+{% if (data['edit'] == "true") %}
+<a href="/current/submit-consent-form/check-answers" class="govuk-back-link">Back</a> 
+<form action="check-answers" method="post">
+{% else %}
+<a href="/current/submit-consent-form/personal-information" class="govuk-back-link">Back</a> 
+<form action="hmrc" method="post">
+{% endif %}
+	<input type="hidden" value="{{ data['edit'] }}" name="edit">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Professional details (TBC)</h1>
+				</legend>
+				<!-- Occupation -->
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="cf-occupation">Occupation</label>
+					<input class="govuk-input" id="cf-occupation" name="cf-occupation" type="text" spellcheck="false" value="{{ data['cf-occupation'] | default('Barrister') }}">
+				</div> 
+				<!-- Magistrate -->
+				<div class="govuk-form-group govuk-!-margin-top-7">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="magistrate">Have you been a magistrate?</label>
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="magistrate-yes" name="magistrate" type="radio" value="Yes" {{ checked("magistrate", "Yes") }}>
+						<label class="govuk-label govuk-radios__label" for="magistrate-yes">Yes</label>
+					</div>
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="magistrate-no" name="magistrate" type="radio" value="No" {{ checked("magistrate", "No") }}>
+						<label class="govuk-label govuk-radios__label" for="magistrate-no">No</label>
+					</div>
+				</div>
+				<div class="govuk-form-group govuk-!-margin-top-7">
+				<!-- Professional body checks -->
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="professional-bodies">Membership (TBC)</label>
+					<span id="professional-bodies-hint" class="govuk-hint">Select all that apply.</span>
+					<!-- Barrister -->
+					<div class="govuk-checkboxes">
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-bodies-conditional" name="professional-bodies" type="checkbox" value="If a Barrister" {{ checked("professional-bodies", "If a Barrister") }} data-aria-controls="conditional-professional-bodies-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-bodies-conditional">If a Barrister</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="barrister-professional-bodies">Bar membership number</label>
+									<input class="govuk-input" id="barrister-professional-bodies" name="barrister-professional-bodies" type="text" spellcheck="false"  value="{{ data['barrister-professional-bodies'] }}">
+								</div>
+							</div>
+						</div>
+						<!-- Solicitor -->
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-bodies-conditional-2" name="professional-bodies" type="checkbox" value="If a Solicitor" {{ checked("professional-bodies", "If a Solicitor") }} data-aria-controls="conditional-professional-bodies-conditional-2">
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-bodies-conditional-2">If a Solicitor</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional-2">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="solicitor-professional-bodies">Solicitors Regulation Authority number</label>
+									<input class="govuk-input" id="solicitor-professional-bodies" name="solicitor-professional-bodies" type="text" spellcheck="false"  value="{{ data['solicitor-professional-bodies'] }}">
+								</div>
+							</div>
+						</div>
+						<!-- CILEX -->
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-bodies-conditional-3" name="professional-bodies" type="checkbox" value="If a fellow of CILEX" {{ checked("professional-bodies", "If a fellow of CILEX") }} data-aria-controls="conditional-professional-bodies-conditional-3">
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-bodies-conditional-3">If a fellow of CILEX</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional-3">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="cilex-professional-bodies">Membership number</label>
+									<input class="govuk-input" id="cilex-professional-bodies" name="cilex-professional-bodies" type="text" spellcheck="false"  value="{{ data['cilex-professional-bodies'] }}">
+								</div>
+							</div>
+						</div>
+						<!-- Other professional body -->
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-bodies-conditional-4" name="professional-bodies" type="checkbox" value="Other professional body" {{ checked("professional-bodies", "Other professional body") }} data-aria-controls="conditional-professional-bodies-conditional-4">
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-bodies-conditional-4">Other professional body</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-bodies-conditional-4">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="other-professional-bodies">Provide details of association and membership number</label>
+									<textarea class="govuk-textarea" id="other-professional-bodies" name="other-professional-bodies" rows="5" aria-describedby="other-professional-bodies">{{ data['other-professional-bodies'] }}</textarea>
+								</div>
+							</div>
+						</div>
+				  	</div>
+				</div>	
+			</fieldset>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

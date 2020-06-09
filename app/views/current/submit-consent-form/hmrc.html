@@ -4,7 +4,7 @@
 
 {% block content %}
 {% include "includes/header.html" %}
-<a href="/current/submit-consent-form/professional-bodies" class="govuk-back-link">Back</a> 
+<a href="/current/submit-consent-form/professional-details" class="govuk-back-link">Back</a> 
 <form action="check-answers" method="post">
 	<input type="hidden" value="{{ data['edit'] }}" name="edit">
 	<div class="govuk-grid-row">
@@ -16,17 +16,19 @@
 				<!-- VAT registration number -->
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m" for="vat">Do you have a VAT registration number?</label>
+					<span id="vat-hint" class="govuk-hint govuk-!-margin-bottom-2">All partnership, company and sole trader VAT registered number(s) that you have a personal responsibility for, whether they relate to the practice of law or not, will be required.</span>
 					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="Yes" data-aria-controls="conditional-vat-yes" {{ checked("vat", "Yes") }}>
 							<label class="govuk-label govuk-radios__label" for="vat-yes">Yes</label>
 						</div>
 						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-vat-yes">
-								<div class="govuk-form-group">
+							<div class="govuk-form-group">
 								<label class="govuk-label" for="vat-reg">VAT registration number</label>
 								<span id="vat-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, ‘123456789’.</span>
 								<input class="govuk-input govuk-!-width-two-thirds" id="vat-reg" name="vat-reg" type="text" aria-describedby="vat-hint" value="{{ data['vat-reg'] }}">
 							</div>
+							<button class="govuk-button govuk-button--secondary govuk-!-margin-top-7" data-module="govuk-button" formaction="#">Add another VAT registration number</button>
 						</div>
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="No" {{ checked("vat", "No") }}>
