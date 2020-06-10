@@ -12,12 +12,25 @@
 			<fieldset class="govuk-fieldset">
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
 					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Would you like to add more details? (optional)</h1>
-					<span id="more-details-hint" class="govuk-hint govuk-!-margin-bottom-0">For example, but not limited to, any impending prosecutions, matters referred to an ombudsman etc.</span>
+					<span id="more-details-hint" class="govuk-hint govuk-!-margin-bottom-0">For example, any impending prosecutions, matters referred to an ombudsman etc.</span>
 				</legend>
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="more-details" name="more-details" rows="10" aria-describedby="more-details-hint">{{ data['more-details'] }}</textarea>
+				<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+					<div class="govuk-form-group">
+						<textarea class="govuk-textarea govuk-js-character-count" id="more-details" name="more-details" rows="15" aria-describedby="more-details-info more-details-hint">{{ data['more-details'] }}</textarea>
+					</div>
+					<span id="more-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 1000 characters</span>
 				</div>
 			</fieldset>
+
+			<!-- <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--xl" for="more-details">Would you like to add more details? (optional)</label>
+				  	<span id="more-details-hint" class="govuk-hint">For example, any impending prosecutions, matters referred to an ombudsman etc.</span>
+				  	<textarea class="govuk-textarea govuk-js-character-count" id="more-details" name="more-details" rows="15" aria-describedby="more-details-info more-details-hint">{{ data['more-details'] }}</textarea>
+				</div>
+				<span id="more-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 1000 characters</span>
+			</div> -->
+
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
 		</div>
 	</div>
