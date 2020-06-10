@@ -4,8 +4,16 @@
 
 {% block content %}
 {% include "includes/header.html" %}
-<a href="/current/submit-consent-form/professional-details" class="govuk-back-link">Back</a> 
+
+{% if (data['edit'] == "true") %}
+<a href="/current/submit-consent-form/check-answers" class="govuk-back-link">Back</a> 
 <form action="check-answers" method="post">
+{% else %}
+<a href="/current/submit-consent-form/professional-details" class="govuk-back-link">Back</a> 
+<form action="more-details" method="post">
+{% endif %}
+<!-- <a href="/current/submit-consent-form/professional-details" class="govuk-back-link">Back</a> 
+<form action="check-answers" method="post"> -->
 	<input type="hidden" value="{{ data['edit'] }}" name="edit">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">

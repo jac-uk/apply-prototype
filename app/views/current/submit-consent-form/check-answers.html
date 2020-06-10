@@ -197,7 +197,7 @@
 				<dd class="govuk-summary-list__value">Barrister</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> occupation</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> occupation</span></a>
 				</dd>
 			</div>
 			<!-- Magistrate -->
@@ -206,7 +206,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Magistrate</dt>
 				<dd class="govuk-summary-list__value">{{ data['magistrate'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> magistrate</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> magistrate</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -216,35 +216,35 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Barrister</dt>
 				<dd class="govuk-summary-list__value">Bar membership number<br /><span class="dark-grey-text">{{ data['barrister-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
 				</dd>
 				<!-- Solicitor -->
 				{% elseif data['professional-bodies'] == "If a Solicitor" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Solicitor</dt>
 				<dd class="govuk-summary-list__value">Solicitors Regulation Authority number<br /><span class="dark-grey-text">{{ data['solicitor-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> solicitors regulation authority number</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> solicitors regulation authority number</span></a>
 				</dd>
 				<!-- CILEX -->
 				{% elseif data['professional-bodies'] == "If a fellow of CILEX" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">CILEX</dt>
 				<dd class="govuk-summary-list__value">Membership number<br /><span class="dark-grey-text">{{ data['cilex-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> membership number</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> membership number</span></a>
 				</dd>
 				<!-- Other professional body -->
 				{% elseif data['professional-bodies'] == "Other professional body" %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Other professional body</dt>
 				<dd class="govuk-summary-list__value">Association and membership number<br /><span class="dark-grey-text">{{ data['other-professional-bodies'] }}</span></dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> association and membership number</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> association and membership number</span></a>
 				</dd>
 				<!-- Default -->
 				{% else %}
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Barrister</dt>
 				<dd class="govuk-summary-list__value">Bar membership number<br /><span class="dark-grey-text">AB1234C</span></dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-bodies?edit=true">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> bar membership number</span></a>
 				</dd>
 				{% endif %}
 			</div>
@@ -264,10 +264,24 @@
 				<dd class="govuk-summary-list__value">123456789</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="hmrc">Change<span class="govuk-visually-hidden"> vat number</span></a>
+					<a class="govuk-link" href="hmrc?edit=true">Change<span class="govuk-visually-hidden"> vat number</span></a>
 				</dd>
           	</div>
 		</dl>
+
+		<!-- More details -->
+		{% if data['more-details'] %}
+		<h2 class="govuk-heading-l">More details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-8 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">TBC</dt>
+				<dd class="govuk-summary-list__value">{{ data['more-details'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="more-details?edit=true">Change<span class="govuk-visually-hidden"> details</span></a>
+				</dd>
+          	</div>
+		</dl>
+		{% endif %}
 
 		<form action="declaration" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">

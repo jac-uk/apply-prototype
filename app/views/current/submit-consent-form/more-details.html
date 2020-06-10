@@ -1,0 +1,29 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit consent form - Would you like to add more details?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="/current/submit-consent-form/hmrc" class="govuk-back-link">Back</a> 
+<form action="check-answers" method="post">
+	<input type="hidden" value="{{ data['edit'] }}" name="edit">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Would you like to add more details? (optional)</h1>
+					<span id="more-details-hint" class="govuk-hint govuk-!-margin-bottom-0">For example, but not limited to, any impending prosecutions, matters referred to an ombudsman etc.</span>
+				</legend>
+				<div class="govuk-form-group">
+					<textarea class="govuk-textarea" id="more-details" name="more-details" rows="10" aria-describedby="more-details-hint">{{ data['more-details'] }}</textarea>
+				</div>
+			</fieldset>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
