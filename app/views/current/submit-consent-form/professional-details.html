@@ -27,13 +27,65 @@
 				<!-- Magistrate -->
 				<div class="govuk-form-group govuk-!-margin-top-7">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="magistrate">Have you been a magistrate?</label>
-					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="magistrate-yes" name="magistrate" type="radio" value="Yes" {{ checked("magistrate", "Yes") }}>
-						<label class="govuk-label govuk-radios__label" for="magistrate-yes">Yes</label>
-					</div>
-					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="magistrate-no" name="magistrate" type="radio" value="No" {{ checked("magistrate", "No") }}>
-						<label class="govuk-label govuk-radios__label" for="magistrate-no">No</label>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="magistrate-yes" name="magistrate" type="radio" value="Yes" data-aria-controls="conditional-magistrate-yes" {{ checked("magistrate", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="magistrate-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-magistrate-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="magistrate-date-from">From date (TBC)</label>
+								<span id="magistrate-date-from-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 12 11 2007 (TBC)</span>
+								<div class="govuk-date-input" id="magistrate-date-from">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="magistrate-date-from-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="magistrate-date-from-day" name="magistrate-date-from-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['magistrate-date-from-day'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="magistrate-date-from-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="magistrate-date-from-month" name="magistrate-date-from-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['magistrate-date-from-month'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="magistrate-date-from-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="magistrate-date-from-year" name="magistrate-date-from-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['magistrate-date-from-year'] }}">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group govuk-!-margin-top-7">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="magistrate-date-until">Until date (TBC)</label>
+								<span id="magistrate-date-until-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 11 6 2020. Leave blank if this is your present role (TBC).</span>
+								<div class="govuk-date-input" id="magistrate-date-until">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="magistrate-date-until-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="magistrate-date-until-day" name="magistrate-date-until-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['magistrate-date-until-day'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="magistrate-date-until-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="magistrate-date-until-month" name="magistrate-date-until-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['magistrate-date-until-month'] }}">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="magistrate-date-until-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="magistrate-date-until-year" name="magistrate-date-until-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['magistrate-date-until-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="magistrate-no" name="magistrate" type="radio" value="No" {{ checked("magistrate", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="magistrate-no">No</label>
+						</div>
 					</div>
 				</div>
 			</fieldset>

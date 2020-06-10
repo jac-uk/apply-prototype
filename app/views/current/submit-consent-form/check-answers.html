@@ -265,7 +265,34 @@
 				</dd>
 			</div>
 			<!-- Magistrate -->
-			{% if data['magistrate'] %}
+			{% if data['magistrate'] == "Yes" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Magistrate</dt>
+				<dd class="govuk-summary-list__value">Yes</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> magistrate</span></a>
+				</dd>
+			</div>
+			{% if data['magistrate-date-from-day'] and data['magistrate-date-from-month'] and data['magistrate-date-from-year'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">From date</dt>
+					<dd class="govuk-summary-list__value">{{ data['magistrate-date-from-day'] }} {{ data['magistrate-date-from-month'] | toMonth }} {{ data['magistrate-date-from-year'] }}</dd>
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> from date</span></a>
+					</dd>
+				</div>
+			{% endif %}
+			{% if data['magistrate-date-until-day'] and data['magistrate-date-until-month'] and data['magistrate-date-until-year'] %}
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-one-third">Until date</dt>
+					<dd class="govuk-summary-list__value">{{ data['magistrate-date-until-day'] }} {{ data['magistrate-date-until-month'] | toMonth }} {{ data['magistrate-date-until-year'] }}</dd>
+					<dd class="govuk-summary-list__actions">
+						<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> until date</span></a>
+					</dd>
+				</div>
+			{% endif %}
+		{% endif %}
+		{% if data['magistrate'] == "No" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Magistrate</dt>
 				<dd class="govuk-summary-list__value">{{ data['magistrate'] }}</dd>
@@ -273,7 +300,7 @@
 					<a class="govuk-link" href="professional-details?edit=true">Change<span class="govuk-visually-hidden"> magistrate</span></a>
 				</dd>
 			</div>
-			{% endif %}
+		{% endif %}
         </dl>
 		<!-- VAT registration number -->
 		<h2 class="govuk-heading-l">HMRC</h2>
