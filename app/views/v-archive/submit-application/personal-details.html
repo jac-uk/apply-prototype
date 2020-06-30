@@ -1,0 +1,103 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Personal details{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Personal details</h1>
+				</legend>
+				<p class="govuk-body govuk-!-margin-bottom-8">We'll use this information to confirm your identity if you contact us.</p>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="full-name">Full name</label>
+					<span id="full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">You do not need to include any titles.</span>
+					{% if data['full-name'] %}
+					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="{{ data['full-name'] }}">
+					{% else %}
+					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="Sharon Schmidt">
+					{% endif %}
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="email-address">Email address</label>
+					{% if data['email-address'] %}
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] }}">
+					{% else %}
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="sharon.schmidt@example.com">
+					{% endif %}
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
+					<span id="dob-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 27 3 1964</span>
+					<div class="govuk-date-input" id="dob">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-day'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="dob-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nino">National Insurance number</label>
+					<span id="nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
+					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="citizenship">Citizenship</label>
+					<span id="citizenship-hint" class="govuk-hint">Select which countries you're a citizen of.</span>
+					<div class="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="citizenship-1" name="citizenship" type="checkbox" value="UK" {{ checked("citizenship", "UK") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-1">UK</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="citizenship-2" name="citizenship" type="checkbox" value="Republic of Ireland" {{ checked("citizenship", "Republic of Ireland") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-2">Republic of Ireland</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="citizenship-3" name="citizenship" type="checkbox" value="Another Commonwealth country" {{ checked("citizenship", "Another Commonwealth country") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-3">Another Commonwealth country</label>
+						</div>
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizenship" type="checkbox" value="Other" {{ checked("citizenship", "Other") }} data-aria-controls="conditional-citizenship-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">Other</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="other-citizenship">Add the countries you're a citizen of
+									</label>
+									<!-- <input class="govuk-input" id="other-citizenship" name="other-citizenship" type="text" spellcheck="false"  value="{{ data['other-citizenship'] }}> -->
+									<textarea class="govuk-textarea govuk-!-width-two-thirds" id="other-citizenship" name="other-citizenship" rows="5">{{ data['other-citizenship'] }}</textarea>
+								</div>
+							</div>
+						</div>
+				  	</div>
+				</div>
+			</fieldset>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

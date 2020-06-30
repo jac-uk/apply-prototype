@@ -1,0 +1,41 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Did you go to either Oxford or Cambridge universities?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="first-university" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Did you go to either Oxford or Cambridge universities?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="oxbridge-yes" name="oxbridge" type="radio" value="Yes" {{ checked("oxbridge", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="oxbridge-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="oxbridge-no" name="oxbridge" type="radio" value="No" {{ checked("oxbridge", "No") }}>
+					  		<label class="govuk-label govuk-radios__label" for="oxbridge-no">No</label>
+						</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="oxbridge-no-answer" name="oxbridge" type="radio" value="Prefer not to say" {{ checked("oxbridge", "Prefer not to say") }}>
+							<label class="govuk-label govuk-radios__label" for="oxbridge-no-answer">Prefer not to say</label>
+					  </div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

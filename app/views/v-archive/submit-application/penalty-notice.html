@@ -1,0 +1,36 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Have you received a non-motoring penalty notice in the last 4 years?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="penalty-notice-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Have you received a non-motoring penalty notice in the last 4 years?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="penalty-notice-yes" name="penalty-notice" type="radio" value="Yes" {{ checked("penalty-notice", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="penalty-notice-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="penalty-notice-no" name="penalty-notice" type="radio" value="No" {{ checked("penalty-notice", "No") }}>
+					  		<label class="govuk-label govuk-radios__label" for="penalty-notice-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

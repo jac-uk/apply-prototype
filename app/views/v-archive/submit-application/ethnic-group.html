@@ -1,0 +1,58 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - What is your ethnic group?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="ethnic-group-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What is your ethnic group?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="ethnic-group" name="ethnic-group" type="radio" value="Asian or Asian British" aria-describedby="ethnic-group-item-hint" {{ checked("ethnic-group", "Asian or Asian British") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label--s" for="ethnic-group">Asian or Asian British</label>
+							<span id="ethnic-group-item-hint" class="govuk-hint govuk-radios__hint">Includes any Asian background, for example, Bangladeshi, Chinese, Indian, Pakistani</span>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="ethnic-group-2" name="ethnic-group" type="radio" value="Black, African, Black British or Caribbean" aria-describedby="ethnic-group-2-item-hint" {{ checked("ethnic-group", "Black, African, Black British or Caribbean") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label--s" for="ethnic-group-2">Black, African, Black British or Caribbean</label>
+						  	<span id="ethnic-group-2-item-hint" class="govuk-hint govuk-radios__hint">Includes any Black background</span>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="ethnic-group-3" name="ethnic-group" type="radio" value="Mixed or multiple ethnic groups" aria-describedby="ethnic-group-3-item-hint" {{ checked("ethnic-group", "Mixed or multiple ethnic groups") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label--s" for="ethnic-group-3">Mixed or multiple ethnic groups</label>
+						  	<span id="ethnic-group-3-item-hint" class="govuk-hint govuk-radios__hint">Includes any Mixed background</span>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="ethnic-group-4" name="ethnic-group" type="radio" value="White" aria-describedby="ethnic-group-4-item-hint" {{ checked("ethnic-group", "White") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label--s" for="ethnic-group-4">White</label>
+						  	<span id="ethnic-group-4-item-hint" class="govuk-hint govuk-radios__hint">Includes any White background</span>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="ethnic-group-5" name="ethnic-group" type="radio" value="Another ethnic group" aria-describedby="ethnic-group-5-item-hint" {{ checked("ethnic-group", "Another ethnic group") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label--s" for="ethnic-group-5">Another ethnic group</label>
+						  	<span id="ethnic-group-5-item-hint" class="govuk-hint govuk-radios__hint">Includes any other ethnic group, for example, Arab</span>
+						</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="ethnic-group-6" name="ethnic-group" type="radio" value="Prefer not to say" {{ checked("ethnic-group", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label" for="ethnic-group-6">Prefer not to say</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

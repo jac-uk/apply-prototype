@@ -1,0 +1,58 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - What is your professional background?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="paid-judicial-role" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="convictions-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What is your professional background?</h1>
+					</legend>
+					<span id="convictions-hint" class="govuk-hint">Select all that apply.</span>
+					<div class="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="professional-background" name="professional-background" type="checkbox" value="Barrister" {{ checked("professional-background", "Barrister") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="professional-background">Barrister</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="professional-background-2" name="professional-background" type="checkbox" value="Fellow of the Chartered Institute of Legal Executives (CILEx)" {{ checked("professional-background", "Fellow of the Chartered Institute of Legal Executives (CILEx)") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="professional-background-2">Fellow of the Chartered Institute of Legal Executives (CILEx)</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="professional-background-3" name="professional-background" type="checkbox" value="Solicitor" {{ checked("professional-background", "Solicitor") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="professional-background-3">Solicitor</label>
+						</div>
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="professional-background-conditional" name="professional-background" type="checkbox" value="Other" {{ checked("professional-background", "Other") }} data-aria-controls="conditional-professional-background-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="professional-background-conditional">Other</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-professional-background-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="other-professional-background">Role</label>
+									<input class="govuk-input" id="other-professional-background" name="other-professional-background" type="text" spellcheck="false"  value="{{ data['other-professional-background'] }}">
+								</div>
+							</div>
+						</div>
+						<div class="govuk-checkboxes__divider govuk-!-font-size-19">or</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="professional-background-5" name="professional-background" type="checkbox" value="Prefer not to say" {{ checked("professional-background", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-checkboxes__label govuk-label" for="professional-background-5">Prefer not to say</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

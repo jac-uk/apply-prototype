@@ -1,0 +1,45 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Create an account{% endblock %}
+
+{% block content %}
+{# include "includes/header.html" #}
+<div class="header-background">
+	<a href="/"><img src="/public/images/jac-logo.svg" width="197" height="66" /></a>
+</div>
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+		<span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.</span>
+	</p>
+</div>
+<form action="check-email" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Create an account</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="full-name">Full name</label>
+					<span id="full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">You do not need to include any titles.</span>
+					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="{{ data['full-name'] }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s" for="email-address">Email address</label>
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s" for="email-address-confirm">Confirm email address</label>
+					<input class="govuk-input" id="email-address-confirm" name="email-address-confirm" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address-confirm'] }}">
+				</div>
+			</fieldset>
+			<button class="govuk-button" data-module="govuk-button">Create account</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
