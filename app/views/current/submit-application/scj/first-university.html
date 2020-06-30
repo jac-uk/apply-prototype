@@ -1,0 +1,45 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Were you the first generation in your family to go to university?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="ethnic-group" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Were you the first generation in your family to go to university?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="first-university-yes" name="first-university" type="radio" value="Yes" {{ checked("first-university", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="first-university-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="first-university-no" name="first-university" type="radio" value="No" {{ checked("first-university", "No") }}>
+					  		<label class="govuk-label govuk-radios__label" for="first-university-no">No</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="first-university-no-go" name="first-university" type="radio" value="I did not go to university" {{ checked("first-university", "I did not go to university") }}>
+							<label class="govuk-label govuk-radios__label" for="first-university-no-go">I did not go to university</label>
+					  	</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="first-university-no-answer" name="first-university" type="radio" value="Prefer not to say" {{ checked("first-university", "Prefer not to say") }}>
+							<label class="govuk-label govuk-radios__label" for="first-university-no-answer">Prefer not to say</label>
+					  </div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

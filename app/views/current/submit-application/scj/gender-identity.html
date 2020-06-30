@@ -1,0 +1,42 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Is your gender identity the same as the sex you were assigned at birth?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="sexual-orientation" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="gender-identity-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Is your gender identity the same as the sex you were assigned at birth?</h1>
+					</legend>
+					<span id="gender-identity-hint" class="govuk-hint">This is about gender re-assignment.</span>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="gender-identity-yes" name="gender-identity" type="radio" value="Yes" {{ checked("gender-identity", "Yes") }}>
+						  	<label class="govuk-label govuk-radios__label" for="gender-identity-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="gender-identity-no" name="gender-identity" type="radio" value="No" {{ checked("gender-identity", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="gender-identity-no">No</label>
+						</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="gender-identity-no-answer" name="gender-identity" type="radio" value="Prefer not to say" {{ checked("gender-identity", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label" for="gender-identity-no-answer">Prefer not to say</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

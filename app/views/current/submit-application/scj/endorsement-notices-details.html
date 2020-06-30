@@ -1,0 +1,55 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Details of driving endorsements or motoring fixed-penalty notices{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="declared-bankrupt" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Details of driving endorsements or motoring fixed-penalty notices</h1>
+				</legend>
+				<h2 class="govuk-heading-m">Driving endorsements or motoring fixed-penalty notice</h2>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="endorsement-notice-date">Date</label>
+					<span id="endorsement-notice-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+					<div class="govuk-date-input" id="endorsement-notice-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="endorsement-notice-date-day">Day</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="endorsement-notice-date-day" name="endorsement-notice-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['endorsement-notice-date-day'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="endorsement-notice-date-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="endorsement-notice-date-month" name="endorsement-notice-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['endorsement-notice-date-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="endorsement-notice-date-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="endorsement-notice-date-year" name="endorsement-notice-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['endorsement-notice-date-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s" for="endorsement-notice-summary">Summary</label>
+					<span id="endorsement-notice-summary-hint" class="govuk-hint">Include number of points.</span>
+					<textarea class="govuk-textarea" id="endorsement-notice-summary" name="endorsement-notice-summary" rows="5" aria-describedby="endorsement-notice-summary-hint">{{ data['endorsement-notice-summary'] }}</textarea>
+				</div>		
+			</fieldset>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another driving endorsement or motoring fixed-penalty notice</button><br />
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>	
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

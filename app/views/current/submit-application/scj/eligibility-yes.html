@@ -1,0 +1,32 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - It looks like you're eligible{% endblock %}
+
+{% block content %}
+{# include "includes/header.html" #}
+<div class="header-background">
+	<a href="/"><img src="/public/images/jac-logo.svg" width="197" height="66" /></a>
+</div>
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+		<span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.</span>
+	</p>
+</div>
+<form action="sign-in" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<!-- <span class="govuk-caption-xl">JAC00013 Senior Circuit Judge, Designated Civil Judge (Birmingham and Winchester)</span> -->
+			<h1 class="govuk-heading-xl">It looks like you're eligible</h1>
+			<p class="govuk-body-l govuk-!-margin-bottom-8">Based on your answers, it looks like you can continue to apply for this role.</p>
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+			<!-- <button class="govuk-button" data-module="govuk-button">Sign in</button>
+			<p class="govuk-body">Or <a class="govuk-link" href="create-account">create an account</a> if you do not have one.</p> -->
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

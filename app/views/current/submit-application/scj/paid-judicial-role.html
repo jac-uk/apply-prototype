@@ -1,0 +1,55 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Do you hold, or have you ever held in the past, a fee-paid judicial role?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="school" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Do you hold, or have you ever held in the past, a fee-paid judicial role?</h1>
+					</legend>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="paid-judicial-role" name="paid-judicial-role" type="radio" value="I have not previously held a fee-paid role" {{ checked("paid-judicial-role", "I have not previously held a fee-paid role") }}>
+						  	<label class="govuk-label govuk-radios__label" for="paid-judicial-role">I have not previously held a fee-paid role</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="paid-judicial-role-2" name="paid-judicial-role" type="radio" value="Fee-paid court post" {{ checked("paid-judicial-role", "Fee-paid court post") }}>
+							<label class="govuk-label govuk-radios__label" for="paid-judicial-role-2">Fee-paid court post</label>
+						</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="paid-judicial-role-3" name="paid-judicial-role" type="radio" value="Fee-paid tribunal post" {{ checked("paid-judicial-role", "Fee-paid tribunal post") }}>
+						  	<label class="govuk-label govuk-radios__label" for="paid-judicial-role-3">Fee-paid tribunal post</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="paid-judicial-role-4" name="paid-judicial-role" type="radio" value="Other fee-paid Judicial Office" data-aria-controls="conditional-paid-judicial-role-4" {{ checked("paid-judicial-role", "Other fee-paid Judicial Office") }}>
+							<label class="govuk-label govuk-radios__label" for="paid-judicial-role-4">Other fee-paid Judicial Office</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-paid-judicial-role-4">
+								<div class="govuk-form-group">
+								<label class="govuk-label" for="paid-judicial-role-other">Role</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="paid-judicial-role-other" name="paid-judicial-role-other" type="text" value="{{ data['paid-judicial-role-other'] }}">
+							</div>
+						</div>
+						<div class="govuk-radios__divider">or</div>
+						<div class="govuk-radios__item">
+						  	<input class="govuk-radios__input" id="paid-judicial-role-5" name="paid-judicial-role" type="radio" value="Prefer not to say" {{ checked("paid-judicial-role", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-radios__label govuk-label" for="paid-judicial-role-5">Prefer not to say</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

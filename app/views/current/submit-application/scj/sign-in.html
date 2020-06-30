@@ -1,0 +1,52 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Sign in to your account{% endblock %}
+
+{% block content %}
+{# include "includes/header.html" #}
+<div class="header-background">
+	<a href="/"><img src="/public/images/jac-logo.svg" width="197" height="66" /></a>
+</div>
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+		<span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.</span>
+	</p>
+</div>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="alert-box govuk-!-margin-bottom-8">
+				<h1 class="govuk-heading-m">New application process</h1>
+				<p class="govuk-body">If you've applied with the JAC before, you'll notice that the process for this role is slightly different.</p>
+				<p class="govuk-body">You'll need to enter some personal details to create your new account profile, as well as professional information for your application.</p>
+				<p class="govuk-body govuk-!-margin-bottom-0">You can still <a class="govuk-link" href="https://www.judicialappointments.gov.uk/user" target="_blank">sign in to your existing account</a> to access anything you need for this application, but you cannot apply there.</p>
+			</div>
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Sign in to your account</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s" for="email-address">Email address</label>
+					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--s" for="password">Password</label>
+					<input class="govuk-input" id="password" name="password" type="password" value="{{ data['password'] }}">
+				</div>
+			</fieldset>
+			<button class="govuk-button" data-module="govuk-button">Sign in</button>
+			<p class="govuk-body">Or <a class="govuk-link" href="create-account">create an account</a> if you do not have one.</p>
+			<h2 class="govuk-heading-m govuk-!-margin-top-8">Problems signing in</h2>
+			<ul class="govuk-list">
+				<li><a class="govuk-link" href="#">I forgot my password</a></li>
+				<li><a class="govuk-link" href="#">I forgot my email address</a></li>
+			</ul>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

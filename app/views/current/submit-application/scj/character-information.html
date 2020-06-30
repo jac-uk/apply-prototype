@@ -1,0 +1,72 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Declare character information{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="caution-conviction" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-l">Declare character information</h1>
+			<p class="govuk-body">You must tell us about any character issues that could affect your suitability for this role.</p>
+			<p class="govuk-body">Read the <a class="govuk-link" href="https://www.judicialappointments.gov.uk/good-character" target="_blank">character guidance</a> for detailed information.</p>
+			
+			<!-- <div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="criminal-offences-conditional-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading">Criminal offences</h2>
+					</legend>
+					<p class="govuk-body govuk-!-margin-bottom-0">Have you ever been cautioned or convicted of a criminal offence?</p>
+				  	<span id="criminal-offences-conditional-hint" class="govuk-hint">This includes spent convictions.</span>
+				  	<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="criminal-offences-conditional-yes" name="criminal-offences" type="radio" value="Yes" {{ checked("criminal-offences", "Yes") }} data-aria-controls="conditional-criminal-offences-conditional-yes">
+							<label class="govuk-label govuk-radios__label" for="criminal-offences-conditional-yes">Yes</label>
+					  	</div>
+					  	<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-criminal-offences-conditional-yes">
+						
+							<div class="govuk-form-group">
+								<fieldset class="govuk-fieldset" role="group" aria-describedby="caution-hint">
+									<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Cautions or convictions</legend>
+									<span id="caution-hint" class="govuk-hint">Add summary details including dates, sentence and fine.</span>
+									<div class="govuk-date-input" id="expiry">
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="expiry-day">Day</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" type="text" pattern="[0-9]*" inputmode="numeric">
+											</div>
+										</div>
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="expiry-month">Month</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" type="text" pattern="[0-9]*" inputmode="numeric">
+											</div>
+										</div>
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="expiry-year">Year</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" type="text" pattern="[0-9]*" inputmode="numeric">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+					  	</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="criminal-offences" name="criminal-offences" type="radio" value="No" {{ checked("criminal-offences", "No") }}>
+					  		<label class="govuk-label govuk-radios__label" for="criminal-offences">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div> -->
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
