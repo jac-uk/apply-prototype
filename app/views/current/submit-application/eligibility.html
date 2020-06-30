@@ -1,0 +1,47 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Check if you're eligible{% endblock %}
+
+{% block content %}
+{# include "includes/header.html" #}
+<div class="header-background">
+	<a href="/"><img src="/public/images/jac-logo.svg" width="197" height="66" /></a>
+</div>
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+		<span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.</span>
+	</p>
+</div>
+<form action="eligibility-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<!-- <span class="govuk-caption-xl">JAC00013 Senior Circuit Judge, Designated Civil Judge (Birmingham and Winchester)</span> -->
+			<h1 class="govuk-heading-xl">Check if you're eligible</h1>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h2 class="govuk-fieldset__heading">Citizenship</h2>
+					</legend>
+					<p class="govuk-body">Are you a citizen of the UK, the Republic of Ireland or another Commonwealth country?</p>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="citizenship-check-yes" name="citizenship-check" type="radio" value="yes" {{ checked("citizenship-check", "yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="citizenship-check-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="citizenship-check-no" name="citizenship-check" type="radio" value="no" {{ checked("citizenship-check", "no") }}>
+					  		<label class="govuk-label govuk-radios__label" for="citizenship-check-no">No</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
