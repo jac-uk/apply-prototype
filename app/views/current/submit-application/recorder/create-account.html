@@ -21,20 +21,57 @@
 					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Create an account</h1>
 				</legend>
 				<div class="govuk-form-group">
-					<label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="full-name">Full name</label>
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="full-name">Full name</label>
 					<span id="full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">You do not need to include any titles.</span>
 					<input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-hint" value="{{ data['full-name'] }}">
 				</div>
 				<div class="govuk-form-group">
-					<label class="govuk-label govuk-label--s" for="email-address">Email address</label>
+					<label class="govuk-label govuk-label--m" for="email-address">Email address</label>
 					<input class="govuk-input" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address'] }}">
 				</div>
 				<div class="govuk-form-group">
-					<label class="govuk-label govuk-label--s" for="email-address-confirm">Confirm email address</label>
+					<label class="govuk-label govuk-label--m" for="email-address-confirm">Confirm email address</label>
 					<input class="govuk-input" id="email-address-confirm" name="email-address-confirm" type="email" autocomplete="email" spellcheck="false" value="{{ data['email-address-confirm'] }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="password">Password</label>
+					<span id="password-hint" class="govuk-hint govuk-!-margin-bottom-2">For security reasons it should be 8 or more characters long, contain a mix of upper- and lower-case letters, at least one digit and special character (like £, #, @, !, %, -, &, *).</span>
+					<input class="govuk-input" id="password" name="password" type="text" spellcheck="false" aria-describedby="password-hint" value="{{ data['password'] }}">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
+					<span id="dob-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 27 3 1964</span>
+					<div class="govuk-date-input" id="dob">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-day'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="dob-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nino">National Insurance number</label>
+					<span id="nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
+					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] }}">
 				</div>
 			</fieldset>
 			<button class="govuk-button" data-module="govuk-button">Create account</button>
+			<p class="govuk-body">Or <a class="govuk-link" href="sign-in">sign in</a> if you already have an account.</p>
+			<h2 class="govuk-heading-m govuk-!-margin-top-8">Your information</h2>
+			<p class="govuk-body">Find out more about how we <a class="govuk-link" href="https://www.judicialappointments.gov.uk/accessing-your-information" target="_blank">process your data</a>.</p>
 		</div>
 	</div>
 </form>
