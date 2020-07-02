@@ -115,24 +115,24 @@
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third no-border">&nbsp;</dt>
-				{% if data['fixed-penalty-date-day'] and data['fixed-penalty-date-month'] and data['fixed-penalty-date-year'] %}
-				<dd class="govuk-summary-list__value">{{ data['fixed-penalty-date-day'] }} {{ data['fixed-penalty-date-month'] | toMonth }} {{ data['fixed-penalty-date-year'] }}</dd>
+				{% if data['penalty-notice-date-day'] and data['penalty-notice-date-month'] and data['penalty-notice-date-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['penalty-notice-date-day'] }} {{ data['penalty-notice-date-month'] | toMonth }} {{ data['penalty-notice-date-year'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">29 April 2016</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice-details">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">&nbsp;</dt>
-				{% if data['fixed-penalty-summary'] %}
-				<dd class="govuk-summary-list__value">{{ data['fixed-penalty-summary'] }}</dd>
+				{% if data['penalty-notice-details'] %}
+				<dd class="govuk-summary-list__value">{{ data['penalty-notice-details'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">Parked car in the wrong zone and had to make a payment of £35.</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice-details">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -147,8 +147,8 @@
 
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Been disqualified from driving, or convicted for driving under the influence of drink or drugs</dt>
-				{% if data['driving-conviction'] %}
-				<dd class="govuk-summary-list__value">{{ data['driving-conviction'] }}</dd>
+				{% if data['driving-offences'] %}
+				<dd class="govuk-summary-list__value">{{ data['driving-offences'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
@@ -158,8 +158,8 @@
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Any endorsements on your licence, or received any motoring fixed-penalty notices</dt>
-				{% if data['endorsement-notice'] %}
-				<dd class="govuk-summary-list__value">{{ data['endorsement-notice'] }}</dd>
+				{% if data['endorsement-notices'] %}
+				<dd class="govuk-summary-list__value">{{ data['endorsement-notices'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
@@ -169,8 +169,8 @@
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Been declared bankrupt</dt>
-				{% if data['bankrupt'] %}
-				<dd class="govuk-summary-list__value">{{ data['bankrupt'] }}</dd>
+				{% if data['declared-bankrupt'] %}
+				<dd class="govuk-summary-list__value">{{ data['declared-bankrupt'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
