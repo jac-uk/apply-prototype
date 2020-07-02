@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="professional-complaints-router" method="post">
+<form action="other-issues" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -13,16 +13,51 @@
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Have you ever been subject to complaints or disciplinary action, or been asked to resign from a position?</h1>
 					</legend>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="professional-complaints-yes" name="professional-complaints" type="radio" value="Yes" {{ checked("professional-complaints", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="professional-complaints-yes">Yes</label>
+							<input class="govuk-radios__input" id="professional-complaints-yes" name="professional-complaints" type="radio" value="Yes" data-aria-controls="conditional-professional-complaints-yes" {{ checked("professional-complaints", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="professional-complaints-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-professional-complaints-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="professional-complaints-date">Date</label>
+								<span id="professional-complaints-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="professional-complaints-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="professional-complaints-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="professional-complaints-date-day" name="professional-complaints-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['professional-complaints-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="professional-complaints-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="professional-complaints-date-month" name="professional-complaints-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['professional-complaints-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="professional-complaints-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="professional-complaints-date-year" name="professional-complaints-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['professional-complaints-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="fa-title-penalty-notice">Findings or actions</label>
+								<input class="govuk-input" id="fa-title-penalty-notice" name="fa-title-penalty-notice" type="text" spellcheck="false" value="{{ data['fa-title-penalty-notice'] }}">
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="professional-complaints-details">Details</label>
+								<textarea class="govuk-textarea" id="professional-complaints-details" name="professional-complaints-details" rows="5">{{ data['professional-complaints-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="professional-complaints-no" name="professional-complaints" type="radio" value="No" {{ checked("professional-complaints", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="professional-complaints-no">No</label>
+							<input class="govuk-radios__input" id="professional-complaints-no" name="professional-complaints" type="radio" value="No" {{ checked("professional-complaints", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="professional-complaints-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>

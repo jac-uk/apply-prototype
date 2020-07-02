@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="other-issues-router" method="post">
+<form action="task-list" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -13,16 +13,47 @@
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Do you have any other issues that you think we should know about when considering your character?</h1>
 					</legend>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="other-issues-yes" name="other-issues" type="radio" value="Yes" {{ checked("other-issues", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="other-issues-yes">Yes</label>
+							<input class="govuk-radios__input" id="other-issues-yes" name="other-issues" type="radio" value="Yes" data-aria-controls="conditional-other-issues-yes" {{ checked("other-issues", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="other-issues-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-issues-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="other-issues-date">Date</label>
+								<span id="other-issues-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="other-issues-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="other-issues-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="other-issues-date-day" name="other-issues-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['other-issues-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="other-issues-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="other-issues-date-month" name="other-issues-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['other-issues-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="other-issues-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="other-issues-date-year" name="other-issues-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['other-issues-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="other-issues-details">Details</label>
+								<textarea class="govuk-textarea" id="other-issues-details" name="other-issues-details" rows="5">{{ data['other-issues-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="other-issues-no" name="other-issues" type="radio" value="No" {{ checked("other-issues", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="other-issues-no">No</label>
+							<input class="govuk-radios__input" id="other-issues-no" name="other-issues" type="radio" value="No" {{ checked("other-issues", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="other-issues-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>

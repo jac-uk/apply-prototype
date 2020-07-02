@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="endorsement-notices-router" method="post">
+<form action="declared-bankrupt" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -13,16 +13,51 @@
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Do you have any endorsements on your licence, or received any motoring fixed-penalty notices in the last 4 years?</h1>
 					</legend>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="endorsement-notice-yes" name="endorsement-notice" type="radio" value="Yes" {{ checked("endorsement-notice", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="endorsement-notice-yes">Yes</label>
+							<input class="govuk-radios__input" id="endorsement-notices-yes" name="endorsement-notices" type="radio" value="Yes" data-aria-controls="conditional-endorsement-notices-yes" {{ checked("endorsement-notices", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="endorsement-notices-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-endorsement-notices-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="endorsement-notices-date">Date of offence</label>
+								<span id="endorsement-notices-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="endorsement-notices-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="endorsement-notices-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="endorsement-notices-date-day" name="endorsement-notices-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['endorsement-notices-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="endorsement-notices-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="endorsement-notices-date-month" name="endorsement-notices-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['endorsement-notices-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="endorsement-notices-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="endorsement-notices-date-year" name="endorsement-notices-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['endorsement-notices-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="epp-title-endorsement-notices">Endorsements and/or penalty points</label>
+								<input class="govuk-input" id="epp-title-endorsement-notices" name="epp-title-endorsement-notices" type="text" spellcheck="false" value="{{ data['epp-title-endorsement-notices'] }}">
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="endorsement-notices-details">Details</label>
+								<textarea class="govuk-textarea" id="endorsement-notices-details" name="endorsement-notices-details" rows="5">{{ data['endorsement-notices-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="endorsement-notice-no" name="endorsement-notice" type="radio" value="No" {{ checked("endorsement-notice", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="endorsement-notice-no">No</label>
+							<input class="govuk-radios__input" id="endorsement-notices-no" name="endorsement-notices" type="radio" value="No" {{ checked("endorsement-notices", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="endorsement-notices-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>

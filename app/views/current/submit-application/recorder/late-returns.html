@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="late-returns-router" method="post">
+<form action="professional-proceeds" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -13,16 +13,47 @@
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Have you ever filed late tax returns or been fined my HMRC?</h1>
 					</legend>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="late-returns-yes" name="late-returns" type="radio" value="Yes" {{ checked("late-returns", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="late-returns-yes">Yes</label>
+							<input class="govuk-radios__input" id="late-returns-yes" name="late-returns" type="radio" value="Yes" data-aria-controls="conditional-late-returns-yes" {{ checked("late-returns", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="late-returns-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-late-returns-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="late-returns-date">Date</label>
+								<span id="late-returns-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="late-returns-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="late-returns-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="late-returns-date-day" name="late-returns-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['late-returns-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="late-returns-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="late-returns-date-month" name="late-returns-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['late-returns-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="late-returns-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="late-returns-date-year" name="late-returns-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['late-returns-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="late-returns-details">Details</label>
+								<textarea class="govuk-textarea" id="late-returns-details" name="late-returns-details" rows="5">{{ data['late-returns-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="late-returns-no" name="late-returns" type="radio" value="No" {{ checked("late-returns", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="late-returns-no">No</label>
+							<input class="govuk-radios__input" id="late-returns-no" name="late-returns" type="radio" value="No" {{ checked("late-returns", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="late-returns-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>

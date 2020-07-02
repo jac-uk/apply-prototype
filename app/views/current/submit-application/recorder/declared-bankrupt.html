@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="declared-bankrupt-router" method="post">
+<form action="late-returns" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -13,16 +13,47 @@
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Have you ever been declared bankrupt or entered into an Individual Voluntary Agreement (IVA)?</h1>
 					</legend>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="bankrupt-yes" name="bankrupt" type="radio" value="Yes" {{ checked("bankrupt", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="bankrupt-yes">Yes</label>
+							<input class="govuk-radios__input" id="declared-bankrupt-yes" name="declared-bankrupt" type="radio" value="Yes" data-aria-controls="conditional-declared-bankrupt-yes" {{ checked("declared-bankrupt", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="declared-bankrupt-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-declared-bankrupt-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="declared-bankrupt-date">Date</label>
+								<span id="declared-bankrupt-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="declared-bankrupt-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="declared-bankrupt-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="declared-bankrupt-date-day" name="declared-bankrupt-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['declared-bankrupt-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="declared-bankrupt-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="declared-bankrupt-date-month" name="declared-bankrupt-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['declared-bankrupt-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="declared-bankrupt-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="declared-bankrupt-date-year" name="declared-bankrupt-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['declared-bankrupt-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="declared-bankrupt-details">Details</label>
+								<textarea class="govuk-textarea" id="declared-bankrupt-details" name="declared-bankrupt-details" rows="5">{{ data['declared-bankrupt-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="bankrupt-no" name="bankrupt" type="radio" value="No" {{ checked("bankrupt", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="bankrupt-no">No</label>
+							<input class="govuk-radios__input" id="declared-bankrupt-no" name="declared-bankrupt" type="radio" value="No" {{ checked("declared-bankrupt", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="declared-bankrupt-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
