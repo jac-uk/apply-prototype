@@ -31,6 +31,17 @@
 					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> email address</span></a>
 				</dd>
 			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Phone number</dt>
+				{% if data['phone-number'] %}
+				<dd class="govuk-summary-list__value">{{ data['phone-number'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">01273 800 900</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> phone number</span></a>
+				</dd>
+			</div>
           	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date of birth</dt>
 				{% if data['dob-day'] and data['dob-month'] and data['dob-year'] %}
@@ -54,22 +65,29 @@
 				</dd>
           	</div>
           	<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
-            	<dd class="govuk-summary-list__value">
-					{% if data['citizenship'] %}
-					<ul class="govuk-list govuk-list--bullet">
-						{% for country in data['citizenship'] %}
-						<li>{{ country }}</li>
-						{% endfor %}
-					</ul>
-					{% else %}
-					<ul class="govuk-list govuk-list--bullet">
-						<li>UK</li>
-					</ul>
-					{% endif %}
-				</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
+				{% if data['citizenship'] %}
+            	<dd class="govuk-summary-list__value">{{ data['citizenship'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">UK</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> citizenship</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Reasonable adjustments</dt>
+				{% if data['reasonable-adjustment'] != "Yes" %}
+				<dd class="govuk-summary-list__value">{{ data['reasonable-adjustment'] }}</dd>
+				{% elseif data['reasonable-adjustment'] == "Yes" %}
+					{% if data['reasonable-adjustment-details'] %}
+					<dd class="govuk-summary-list__value">Yes - {{ data['reasonable-adjustment-details'] }}</dd>
+					{% else %}
+					<dd class="govuk-summary-list__value">Yes - I use a wheelchair</dd>
+					{% endif %}
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> reasonable adjustments</span></a>
 				</dd>
 			</div>
 		</dl>

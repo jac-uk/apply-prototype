@@ -12,7 +12,7 @@
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Personal details</h1>
 				</legend>
-				<p class="govuk-body govuk-!-margin-bottom-8">We'll use this information to confirm your identity if you contact us.</p>
+				<p class="govuk-body govuk-!-margin-bottom-8">We'll use this information to confirm your identity if you contact us or to contact you about your application.</p>
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="full-name">Full name</label>
 					<span id="full-name-hint" class="govuk-hint govuk-!-margin-bottom-2">You do not need to include any titles.</span>
@@ -31,25 +31,30 @@
 					{% endif %}
 				</div>
 				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="phone-number">Phone number (optional)</label>
+					<span id="phone-number-hint" class="govuk-hint govuk-!-margin-bottom-2">For international numbers include the country code.</span>
+					<input class="govuk-input" id="phone-number" name="phone-number" type="text" aria-describedby="phone-number-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['phone-number'] }}">
+				</div>
+				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="dob">Date of birth</label>
 					<span id="dob-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 27 3 1964</span>
 					<div class="govuk-date-input" id="dob">
 						<div class="govuk-date-input__item">
 							<div class="govuk-form-group">
 								<label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-day'] }}">
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-day'] | default('1') }}">
 						  	</div>
 						</div>
 						<div class="govuk-date-input__item">
 						  	<div class="govuk-form-group">
 								<label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-month'] }}">
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-month'] | default('1') }}">
 						  	</div>
 						</div>
 						<div class="govuk-date-input__item">
 							<div class="govuk-form-group">
 								<label class="govuk-label govuk-date-input__label" for="dob-year">Year</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-year'] }}">
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-year'] | default('1969') }}">
 						  	</div>
 						</div>
 					</div>
@@ -57,39 +62,50 @@
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="nino">National Insurance number</label>
 					<span id="nino-hint" class="govuk-hint govuk-!-margin-bottom-2">It’s on your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 C’.</span>
-					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] }}">
+					<input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" spellcheck="false" aria-describedby="nino-hint" value="{{ data['nino'] | default('QQ 12 34 56 C') }}">
 				</div>
 				<div class="govuk-form-group">
 					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="citizenship">Citizenship</label>
-					<span id="citizenship-hint" class="govuk-hint">Select which countries you're a citizen of.</span>
-					<div class="govuk-checkboxes">
-						<div class="govuk-checkboxes__item">
-							<input class="govuk-checkboxes__input" id="citizenship-1" name="citizenship" type="checkbox" value="UK" {{ checked("citizenship", "UK") }}>
-						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-1">UK</label>
+					<span id="citizenship-hint" class="govuk-hint">If you have dual citizenship, please select the option most appropriate to you.</span>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="citizenship-1" name="citizenship" type="radio" value="UK" {{ checked("citizenship", "UK") }}>
+					  		<label class="govuk-label govuk-radios__label" for="citizenship-1">UK</label>
 						</div>
-						<div class="govuk-checkboxes__item">
-						  	<input class="govuk-checkboxes__input" id="citizenship-2" name="citizenship" type="checkbox" value="Republic of Ireland" {{ checked("citizenship", "Republic of Ireland") }}>
-						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-2">Republic of Ireland</label>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="citizenship-2" name="citizenship" type="radio" value="Republic of Ireland" {{ checked("citizenship", "Republic of Ireland") }}>
+					  		<label class="govuk-label govuk-radios__label" for="citizenship-2">Republic of Ireland</label>
 						</div>
-						<div class="govuk-checkboxes__item">
-						  	<input class="govuk-checkboxes__input" id="citizenship-3" name="citizenship" type="checkbox" value="Another Commonwealth country" {{ checked("citizenship", "Another Commonwealth country") }}>
-						  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-3">Another Commonwealth country</label>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="citizenship-3" name="citizenship" type="radio" value="Another Commonwealth country" {{ checked("citizenship", "Another Commonwealth country") }}>
+							<label class="govuk-label govuk-radios__label" for="citizenship-3">Another Commonwealth country</label>
 						</div>
-						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
-							<div class="govuk-checkboxes__item">
-								<input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizenship" type="checkbox" value="Other" {{ checked("citizenship", "Other") }} data-aria-controls="conditional-citizenship-conditional">
-							  	<label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">Other</label>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="citizenship-4" name="citizenship" type="radio" value="Other" {{ checked("citizenship", "Other") }}>
+							<label class="govuk-label govuk-radios__label" for="citizenship-4">Other</label>
+					  	</div>
+					</div>
+				</div>
+
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="reasonable-adjustment">Reasonable Adjustments</label>
+					<p class="govuk-body">With reference to our <a class="govuk-link" href="https://www.judicialappointments.gov.uk/reasonable-adjustments-policy" target="_blank">reasonable adjustments policy</a> do you have a disability or long term health condition that means you need an adjustment during the process?</pn>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="reasonable-adjustment-yes" name="reasonable-adjustment" type="radio" value="Yes" data-aria-controls="conditional-reasonable-adjustment-yes" {{ checked("reasonable-adjustment", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="reasonable-adjustment-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reasonable-adjustment-yes">
+								<div class="govuk-form-group">
+								<label class="govuk-label" for="reasonable-adjustment-details">Provide details</label>
+								<textarea class="govuk-textarea" id="reasonable-adjustment-details" name="reasonable-adjustment-details" rows="5">{{ data['reasonable-adjustment-details'] }}</textarea>
 							</div>
-							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
-							  	<div class="govuk-form-group">
-									<label class="govuk-label" for="other-citizenship">Add the countries you're a citizen of
-									</label>
-									<!-- <input class="govuk-input" id="other-citizenship" name="other-citizenship" type="text" spellcheck="false"  value="{{ data['other-citizenship'] }}> -->
-									<textarea class="govuk-textarea govuk-!-width-two-thirds" id="other-citizenship" name="other-citizenship" rows="5">{{ data['other-citizenship'] }}</textarea>
-								</div>
-							</div>
 						</div>
-				  	</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="reasonable-adjustment-no" name="reasonable-adjustment" type="radio" value="No" {{ checked("reasonable-adjustment", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="reasonable-adjustment-no">No</label>
+						</div>
+					</div>
 				</div>
 			</fieldset>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
