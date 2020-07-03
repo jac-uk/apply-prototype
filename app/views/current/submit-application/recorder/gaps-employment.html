@@ -1,0 +1,116 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Gaps in employment{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Gaps in employment</h1>
+				</legend>
+				<!-- <p class="govuk-body-l govuk-!-margin-bottom-7">Add dates and details of any gaps in employment you may have.</p> 
+				<h2 class="govuk-heading-l">Role</h2> -->
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="start-gaps">Start date</label>
+					<div class="govuk-date-input" id="start-gaps">
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="start-gaps-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-gaps-month" name="start-gaps-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-gaps-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="start-gaps-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-gaps-year" name="start-gaps-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-gaps-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="end-gaps">End date</label>
+					<span id="end-gaps-hint" class="govuk-hint govuk-!-margin-bottom-2">Leave this blank if you're currently in this role.</span>
+					<div class="govuk-date-input" id="end-gaps">
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="end-gaps-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-gaps-month" name="end-gaps-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['end-gaps-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="end-gaps-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-gaps-year" name="end-gaps-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['end-gaps-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="gap-details">Details</label>
+					<textarea class="govuk-textarea" id="gap-details" name="gap-details" rows="5">{{ data['gap-details'] }}</textarea>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="law-tasks-gaps">Law-related tasks in this role</label>
+					<span id="law-tasks-gaps-hint" class="govuk-hint">Select all tasks you do in this role. These are defined in the <a href="http://www.legislation.gov.uk/ukpga/2007/15/section/52" class="govuk-link" target="_blank">Tribunals, Courts and Enforcement Act 2007</a>.</span>
+					<div class="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="law-tasks-gaps-1" name="law-tasks-gaps" type="checkbox" value="The carrying-out of judicial functions of any court or tribunal" {{ checked("law-tasks-gaps", "The carrying-out of judicial functions of any court or tribunal") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-1">The carrying-out of judicial functions of any court or tribunal</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="law-tasks-gaps-2" name="law-tasks-gaps" type="checkbox" value="Acting as an arbitrator" {{ checked("law-tasks-gaps", "Acting as an arbitrator") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-2">Acting as an arbitrator</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="law-tasks-gaps-3" name="law-tasks-gaps" type="checkbox" value="Practice or employment as a lawyer" {{ checked("law-tasks-gaps", "Practice or employment as a lawyer") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-3">Practice or employment as a lawyer</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="law-tasks-gaps-4" name="law-tasks-gaps" type="checkbox" value="Advising on the application of the law" {{ checked("law-tasks-gaps", "Advising on the application of the law") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-4">Advising on the application of the law</label>
+					  	</div>
+					  	<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="law-tasks-gaps-5" name="law-tasks-gaps" type="checkbox" value="Assisting persons involved in proceedings for the resolution of issues arising under the law" {{ checked("law-tasks-gaps", "Assisting persons involved in proceedings for the resolution of issues arising under the law") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-5">Assisting persons involved in proceedings for the resolution of issues arising under the law</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="law-tasks-gaps-6" name="law-tasks-gaps" type="checkbox" value="Acting as mediator in connection with attempts to resolve issues that are, or if not resolved could be, the subject of proceedings" {{ checked("law-tasks-gaps", "Acting as mediator in connection with attempts to resolve issues that are, or if not resolved could be, the subject of proceedings") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-6">Acting as mediator in connection with attempts to resolve issues that are, or if not resolved could be, the subject of proceedings</label>
+					  	</div>
+					  	<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="law-tasks-gaps-7" name="law-tasks-gaps" type="checkbox" value="Drafting documents intended to affect persons' rights or obligations" {{ checked("law-tasks-gaps", "Drafting documents intended to affect persons' rights or obligations") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-7">Drafting documents intended to affect persons' rights or obligations</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="law-tasks-gaps-8" name="law-tasks-gaps" type="checkbox" value="Teaching or researching law" {{ checked("law-tasks-gaps", "Teaching or researching law") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-8">Teaching or researching law</label>
+				  		</div>
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="law-tasks-gaps-conditional" name="law-tasks-gaps" type="checkbox" value="None of the above - Any activity that, in the relevant decision-maker's opinion, is of a broadly similar nature to those listed above" {{ checked("law-tasks-gaps", "None of the above - Any activity that, in the relevant decision-maker's opinion, is of a broadly similar nature to those listed above") }} data-aria-controls="conditional-law-tasks-gaps-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="law-tasks-gaps-conditional">None of the above - Any activity that, in the relevant decision-maker's opinion, is of a broadly similar nature to those listed above</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-law-tasks-gaps-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label" for="list-law-tasks-gaps">List your different law-related tasks</label>
+									<textarea class="govuk-textarea" id="list-law-tasks-gaps" name="list-law-tasks-gaps" rows="5">{{ data['list-law-tasks-gaps'] }}</textarea>
+								</div>
+							</div>
+						</div>
+				  	</div>
+				</div>
+			</fieldset>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button><br />
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>	
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
