@@ -253,8 +253,8 @@
             	<dd class="govuk-summary-list__value">
 					{% if data['professional-background'] %}
 					<ul class="govuk-list govuk-list--bullet">
-						{% for country in data['professional-background'] %}
-						<li>{{ country }}</li>
+						{% for background in data['professional-background'] %}
+						<li>{{ background }}</li>
 						{% endfor %}
 					</ul>
 					{% else %}
@@ -266,6 +266,28 @@
 				</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-background">Change<span class="govuk-visually-hidden"> professional-background</span></a>
+				</dd>
+			</div>
+
+			<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Current legal role</dt>
+            	<dd class="govuk-summary-list__value">
+					{% if data['current-legal-role'] %}
+					<ul class="govuk-list govuk-list--bullet">
+						{% for current in data['current-legal-role'] %}
+						<li>{{ current }}</li>
+						{% endfor %}
+					</ul>
+					{% else %}
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Barrister</li>
+						<li>Fellow of the Chartered Institute of Legal Executives (CILEx)</li>
+						<li>Solicitor</li>
+					</ul>
+					{% endif %}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="current-legal-role">Change<span class="govuk-visually-hidden"> current legal role</span></a>
 				</dd>
 			</div>
 
@@ -558,20 +580,20 @@
 			</div>
 			{% endif %}
 
-			{% if data['religion-faith'] %}
+			{% if data['religion-belief'] %}
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
-				{% if data['religion-faith'] != "Other" %}
-				<dd class="govuk-summary-list__value">{{ data['religion-faith'] }}</dd>
-				{% elseif data['religion-faith'] == "Other" %}
-					{% if data['religion-faith-other'] %}
-					<dd class="govuk-summary-list__value">Other - {{ data['religion-faith-other'] }}</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or belief</dt>
+				{% if data['religion-belief'] != "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['religion-belief'] }}</dd>
+				{% elseif data['religion-belief'] == "Other" %}
+					{% if data['religion-belief-other'] %}
+					<dd class="govuk-summary-list__value">Other - {{ data['religion-belief-other'] }}</dd>
 					{% else %}
 					<dd class="govuk-summary-list__value">Other - Rastafarian</dd>
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+					<a class="govuk-link" href="religion-belief">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -579,7 +601,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
 				<dd class="govuk-summary-list__value">Christian</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+					<a class="govuk-link" href="religion-belief">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -595,21 +617,34 @@
 					<a class="govuk-link" href="outreach-event">Change<span class="govuk-visually-hidden"> attended an outreach event on JAC selection exercises</span></a>
 				</dd>
 			</div>
-		</dl>
 
-		<h2 class="govuk-heading-m">Working preference</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Part-time</dt>
-				{% if data['part-time'] %}
-				<dd class="govuk-summary-list__value">{{ data['part-time'] }}</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Participated in a Judicial Workshadowing Scheme</dt>
+				{% if data['workshadowing-scheme'] %}
+				<dd class="govuk-summary-list__value">{{ data['workshadowing-scheme'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
+					<a class="govuk-link" href="workshadowing-scheme">Change<span class="govuk-visually-hidden"> participated in a Judicial Workshadowing Scheme</span></a>
 				</dd>
-          	</div>
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Taken part in the Pre-Application Judicial Education programme (PAJE)</dt>
+				{% if data['part-paje'] %}
+				<dd class="govuk-summary-list__value">{{ data['part-paje'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="part-paje">Change<span class="govuk-visually-hidden"> taken part in the Pre-Application Judicial Education programme (PAJE)</span></a>
+				</dd>
+			</div>
+		</dl>
+
+		<h2 class="govuk-heading-m">Qualifications</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 		</dl>
 
 		<h2 class="govuk-heading-m">Post-qualification experience</h2>
@@ -677,6 +712,21 @@
 					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
 				</dd>
 			</div>
+		</dl>
+
+		<h2 class="govuk-heading-m">Working preference</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Part-time</dt>
+				{% if data['part-time'] %}
+				<dd class="govuk-summary-list__value">{{ data['part-time'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Yes</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
+				</dd>
+          	</div>
 		</dl>
 
 		<h2 class="govuk-heading-m">Independent assessors</h2>

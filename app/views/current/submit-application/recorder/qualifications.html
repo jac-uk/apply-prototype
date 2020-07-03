@@ -1,0 +1,80 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Qualifications{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Qualifications</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="what-qualified">What are you qualified as?</label>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="what-qualified-1" name="what-qualified" type="radio" value="Advocate - Scotland" {{ checked("what-qualified", "Advocate - Scotland") }}>
+					  		<label class="govuk-label govuk-radios__label" for="what-qualified-1">Advocate - Scotland</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="what-qualified-2" name="what-qualified" type="radio" value="Barrister" {{ checked("what-qualified", "Barrister") }}>
+					  		<label class="govuk-label govuk-radios__label" for="what-qualified-2">Barrister</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="what-qualified-3" name="what-qualified" type="radio" value="Fellow of the Chartered Institute of Legal Executives (CILEx)" {{ checked("what-qualified", "Fellow of the Chartered Institute of Legal Executives (CILEx)") }}>
+							<label class="govuk-label govuk-radios__label" for="what-qualified-3">Fellow of the Chartered Institute of Legal Executives (CILEx)</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="what-qualified-4" name="what-qualified" type="radio" value="Solicitor" {{ checked("what-qualified", "Solicitor") }}>
+							<label class="govuk-label govuk-radios__label" for="what-qualified-4">Solicitor</label>
+					  	</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="where-qualified">Where are you qualified?</label>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="where-qualified-1" name="where-qualified" type="radio" value="England and Wales" {{ checked("where-qualified", "England and Wales") }}>
+					  		<label class="govuk-label govuk-radios__label" for="where-qualified-1">England and Wales</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="where-qualified-2" name="where-qualified" type="radio" value="Northern Ireland" {{ checked("where-qualified", "Northern Ireland") }}>
+					  		<label class="govuk-label govuk-radios__label" for="where-qualified-2">Northern Ireland</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="where-qualified-3" name="where-qualified" type="radio" value="Scotland" {{ checked("where-qualified", "Scotland") }}>
+							<label class="govuk-label govuk-radios__label" for="where-qualified-3">Scotland</label>
+						</div>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label govuk-label--m" for="when-qualifications">When did you qualify?</label>
+					<div class="govuk-date-input" id="when-qualifications">
+						<div class="govuk-date-input__item">
+						  	<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="when-qualifications-month">Month</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="when-qualifications-month" name="when-qualifications-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['when-qualifications-month'] }}">
+						  	</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="when-qualifications-year">Year</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="when-qualifications-year" name="when-qualifications-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['when-qualifications-year'] }}">
+						  	</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button><br />
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>	
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
