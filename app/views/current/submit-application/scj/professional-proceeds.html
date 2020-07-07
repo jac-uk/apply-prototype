@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="professional-proceeds-router" method="post">
+<form action="professional-complaints" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -13,16 +13,47 @@
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Have you ever been, or are you currently, subject to professional misconduct, negligence, wrongful dismissal, discrimination or harassment proceedings?</h1>
 					</legend>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="professional-proceeds-yes" name="professional-proceeds" type="radio" value="Yes" {{ checked("professional-proceeds", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="professional-proceeds-yes">Yes</label>
+							<input class="govuk-radios__input" id="professional-proceeds-yes" name="professional-proceeds" type="radio" value="Yes" data-aria-controls="conditional-professional-proceeds-yes" {{ checked("professional-proceeds", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="professional-proceeds-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-professional-proceeds-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="professional-proceeds-date">Date</label>
+								<span id="professional-proceeds-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="professional-proceeds-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="professional-proceeds-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="professional-proceeds-date-day" name="professional-proceeds-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['professional-proceeds-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="professional-proceeds-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="professional-proceeds-date-month" name="professional-proceeds-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['professional-proceeds-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="professional-proceeds-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="professional-proceeds-date-year" name="professional-proceeds-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['professional-proceeds-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="professional-proceeds-details">Details</label>
+								<textarea class="govuk-textarea" id="professional-proceeds-details" name="professional-proceeds-details" rows="5">{{ data['professional-proceeds-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="professional-proceeds-no" name="professional-proceeds" type="radio" value="No" {{ checked("professional-proceeds", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="professional-proceeds-no">No</label>
+							<input class="govuk-radios__input" id="professional-proceeds-no" name="professional-proceeds" type="radio" value="No" {{ checked("professional-proceeds", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="professional-proceeds-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>

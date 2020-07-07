@@ -5,14 +5,15 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="religion-faith" method="post">
+<form action="religion-belief" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset">
+				<fieldset class="govuk-fieldset" aria-describedby="disability-hint">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Do you have a disability?</h1>
 					</legend>
+					<span id="disability-hint" class="govuk-hint">Disability is defined in the <a class="govuk-link" href="https://www.gov.uk/definition-of-disability-under-equality-act-2010" target="_blank">Equality Act 2010</a>.</span>
 					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="disability-yes" name="disability" type="radio" value="Yes" data-aria-controls="conditional-disability-yes" {{ checked("disability", "Yes") }}>
@@ -20,8 +21,7 @@
 						</div>
 						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disability-yes">
 								<div class="govuk-form-group">
-								<label class="govuk-label" for="disability-details">Disability details</label>
-								<!-- <input class="govuk-input govuk-!-width-two-thirds" id="disability-details" name="disability-details" type="text" value="{{ data['disability-details'] }}"> -->
+								<label class="govuk-label govuk-label--m" for="disability-details">Disability details</label>
 								<textarea class="govuk-textarea" id="disability-details" name="disability-details" rows="5">{{ data['disability-details'] }}</textarea>
 							</div>
 						</div>

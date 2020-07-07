@@ -1,0 +1,44 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Reasonable length of service{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="task-list" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<h1 class="govuk-heading-xl">Reasonable length of service</h1>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h2 class="govuk-fieldset__heading">Can you work for at least 4 years before reaching the retirement age of 70?</h2>
+					</legend>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="reasonable-length-service-yes" name="reasonable-length-service" type="radio" value="Yes" {{ checked("reasonable-length-service", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="reasonable-length-service-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="reasonable-length-service-no" name="reasonable-length-service" type="radio" value="No" data-aria-controls="conditional-reasonable-length-service-no" {{ checked("reasonable-length-service", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="reasonable-length-service-no">No</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reasonable-length-service-no">
+								<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m"  aria-describedby="reasonable-length-service-hint" for="reasonable-length-service-details">Why do you think you should still be considered for this role?</label>
+								<span id="reasonable-length-service-hint" class="govuk-hint">The JAC will consider it when assessing your eligibility for this role.</span>
+								<textarea class="govuk-textarea" id="reasonable-length-service-details" name="reasonable-length-service-details" rows="5">{{ data['reasonable-length-service-details'] }}</textarea>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

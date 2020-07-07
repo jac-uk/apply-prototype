@@ -1,0 +1,102 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - What is your current legal role?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="paid-judicial-role" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="convictions-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What is your current legal role?</h1>
+					</legend>
+					<span id="convictions-hint" class="govuk-hint">Select all that apply.</span>
+					<div class="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="current-legal-role" name="current-legal-role" type="checkbox" value="Academic" {{ checked("current-legal-role", "Academic") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="current-legal-role">Academic</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="current-legal-role-2" name="current-legal-role" type="checkbox" value="Barrister" {{ checked("current-legal-role", "Barrister") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-2">Barrister</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="current-legal-role-3" name="current-legal-role" type="checkbox" value="Fellow of the Chartered Institute of Legal Executives (CILEx)" {{ checked("current-legal-role", "Fellow of the Chartered Institute of Legal Executives (CILEx)") }}>
+						  	<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-3">Fellow of the Chartered Institute of Legal Executives (CILEx)</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="current-legal-role-4" name="current-legal-role" type="checkbox" value="Solicitor" {{ checked("current-legal-role", "Solicitor") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-4">Solicitor</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="current-legal-role-5" name="current-legal-role" type="checkbox" value="Fee-paid court judge" {{ checked("current-legal-role", "Fee-paid court judge") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-5">Fee-paid court judge</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="current-legal-role-6" name="current-legal-role" type="checkbox" value="Fee-paid tribunal judge" {{ checked("current-legal-role", "Fee-paid tribunal judge") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-6">Fee-paid tribunal judge</label>
+						</div>
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="current-legal-role-conditional-7" name="current-legal-role" type="checkbox" value="Other fee-paid judicial office holder" {{ checked("current-legal-role", "Other fee-paid judicial office holder") }} data-aria-controls="conditional-current-legal-role-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-conditional-7">Other fee-paid judicial office holder</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-current-legal-role-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label govuk-label--m" for="other-current-legal-role-1">Role</label>
+									<input class="govuk-input" id="other-current-legal-role-1" name="other-current-legal-role-1" type="text" spellcheck="false"  value="{{ data['other-current-legal-role-1'] }}">
+								</div>
+							</div>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="current-legal-role-8" name="current-legal-role" type="checkbox" value="Salaried court judge" {{ checked("current-legal-role", "Salaried court judge") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-8">Salaried court judge</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="current-legal-role-9" name="current-legal-role" type="checkbox" value="Salaried tribunal judge" {{ checked("current-legal-role", "Salaried tribunal judge") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-9">Salaried tribunal judge</label>
+						</div>
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="current-legal-role-conditional-10" name="current-legal-role" type="checkbox" value="Other salaried Judicial Office holder" {{ checked("current-legal-role", "Other salaried Judicial Office holder") }} data-aria-controls="conditional-current-legal-role-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-conditional-10">Other salaried Judicial Office holder</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-current-legal-role-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label govuk-label--m" for="other-current-legal-role-2">Role</label>
+									<input class="govuk-input" id="other-current-legal-role-2" name="other-current-legal-role-2" type="text" spellcheck="false"  value="{{ data['other-current-legal-role-2'] }}">
+								</div>
+							</div>
+						</div>
+						<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="current-legal-role-conditional-11" name="current-legal-role" type="checkbox" value="Other" {{ checked("current-legal-role", "Other") }} data-aria-controls="conditional-current-legal-role-conditional">
+							  	<label class="govuk-label govuk-checkboxes__label" for="current-legal-role-conditional-11">Other</label>
+							</div>
+							<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-current-legal-role-conditional">
+							  	<div class="govuk-form-group">
+									<label class="govuk-label govuk-label--m" for="other-current-legal-role-3">Role</label>
+									<input class="govuk-input" id="other-current-legal-role-3" name="other-current-legal-role-3" type="text" spellcheck="false"  value="{{ data['other-current-legal-role-3'] }}">
+								</div>
+							</div>
+						</div>
+						<div class="govuk-checkboxes__divider govuk-!-font-size-19">or</div>
+						<div class="govuk-checkboxes__item">
+						  	<input class="govuk-checkboxes__input" id="current-legal-role-12" name="current-legal-role" type="checkbox" value="Prefer not to say" {{ checked("current-legal-role", "Prefer not to say") }}>
+						  	<label class="govuk-label govuk-checkboxes__label govuk-label" for="current-legal-role-12">Prefer not to say</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

@@ -5,7 +5,7 @@
 {% block content %}
 {% include "includes/header.html" %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="caution-conviction-router" method="post">
+<form action="penalty-notice" method="post">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
@@ -14,16 +14,51 @@
 						<h1 class="govuk-fieldset__heading">Have you ever been cautioned or convicted of a criminal offence?</h1>
 					</legend>
 					<span id="convictions-hint" class="govuk-hint">This includes spent convictions.</span>
-					<div class="govuk-radios">
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="caution-conviction-yes" name="caution-conviction" type="radio" value="Yes" {{ checked("caution-conviction", "Yes") }}>
-					  		<label class="govuk-label govuk-radios__label" for="caution-conviction-yes">Yes</label>
+							<input class="govuk-radios__input" id="caution-conviction-yes" name="caution-conviction" type="radio" value="Yes" data-aria-controls="conditional-caution-conviction-yes" {{ checked("caution-conviction", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="caution-conviction-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-caution-conviction-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m govuk-!-margin-bottom-0" for="caution-conviction-date">Date of offence</label>
+								<span id="caution-conviction-date-hint" class="govuk-hint govuk-!-margin-bottom-2">For example, 19 08 2009</span>
+								<div class="govuk-date-input" id="caution-conviction-date">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="caution-conviction-date-day">Day</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="caution-conviction-date-day" name="caution-conviction-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['caution-conviction-date-day'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										  <div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="caution-conviction-date-month">Month</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="caution-conviction-date-month" name="caution-conviction-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['caution-conviction-date-month'] }}">
+										  </div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="caution-conviction-date-year">Year</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="caution-conviction-date-year" name="caution-conviction-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['caution-conviction-date-year'] }}">
+										  </div>
+									</div>
+								</div>
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="spf-title-caution-conviction">Sentence, penalty or fine</label>
+								<input class="govuk-input" id="spf-title-caution-conviction" name="spf-title-caution-conviction" type="text" spellcheck="false" value="{{ data['spf-title-caution-conviction'] }}">
+							</div>
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="caution-conviction-details">Details</label>
+								<textarea class="govuk-textarea" id="caution-conviction-details" name="caution-conviction-details" rows="5">{{ data['caution-conviction-details'] }}</textarea>
+							</div>	
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="#">Add another</button>
 						</div>
 						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="caution-conviction-no" name="caution-conviction" type="radio" value="No" {{ checked("caution-conviction", "No") }}>
-					  		<label class="govuk-label govuk-radios__label" for="caution-conviction-no">No</label>
+							<input class="govuk-radios__input" id="caution-conviction-no" name="caution-conviction" type="radio" value="No" {{ checked("caution-conviction", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="caution-conviction-no">No</label>
 						</div>
-				  	</div>
+					</div>
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
