@@ -9,12 +9,11 @@
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<h1 class="govuk-heading-xl">Set location preferences</h1>
-			<p class="govuk-body-l">You must indicate which of the 2 posts you wish to apply for.</p>
-			<p class="govuk-body-l">If you wish to apply for both posts you must select your preference. Please note that if you apply for both posts, you may be recommended to either post.</p>
+			<p class="govuk-body-l govuk-!-margin-bottom-8">You must indicate which of the 2 posts you wish to apply for. If you wish to apply for both posts you must rank them in order of preference. Please note that if you apply for both posts, you may be recommended to either post.</p>
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-						<h2 class="govuk-fieldset__heading">Which posts are you applying for?</h2>
+						<h2 class="govuk-fieldset__heading">Which posts are you applying for, including your order of preference?</h2>
 					</legend>
 					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 						<div class="govuk-checkboxes__item">
@@ -32,15 +31,11 @@
 										<input class="govuk-radios__input" id="birmingham-2" name="birmingham-preference" type="radio" value="Second preference" {{ checked("birmingham-preference", "Second preference") }}>
 										<label class="govuk-label govuk-radios__label" for="birmingham-2">Second preference</label>
 									</div>
-									<div class="govuk-radios__divider">or</div>
-									<div class="govuk-radios__item">
-										<input class="govuk-radios__input" id="birmingham-preference-3" name="birmingham-preference" type="radio" value="Not applicable" {{ checked("birmingham-preference", "Not applicable") }}>
-										<label class="govuk-label govuk-radios__label" for="birmingham-preference-3">Not applicable</label>
-									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+
 					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 						<div class="govuk-checkboxes__item">
 							<input class="govuk-checkboxes__input" id="location-preference-conditional-2" name="location-preference" type="checkbox" value="Winchester" {{ checked("location-preference", "Winchester") }} data-aria-controls="conditional-location-preference-conditional">
@@ -56,11 +51,6 @@
 									<div class="govuk-radios__item">
 										<input class="govuk-radios__input" id="winchester-2" name="winchester-preference" type="radio" value="Second preference" {{ checked("winchester-preference", "Second preference") }}>
 										<label class="govuk-label govuk-radios__label" for="winchester-2">Second preference</label>
-									</div>
-									<div class="govuk-radios__divider">or</div>
-									<div class="govuk-radios__item">
-										<input class="govuk-radios__input" id="winchester-preference-3" name="winchester-preference" type="radio" value="Not applicable" {{ checked("winchester-preference", "Not applicable") }}>
-										<label class="govuk-label govuk-radios__label" for="winchester-preference-3">Not applicable</label>
 									</div>
 								</div>
 							</div>
