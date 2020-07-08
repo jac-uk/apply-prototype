@@ -86,102 +86,47 @@ router.all('/submit-application/scj/ethnic-group-router', function (req, res) {
 	}
 })
 
-router.all('/submit-application/scj/caution-conviction-router', function (req, res) {
+router.all('/submit-application/scj/fee-paid-salaried-judge-router', function (req, res) {
 	
-	let cautionConviction = req.session.data['caution-conviction']
+	let feePaidSalariedJudge = req.session.data['fee-paid-salaried-judge']
 	
-	if (cautionConviction === 'Yes') {
-		res.redirect('caution-conviction-details')
+	if (feePaidSalariedJudge === 'Yes') {
+		res.redirect('sat-30-days')
 	} else {
-		res.redirect('penalty-notice')
+		res.redirect('quasi-judicial')
 	}
 })
 
-router.all('/submit-application/scj/penalty-notice-router', function (req, res) {
+router.all('/submit-application/scj/sat-30-days-router', function (req, res) {
 	
-	let penaltyNotice = req.session.data['penalty-notice']
+	let sat30days = req.session.data['sat-30-days']
 	
-	if (penaltyNotice === 'Yes') {
-		res.redirect('penalty-notice-details')
-	} else {
-		res.redirect('driving-offences')
-	}
-})
-
-router.all('/submit-application/scj/driving-offences-router', function (req, res) {
-	
-	let drivingOffence = req.session.data['driving-conviction']
-	
-	if (drivingOffence === 'Yes') {
-		res.redirect('driving-offences-details')
-	} else {
-		res.redirect('endorsement-notices')
-	}
-})
-
-router.all('/submit-application/scj/endorsement-notices-router', function (req, res) {
-	
-	let endorsementNotice = req.session.data['endorsement-notice']
-	
-	if (endorsementNotice === 'Yes') {
-		res.redirect('endorsement-notices-details')
-	} else {
-		res.redirect('declared-bankrupt')
-	}
-})
-
-router.all('/submit-application/scj/declared-bankrupt-router', function (req, res) {
-	
-	let declaredBankrupt = req.session.data['bankrupt']
-	
-	if (declaredBankrupt === 'Yes') {
-		res.redirect('declared-bankrupt-details')
-	} else {
-		res.redirect('late-returns')
-	}
-})
-
-router.all('/submit-application/scj/late-returns-router', function (req, res) {
-	
-	let lateReturns = req.session.data['late-returns']
-	
-	if (lateReturns === 'Yes') {
-		res.redirect('late-returns-details')
-	} else {
-		res.redirect('professional-proceeds')
-	}
-})
-
-router.all('/submit-application/scj/professional-proceeds-router', function (req, res) {
-	
-	let professionalProceeds = req.session.data['professional-proceeds']
-	
-	if (professionalProceeds === 'Yes') {
-		res.redirect('professional-proceeds-details')
-	} else {
-		res.redirect('professional-complaints')
-	}
-})
-
-router.all('/submit-application/scj/professional-complaints-router', function (req, res) {
-	
-	let professionalComplaints = req.session.data['professional-complaints']
-	
-	if (professionalComplaints === 'Yes') {
-		res.redirect('professional-complaints-details')
-	} else {
-		res.redirect('other-issues')
-	}
-})
-
-router.all('/submit-application/scj/other-issues-router', function (req, res) {
-	
-	let otherIssues = req.session.data['other-issues']
-	
-	if (otherIssues === 'Yes') {
-		res.redirect('other-issues-details')
-	} else {
+	if (sat30days === 'Yes') {
 		res.redirect('task-list')
+	} else {
+		res.redirect('quasi-judicial')
+	}
+})
+
+router.all('/submit-application/scj/least-30-days-appointment-router', function (req, res) {
+	
+	let least30DaysAppointment = req.session.data['least-30-days-appointment']
+	
+	if (least30DaysAppointment === 'Yes') {
+		res.redirect('task-list')
+	} else {
+		res.redirect('acquired-skills-other')
+	}
+})
+
+router.all('/submit-application/scj/quasi-judicial-router', function (req, res) {
+	
+	let quasiJudicial = req.session.data['quasi-judicial']
+	
+	if (quasiJudicial === 'Yes') {
+		res.redirect('least-30-days-appointment')
+	} else {
+		res.redirect('acquired-skills-other')
 	}
 })
 
