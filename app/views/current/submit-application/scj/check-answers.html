@@ -6,8 +6,8 @@
 {% include "includes/header.html" %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full govuk-!-margin-top-8">
-		<h1 class="govuk-heading-l">Check your answers</h1>
-		<h2 class="govuk-heading-m">Personal details</h2>
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+		<h2 class="govuk-heading-l">Personal details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Full name</dt>
@@ -29,6 +29,17 @@
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> email address</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Phone number</dt>
+				{% if data['phone-number'] %}
+				<dd class="govuk-summary-list__value">{{ data['phone-number'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">01273 800 900</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> phone number</span></a>
 				</dd>
 			</div>
           	<div class="govuk-summary-list__row">
@@ -54,27 +65,34 @@
 				</dd>
           	</div>
           	<div class="govuk-summary-list__row">
-            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
-            	<dd class="govuk-summary-list__value">
-					{% if data['citizenship'] %}
-					<ul class="govuk-list govuk-list--bullet">
-						{% for country in data['citizenship'] %}
-						<li>{{ country }}</li>
-						{% endfor %}
-					</ul>
-					{% else %}
-					<ul class="govuk-list govuk-list--bullet">
-						<li>UK</li>
-					</ul>
-					{% endif %}
-				</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Citizenship</dt>
+				{% if data['citizenship'] %}
+            	<dd class="govuk-summary-list__value">{{ data['citizenship'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">UK</dd>
+				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> citizenship</span></a>
 				</dd>
 			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Reasonable adjustments</dt>
+				{% if data['reasonable-adjustment'] != "Yes" %}
+				<dd class="govuk-summary-list__value">{{ data['reasonable-adjustment'] }}</dd>
+				{% elseif data['reasonable-adjustment'] == "Yes" %}
+					{% if data['reasonable-adjustment-details'] %}
+					<dd class="govuk-summary-list__value">Yes - {{ data['reasonable-adjustment-details'] }}</dd>
+					{% else %}
+					<dd class="govuk-summary-list__value">Yes - I use a wheelchair</dd>
+					{% endif %}
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> reasonable adjustments</span></a>
+				</dd>
+			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m">Character information</h2>
+		<h2 class="govuk-heading-l">Character information</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Been cautioned or convicted of a criminal offence</dt>
@@ -97,24 +115,24 @@
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third no-border">&nbsp;</dt>
-				{% if data['fixed-penalty-date-day'] and data['fixed-penalty-date-month'] and data['fixed-penalty-date-year'] %}
-				<dd class="govuk-summary-list__value">{{ data['fixed-penalty-date-day'] }} {{ data['fixed-penalty-date-month'] | toMonth }} {{ data['fixed-penalty-date-year'] }}</dd>
+				{% if data['penalty-notice-date-day'] and data['penalty-notice-date-month'] and data['penalty-notice-date-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['penalty-notice-date-day'] }} {{ data['penalty-notice-date-month'] | toMonth }} {{ data['penalty-notice-date-year'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">29 April 2016</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice-details">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">&nbsp;</dt>
-				{% if data['fixed-penalty-summary'] %}
-				<dd class="govuk-summary-list__value">{{ data['fixed-penalty-summary'] }}</dd>
+				{% if data['penalty-notice-details'] %}
+				<dd class="govuk-summary-list__value">{{ data['penalty-notice-details'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">Parked car in the wrong zone and had to make a payment of £35.</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice-details">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -129,8 +147,8 @@
 
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Been disqualified from driving, or convicted for driving under the influence of drink or drugs</dt>
-				{% if data['driving-conviction'] %}
-				<dd class="govuk-summary-list__value">{{ data['driving-conviction'] }}</dd>
+				{% if data['driving-offences'] %}
+				<dd class="govuk-summary-list__value">{{ data['driving-offences'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
@@ -140,8 +158,8 @@
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Any endorsements on your licence, or received any motoring fixed-penalty notices</dt>
-				{% if data['endorsement-notice'] %}
-				<dd class="govuk-summary-list__value">{{ data['endorsement-notice'] }}</dd>
+				{% if data['endorsement-notices'] %}
+				<dd class="govuk-summary-list__value">{{ data['endorsement-notices'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
@@ -151,8 +169,8 @@
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Been declared bankrupt</dt>
-				{% if data['bankrupt'] %}
-				<dd class="govuk-summary-list__value">{{ data['bankrupt'] }}</dd>
+				{% if data['declared-bankrupt'] %}
+				<dd class="govuk-summary-list__value">{{ data['declared-bankrupt'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
@@ -206,19 +224,8 @@
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m">Equality and diversity information</h2>
+		<h2 class="govuk-heading-l">Equality and diversity information</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
-			<!-- <div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Participated in the PAJE programme</dt>
-				{% if data['take-part'] %}
-				<dd class="govuk-summary-list__value">{{ data['take-part'] }}</dd>
-				{% else %}
-				<dd class="govuk-summary-list__value">No</dd>
-				{% endif %}
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="paje-programme">Change<span class="govuk-visually-hidden"> participation in PAJE programme</span></a>
-				</dd>
-			</div> -->
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Share your data with MoJ, HMCTS, and Judicial Office</dt>
 				{% if data['opt-out'] %}
@@ -235,8 +242,8 @@
             	<dd class="govuk-summary-list__value">
 					{% if data['professional-background'] %}
 					<ul class="govuk-list govuk-list--bullet">
-						{% for country in data['professional-background'] %}
-						<li>{{ country }}</li>
+						{% for background in data['professional-background'] %}
+						<li>{{ background }}</li>
 						{% endfor %}
 					</ul>
 					{% else %}
@@ -248,6 +255,28 @@
 				</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="professional-background">Change<span class="govuk-visually-hidden"> professional-background</span></a>
+				</dd>
+			</div>
+
+			<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Current legal role</dt>
+            	<dd class="govuk-summary-list__value">
+					{% if data['current-legal-role'] %}
+					<ul class="govuk-list govuk-list--bullet">
+						{% for current in data['current-legal-role'] %}
+						<li>{{ current }}</li>
+						{% endfor %}
+					</ul>
+					{% else %}
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Barrister</li>
+						<li>Fellow of the Chartered Institute of Legal Executives (CILEx)</li>
+						<li>Solicitor</li>
+					</ul>
+					{% endif %}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="current-legal-role">Change<span class="govuk-visually-hidden"> current legal role</span></a>
 				</dd>
 			</div>
 
@@ -540,20 +569,20 @@
 			</div>
 			{% endif %}
 
-			{% if data['religion-faith'] %}
+			{% if data['religion-belief'] %}
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
-				{% if data['religion-faith'] != "Other" %}
-				<dd class="govuk-summary-list__value">{{ data['religion-faith'] }}</dd>
-				{% elseif data['religion-faith'] == "Other" %}
-					{% if data['religion-faith-other'] %}
-					<dd class="govuk-summary-list__value">Other - {{ data['religion-faith-other'] }}</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or belief</dt>
+				{% if data['religion-belief'] != "Other" %}
+				<dd class="govuk-summary-list__value">{{ data['religion-belief'] }}</dd>
+				{% elseif data['religion-belief'] == "Other" %}
+					{% if data['religion-belief-other'] %}
+					<dd class="govuk-summary-list__value">Other - {{ data['religion-belief-other'] }}</dd>
 					{% else %}
 					<dd class="govuk-summary-list__value">Other - Rastafarian</dd>
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+					<a class="govuk-link" href="religion-belief">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -561,7 +590,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
 				<dd class="govuk-summary-list__value">Christian</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-faith">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+					<a class="govuk-link" href="religion-belief">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -577,24 +606,72 @@
 					<a class="govuk-link" href="outreach-event">Change<span class="govuk-visually-hidden"> attended an outreach event on JAC selection exercises</span></a>
 				</dd>
 			</div>
-		</dl>
 
-		<h2 class="govuk-heading-m">Working preference</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Part-time</dt>
-				{% if data['part-time'] %}
-				<dd class="govuk-summary-list__value">{{ data['part-time'] }}</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Participated in a Judicial Workshadowing Scheme</dt>
+				{% if data['workshadowing-scheme'] %}
+				<dd class="govuk-summary-list__value">{{ data['workshadowing-scheme'] }}</dd>
 				{% else %}
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="part-time-working">Change<span class="govuk-visually-hidden"> working preference</span></a>
+					<a class="govuk-link" href="workshadowing-scheme">Change<span class="govuk-visually-hidden"> participated in a Judicial Workshadowing Scheme</span></a>
 				</dd>
-          	</div>
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Taken part in the Pre-Application Judicial Education programme (PAJE)</dt>
+				{% if data['part-paje'] %}
+				<dd class="govuk-summary-list__value">{{ data['part-paje'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="part-paje">Change<span class="govuk-visually-hidden"> taken part in the Pre-Application Judicial Education programme (PAJE)</span></a>
+				</dd>
+			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m">Post-qualification experience</h2>
+		<h2 class="govuk-heading-l">Qualifications</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Qualification</dt>
+				{% if data['what-qualified'] %}
+				<dd class="govuk-summary-list__value">{{ data['what-qualified'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Barrister</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="qualifications">Change<span class="govuk-visually-hidden"> qualification</span></a>
+				</dd>
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Location</dt>
+				{% if data['where-qualified'] %}
+				<dd class="govuk-summary-list__value">{{ data['where-qualified'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">England and Wales</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="qualifications">Change<span class="govuk-visually-hidden"> location</span></a>
+				</dd>
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date qualified</dt>
+				{% if data['when-qualifications-month'] and data['when-qualifications-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['when-qualifications-month'] | toMonth }} {{ data['when-qualifications-year'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">July 2000</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="qualifications">Change<span class="govuk-visually-hidden"> date qualified</span></a>
+				</dd>
+			</div>
+		</dl>
+
+		<h2 class="govuk-heading-l">Post-qualification experience</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
         	<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Job title</dt>
@@ -661,8 +738,93 @@
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m">Independent assessors</h2>
-		<h3 class="govuk-heading-s clearfix">First independent assessor</h3>
+		<h2 class="govuk-heading-l">Gaps in employment</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Start date</dt>
+				{% if data['start-gaps-month'] and data['start-gaps-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['start-gaps-month'] | toMonth }} {{ data['start-gaps-year'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">September 1997</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> start date</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">End date</dt>
+				{% if data['end-gaps-month'] and data['end-gaps-year'] %}
+				<dd class="govuk-summary-list__value">{{ data['end-gaps-month'] | toMonth }} {{ data['end-gaps-year'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">September 1998</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> end date</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Details</dt>
+				{% if data['gap-details'] %}
+				<dd class="govuk-summary-list__value">{{ data['gap-details'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">I spent one year learning about UK law.</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> details</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+            	<dt class="govuk-summary-list__key govuk-!-width-one-third">Law-related tasks in this role</dt>
+            	<dd class="govuk-summary-list__value">
+					{% if data['law-tasks-gaps'] %}
+					<ul class="govuk-list govuk-list--bullet">
+						{% for tasks in data['law-tasks-gaps'] %}
+						<li>{{ tasks }}</li>
+						{% endfor %}
+					</ul>
+					{% else %}
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Teaching or researching law</li>
+					</ul>
+					{% endif %}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
+				</dd>
+			</div>
+		</dl>
+
+		<h2 class="govuk-heading-l">Reasonable length of service</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">	  
+			{% if data['reasonable-length-service'] %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Can work for at least 4 years before reaching the retirement age of 70</dt>
+				{% if data['reasonable-length-service'] != "No" %}
+				<dd class="govuk-summary-list__value">{{ data['reasonable-length-service'] }}</dd>
+				{% elseif data['reasonable-length-service'] == "No" %}
+					{% if data['reasonable-length-service-details'] %}
+					<dd class="govuk-summary-list__value">No - {{ data['reasonable-length-service-details'] }}</dd>
+					{% else %}
+					<dd class="govuk-summary-list__value">No - I am competent</dd>
+					{% endif %}
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="reasonable-length-service">Change<span class="govuk-visually-hidden"> reasonable length of service</span></a>
+				</dd>
+			</div>
+			{% else %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Disability</dt>
+				<dd class="govuk-summary-list__value">Prefer not to say</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="disability">Change<span class="govuk-visually-hidden"> disability</span></a>
+				</dd>
+			</div>
+			{% endif %}
+		</dl>
+
+		<h2 class="govuk-heading-l">Independent assessors</h2>
+		<h3 class="govuk-heading-m clearfix">First independent assessor</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Full name</dt>
@@ -673,6 +835,17 @@
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> full name</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Title or position</dt>
+				{% if data['title-position-first'] %}
+				<dd class="govuk-summary-list__value">{{ data['title-position-first'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Partner at ABC Solicitors</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> title or position</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -698,7 +871,7 @@
 				</dd>
 			</div>
 		</dl>
-		<h3 class="govuk-heading-s clearfix">Second independent assessor</h3>
+		<h3 class="govuk-heading-m clearfix">Second independent assessor</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Full name</dt>
@@ -709,6 +882,17 @@
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> full name</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Title or position</dt>
+				{% if data['title-position-second'] %}
+				<dd class="govuk-summary-list__value">{{ data['title-position-second'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">QC</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> title or position</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -735,15 +919,15 @@
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m">Self-assessment competencies</h2>
+		<h2 class="govuk-heading-l">Self-assessment competencies</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Finished statements</dt>
-				<dd class="govuk-summary-list__value"><a href="#" class="govuk-link">sharonschmidt-assessments.doc</a></dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Upload finished self assessment</dt>
+				<dd class="govuk-summary-list__value">Your file has been received</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="self-assessment">Change<span class="govuk-visually-hidden"> finished assessment statement</span></a>
+					<a class="govuk-link" href="self-assessment">Change<span class="govuk-visually-hidden"> self-assessment competencies</span></a>
 				</dd>
-          	</div>
+			</div>
 		</dl>
 		<form action="task-list-submit" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
