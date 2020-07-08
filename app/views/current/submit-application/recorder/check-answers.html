@@ -17,7 +17,7 @@
 				<dd class="govuk-summary-list__value">Sharon Schmidt</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> full name</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> full name</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -28,7 +28,7 @@
 				<dd class="govuk-summary-list__value">sharon.schmidt@example.com</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> email address</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> email address</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -39,7 +39,7 @@
 				<dd class="govuk-summary-list__value">01273 800 900</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> phone number</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> phone number</span></a>
 				</dd>
 			</div>
           	<div class="govuk-summary-list__row">
@@ -50,7 +50,7 @@
 				<dd class="govuk-summary-list__value">1 January 1969</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> date of birth</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -61,7 +61,7 @@
 				<dd class="govuk-summary-list__value">QQ 12 34 56 C</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> national insurance number</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> national insurance number</span></a>
 				</dd>
           	</div>
           	<div class="govuk-summary-list__row">
@@ -72,7 +72,7 @@
 				<dd class="govuk-summary-list__value">UK</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> citizenship</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> citizenship</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -87,7 +87,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="personal-details">Change<span class="govuk-visually-hidden"> reasonable adjustments</span></a>
+					<a class="govuk-link" href="personal-details?edit=true">Change<span class="govuk-visually-hidden"> reasonable adjustments</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -102,7 +102,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="caution-conviction">Change<span class="govuk-visually-hidden"> caution or conviction</span></a>
+					<a class="govuk-link" href="caution-conviction?edit=true">Change<span class="govuk-visually-hidden"> caution or conviction</span></a>
 				</dd>
 			</div>
 			{% if data['penalty-notice'] == "Yes" %}
@@ -110,7 +110,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third no-border">Received a non-motoring penalty notice</dt>
 				<dd class="govuk-summary-list__value">{{ data['penalty-notice'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice?edit=true">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -121,7 +121,7 @@
 				<dd class="govuk-summary-list__value">29 April 2016</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice?edit=true">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -132,7 +132,7 @@
 				<dd class="govuk-summary-list__value">Parked car in the wrong zone and had to make a payment of £35.</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice?edit=true">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -140,7 +140,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Received a non-motoring penalty notice</dt>
 				<dd class="govuk-summary-list__value">No</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="penalty-notice">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
+					<a class="govuk-link" href="penalty-notice?edit=true">Change<span class="govuk-visually-hidden"> non-motoring penalty notice</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -153,7 +153,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="driving-offences">Change<span class="govuk-visually-hidden"> disqualification from driving, or conviction for driving under the influence of drink or drugs</span></a>
+					<a class="govuk-link" href="driving-offences?edit=true">Change<span class="govuk-visually-hidden"> disqualification from driving, or conviction for driving under the influence of drink or drugs</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -164,7 +164,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="endorsement-notices">Change<span class="govuk-visually-hidden"> endorsements on your licence, or any motoring fixed-penalty notices</span></a>
+					<a class="govuk-link" href="endorsement-notices?edit=true">Change<span class="govuk-visually-hidden"> endorsements on your licence, or any motoring fixed-penalty notices</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -175,7 +175,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="declared-bankrupt">Change<span class="govuk-visually-hidden"> declared bankrupt</span></a>
+					<a class="govuk-link" href="declared-bankrupt?edit=true">Change<span class="govuk-visually-hidden"> declared bankrupt</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -186,7 +186,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="late-returns">Change<span class="govuk-visually-hidden"> filed late tax returns or fine from HMRC</span></a>
+					<a class="govuk-link" href="late-returns?edit=true">Change<span class="govuk-visually-hidden"> filed late tax returns or fine from HMRC</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -197,7 +197,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-proceeds">Change<span class="govuk-visually-hidden"> subject to professional negligence, wrongful dismissal, discrimination or harassment proceedings</span></a>
+					<a class="govuk-link" href="professional-proceeds?edit=true">Change<span class="govuk-visually-hidden"> subject to professional negligence, wrongful dismissal, discrimination or harassment proceedings</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -208,7 +208,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-complaints">Change<span class="govuk-visually-hidden"> subject to complaints or disciplinary action, or asked to resign from a position</span></a>
+					<a class="govuk-link" href="professional-complaints?edit=true">Change<span class="govuk-visually-hidden"> subject to complaints or disciplinary action, or asked to resign from a position</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -219,7 +219,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="other-issues">Change<span class="govuk-visually-hidden"> other issues when considering your character</span></a>
+					<a class="govuk-link" href="other-issues?edit=true">Change<span class="govuk-visually-hidden"> other issues when considering your character</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -234,7 +234,7 @@
 				<dd class="govuk-summary-list__value">Do not share</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="equality-diversity">Change<span class="govuk-visually-hidden"> share your data with MoJ, HMCTS, and judicial office</span></a>
+					<a class="govuk-link" href="equality-diversity?edit=true">Change<span class="govuk-visually-hidden"> share your data with MoJ, HMCTS, and judicial office</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -254,7 +254,7 @@
 					{% endif %}
 				</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="professional-background">Change<span class="govuk-visually-hidden"> professional-background</span></a>
+					<a class="govuk-link" href="professional-background?edit=true">Change<span class="govuk-visually-hidden"> professional-background</span></a>
 				</dd>
 			</div>
 
@@ -276,7 +276,7 @@
 					{% endif %}
 				</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="current-legal-role">Change<span class="govuk-visually-hidden"> current legal role</span></a>
+					<a class="govuk-link" href="current-legal-role?edit=true">Change<span class="govuk-visually-hidden"> current legal role</span></a>
 				</dd>
 			</div>
 
@@ -293,7 +293,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="paid-judicial-role">Change<span class="govuk-visually-hidden"> fee-paid judicial role</span></a>
+					<a class="govuk-link" href="paid-judicial-role?edit=true">Change<span class="govuk-visually-hidden"> fee-paid judicial role</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -301,7 +301,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Fee-paid judicial role</dt>
 				<dd class="govuk-summary-list__value">Fee-paid court post</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="paid-judicial-role">Change<span class="govuk-visually-hidden"> fee-paid judicial role</span></a>
+					<a class="govuk-link" href="paid-judicial-role?edit=true">Change<span class="govuk-visually-hidden"> fee-paid judicial role</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -314,7 +314,7 @@
 				<dd class="govuk-summary-list__value">UK independent or fee-paying school</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="school">Change<span class="govuk-visually-hidden"> state or fee-paying school</span></a>
+					<a class="govuk-link" href="school?edit=true">Change<span class="govuk-visually-hidden"> state or fee-paying school</span></a>
 				</dd>
 			</div>
 
@@ -326,7 +326,7 @@
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="oxbridge">Change<span class="govuk-visually-hidden"> attended oxford or cambridge universities</span></a>
+					<a class="govuk-link" href="oxbridge?edit=true">Change<span class="govuk-visually-hidden"> attended oxford or cambridge universities</span></a>
 				</dd>
 			</div>
 
@@ -338,7 +338,7 @@
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="first-university">Change<span class="govuk-visually-hidden"> attended university</span></a>
+					<a class="govuk-link" href="first-university?edit=true">Change<span class="govuk-visually-hidden"> attended university</span></a>
 				</dd>
 			</div>
 
@@ -348,7 +348,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 				{% if data['ethnic-group-asian'] %}
@@ -360,7 +360,7 @@
 					<dd class="govuk-summary-list__value">{{ data['ethnicity-asian-other'] }}</dd>
 					{% endif %}
 					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="ethnic-group-asian">Change<span class="govuk-visually-hidden"> asian or asian british background</span></a>
+						<a class="govuk-link" href="ethnic-group-asian?edit=true">Change<span class="govuk-visually-hidden"> asian or asian british background</span></a>
 					</dd>
 				</div>
 				{% endif %}
@@ -370,7 +370,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 				{% if data['ethnic-group-black'] %}
@@ -382,7 +382,7 @@
 					<dd class="govuk-summary-list__value">{{ data['ethnicity-black-other'] }}</dd>
 					{% endif %}
 					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="ethnic-group-black">Change<span class="govuk-visually-hidden"> black, african, black british or caribbean  background</span></a>
+						<a class="govuk-link" href="ethnic-group-black?edit=true">Change<span class="govuk-visually-hidden"> black, african, black british or caribbean  background</span></a>
 					</dd>
 				</div>
 				{% endif %}
@@ -392,7 +392,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 				{% if data['ethnic-group-mixed'] %}
@@ -404,7 +404,7 @@
 					<dd class="govuk-summary-list__value">{{ data['ethnicity-mixed-other'] }}</dd>
 					{% endif %}
 					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="ethnic-group-mixed">Change<span class="govuk-visually-hidden"> mixed or multiple ethnic groups background</span></a>
+						<a class="govuk-link" href="ethnic-group-mixed?edit=true">Change<span class="govuk-visually-hidden"> mixed or multiple ethnic groups background</span></a>
 					</dd>
 				</div>
 				{% endif %}
@@ -414,7 +414,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 				{% if data['ethnic-group-white'] %}
@@ -426,7 +426,7 @@
 					<dd class="govuk-summary-list__value">{{ data['ethnicity-white-other'] }}</dd>
 					{% endif %}
 					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="ethnic-group-white">Change<span class="govuk-visually-hidden"> white background</span></a>
+						<a class="govuk-link" href="ethnic-group-white?edit=true">Change<span class="govuk-visually-hidden"> white background</span></a>
 					</dd>
 				</div>
 				{% endif %}
@@ -436,7 +436,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 				{% if data['ethnic-group-another'] %}
@@ -448,7 +448,7 @@
 					<dd class="govuk-summary-list__value">{{ data['ethnicity-another-other'] }}</dd>
 					{% endif %}
 					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="ethnic-group-another">Change<span class="govuk-visually-hidden"> another ethnic group background</span></a>
+						<a class="govuk-link" href="ethnic-group-another?edit=true">Change<span class="govuk-visually-hidden"> another ethnic group background</span></a>
 					</dd>
 				</div>
 				{% endif %}
@@ -458,7 +458,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">{{ data['ethnic-group'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 			<!-- Default: If no ethnic background is chosen -->
@@ -467,14 +467,14 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Ethnic group</dt>
 				<dd class="govuk-summary-list__value">White</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
+					<a class="govuk-link" href="ethnic-group?edit=true">Change<span class="govuk-visually-hidden"> ethnic group</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">White background</dt>
 				<dd class="govuk-summary-list__value">British, English, Northern Irish, Scottish, or Welsh</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="ethnic-group-white">Change<span class="govuk-visually-hidden"> white background</span></a>
+					<a class="govuk-link" href="ethnic-group-white?edit=true">Change<span class="govuk-visually-hidden"> white background</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -492,7 +492,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gender">Change<span class="govuk-visually-hidden"> gender</span></a>
+					<a class="govuk-link" href="gender?edit=true">Change<span class="govuk-visually-hidden"> gender</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -500,7 +500,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Gender</dt>
 				<dd class="govuk-summary-list__value">Female</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gender">Change<span class="govuk-visually-hidden"> gender</span></a>
+					<a class="govuk-link" href="gender?edit=true">Change<span class="govuk-visually-hidden"> gender</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -513,7 +513,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gender-identity">Change<span class="govuk-visually-hidden"> gender identity</span></a>
+					<a class="govuk-link" href="gender-identity?edit=true">Change<span class="govuk-visually-hidden"> gender identity</span></a>
 				</dd>
 			</div>
 
@@ -530,7 +530,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="sexual-orientation">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
+					<a class="govuk-link" href="sexual-orientation?edit=true">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -538,7 +538,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sexual orientation</dt>
 				<dd class="govuk-summary-list__value">Heterosexual or straight</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="sexual-orientation">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
+					<a class="govuk-link" href="sexual-orientation?edit=true">Change<span class="govuk-visually-hidden"> sexual orientation</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -556,7 +556,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="disability">Change<span class="govuk-visually-hidden"> disability</span></a>
+					<a class="govuk-link" href="disability?edit=true">Change<span class="govuk-visually-hidden"> disability</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -564,7 +564,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Disability</dt>
 				<dd class="govuk-summary-list__value">Prefer not to say</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="disability">Change<span class="govuk-visually-hidden"> disability</span></a>
+					<a class="govuk-link" href="disability?edit=true">Change<span class="govuk-visually-hidden"> disability</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -582,7 +582,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-belief">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+					<a class="govuk-link" href="religion-belief?edit=true">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -590,7 +590,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Religion or faith</dt>
 				<dd class="govuk-summary-list__value">Christian</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="religion-belief">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
+					<a class="govuk-link" href="religion-belief?edit=true">Change<span class="govuk-visually-hidden"> religion or faith</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -603,7 +603,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="outreach-event">Change<span class="govuk-visually-hidden"> attended an outreach event on JAC selection exercises</span></a>
+					<a class="govuk-link" href="outreach-event?edit=true">Change<span class="govuk-visually-hidden"> attended an outreach event on JAC selection exercises</span></a>
 				</dd>
 			</div>
 
@@ -615,7 +615,7 @@
 				<dd class="govuk-summary-list__value">Yes</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="workshadowing-scheme">Change<span class="govuk-visually-hidden"> participated in a Judicial Workshadowing Scheme</span></a>
+					<a class="govuk-link" href="workshadowing-scheme?edit=true">Change<span class="govuk-visually-hidden"> participated in a Judicial Workshadowing Scheme</span></a>
 				</dd>
 			</div>
 
@@ -627,7 +627,7 @@
 				<dd class="govuk-summary-list__value">No</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="part-paje">Change<span class="govuk-visually-hidden"> taken part in the Pre-Application Judicial Education programme (PAJE)</span></a>
+					<a class="govuk-link" href="part-paje?edit=true">Change<span class="govuk-visually-hidden"> taken part in the Pre-Application Judicial Education programme (PAJE)</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -642,7 +642,7 @@
 				<dd class="govuk-summary-list__value">Barrister</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="qualifications">Change<span class="govuk-visually-hidden"> qualification</span></a>
+					<a class="govuk-link" href="qualifications?edit=true">Change<span class="govuk-visually-hidden"> qualification</span></a>
 				</dd>
 			</div>
 
@@ -654,7 +654,7 @@
 				<dd class="govuk-summary-list__value">England and Wales</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="qualifications">Change<span class="govuk-visually-hidden"> location</span></a>
+					<a class="govuk-link" href="qualifications?edit=true">Change<span class="govuk-visually-hidden"> location</span></a>
 				</dd>
 			</div>
 
@@ -666,7 +666,7 @@
 				<dd class="govuk-summary-list__value">July 2000</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="qualifications">Change<span class="govuk-visually-hidden"> date qualified</span></a>
+					<a class="govuk-link" href="qualifications?edit=true">Change<span class="govuk-visually-hidden"> date qualified</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -681,7 +681,7 @@
 				<dd class="govuk-summary-list__value">Junior counsel</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> job title</span></a>
+					<a class="govuk-link" href="post-qualification?edit=true">Change<span class="govuk-visually-hidden"> job title</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -692,7 +692,7 @@
 				<dd class="govuk-summary-list__value">Naughton Court Chambers</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> organisation or business name</span></a>
+					<a class="govuk-link" href="post-qualification?edit=true">Change<span class="govuk-visually-hidden"> organisation or business name</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -703,7 +703,7 @@
 				<dd class="govuk-summary-list__value">March 2016</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> start date</span></a>
+					<a class="govuk-link" href="post-qualification?edit=true">Change<span class="govuk-visually-hidden"> start date</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -714,7 +714,7 @@
 				<dd class="govuk-summary-list__value">February 2020</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> end date</span></a>
+					<a class="govuk-link" href="post-qualification?edit=true">Change<span class="govuk-visually-hidden"> end date</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -733,7 +733,7 @@
 					{% endif %}
 				</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="post-qualification">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
+					<a class="govuk-link" href="post-qualification?edit=true">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -748,7 +748,7 @@
 				<dd class="govuk-summary-list__value">September 1997</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> start date</span></a>
+					<a class="govuk-link" href="gaps-employment?edit=true">Change<span class="govuk-visually-hidden"> start date</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -759,7 +759,7 @@
 				<dd class="govuk-summary-list__value">September 1998</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> end date</span></a>
+					<a class="govuk-link" href="gaps-employment?edit=true">Change<span class="govuk-visually-hidden"> end date</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -770,7 +770,7 @@
 				<dd class="govuk-summary-list__value">I spent one year learning about UK law.</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> details</span></a>
+					<a class="govuk-link" href="gaps-employment?edit=true">Change<span class="govuk-visually-hidden"> details</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -789,7 +789,7 @@
 					{% endif %}
 				</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="gaps-employment">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
+					<a class="govuk-link" href="gaps-employment?edit=true">Change<span class="govuk-visually-hidden"> law-related tasks</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -809,7 +809,7 @@
 					{% endif %}
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="reasonable-length-service">Change<span class="govuk-visually-hidden"> reasonable length of service</span></a>
+					<a class="govuk-link" href="reasonable-length-service?edit=true">Change<span class="govuk-visually-hidden"> reasonable length of service</span></a>
 				</dd>
 			</div>
 			{% else %}
@@ -817,7 +817,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Disability</dt>
 				<dd class="govuk-summary-list__value">Prefer not to say</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="disability">Change<span class="govuk-visually-hidden"> disability</span></a>
+					<a class="govuk-link" href="disability?edit=true">Change<span class="govuk-visually-hidden"> disability</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -834,7 +834,7 @@
 				<dd class="govuk-summary-list__value">Henry Brady</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> full name</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> full name</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -845,7 +845,7 @@
 				<dd class="govuk-summary-list__value">Partner at ABC Solicitors</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> title or position</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> title or position</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -856,7 +856,7 @@
 				<dd class="govuk-summary-list__value">henry.brady@example.com</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> email address</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> email address</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -867,7 +867,7 @@
 				<dd class="govuk-summary-list__value">07771 900 900</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> phone number</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> phone number</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -881,7 +881,7 @@
 				<dd class="govuk-summary-list__value">Kiera Watts</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> full name</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> full name</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -892,7 +892,7 @@
 				<dd class="govuk-summary-list__value">QC</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> title or position</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> title or position</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -903,7 +903,7 @@
 				<dd class="govuk-summary-list__value">kiera.watts@example.com</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> email address</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> email address</span></a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -914,7 +914,7 @@
 				<dd class="govuk-summary-list__value">020 7450 4000</dd>
 				{% endif %}
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="independent-assessors">Change<span class="govuk-visually-hidden"> phone number</span></a>
+					<a class="govuk-link" href="independent-assessors?edit=true">Change<span class="govuk-visually-hidden"> phone number</span></a>
 				</dd>
 			</div>
 		</dl>
@@ -925,7 +925,7 @@
 				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Upload finished self assessment</dt>
 				<dd class="govuk-summary-list__value">Your file has been received</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="self-assessment">Change<span class="govuk-visually-hidden"> self-assessment competencies</span></a>
+					<a class="govuk-link" href="self-assessment?edit=true">Change<span class="govuk-visually-hidden"> self-assessment competencies</span></a>
 				</dd>
 			</div>
 		</dl>
