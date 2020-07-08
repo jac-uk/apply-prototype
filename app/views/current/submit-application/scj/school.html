@@ -4,8 +4,15 @@
 
 {% block content %}
 {% include "includes/header.html" %}
+
+{% if (data['edit'] == "true") %}
+<a href="/current/submit-application/scj/check-answers" class="govuk-back-link">Back</a> 
+<form action="check-answers" method="post">
+{% else %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
 <form action="oxbridge" method="post">
+{% endif %}
+	<input type="hidden" value="{{ data['edit'] }}" name="edit">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<div class="govuk-form-group">
