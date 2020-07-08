@@ -1,0 +1,42 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Have you sat for at least 30 days?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="sat-30-days-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Have you sat for at least 30 days?</h1>
+					</legend>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="sat-30-days-yes" name="sat-30-days" type="radio" value="Yes" data-aria-controls="conditional-sat-30-days-yes" {{ checked("sat-30-days", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="sat-30-days-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-sat-30-days-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="sat-30-days-details">Enter the number of sitting days for each judicial appointments you have declared on this application.</label>
+								<input class="govuk-input govuk-input--width-4" id="sat-30-days-details" name="sat-30-days-details" type="text" value="{{ data['sat-30-days-details'] }}">
+							 </div>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="sat-30-days-no" name="sat-30-days" type="radio" value="No" {{ checked("sat-30-days", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="sat-30-days-no">No</label>
+					  	</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

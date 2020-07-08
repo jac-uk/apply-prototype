@@ -1,0 +1,60 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Have you declared an appointment or appointments in a quasi-judicial body in this application?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="quasi-judicial-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Have you declared an appointment or appointments in a quasi-judicial body in this application?</h1>
+					</legend>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="quasi-judicial-yes" name="quasi-judicial" type="radio" value="Yes" {{ checked("quasi-judicial", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="quasi-judicial-yes">Yes</label>
+						</div>
+						
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="quasi-judicial-no" name="quasi-judicial" type="radio" value="No" data-aria-controls="conditional-quasi-judicial-no" {{ checked("quasi-judicial", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="quasi-judicial-no">No</label>
+						</div>
+						<!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-quasi-judicial-no">
+								<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="quasi-judicial-details">Provide details of how you have acquired the necessary skills for this role in some other significant way.</label>
+								<textarea class="govuk-textarea" id="quasi-judicial-details" name="quasi-judicial-details" rows="5">{{ data['quasi-judicial-details'] }}</textarea>
+							</div>
+						</div> -->
+					</div>
+				</fieldset>
+				<details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
+					<summary class="govuk-details__summary">
+						<span class="govuk-details__summary-text">More about quasi-judicial bodies</span>
+					</summary>
+					<div class="govuk-details__text">
+						<p class="govuk-body">Quasi-judicial bodies have powers and procedures similar to those of courts. For example, involve complex matters, determining facts and making decisions.</p>
+						<p class="govuk-body">Examples of quasi-judicial bodies include:</p>
+						<ul class="govuk-list govuk-list--bullet">
+							<li>Coroner</li>
+							<li>Parole Board</li>
+							<li>Chair of a statutory inquiry</li>
+							<li>Arbitration</li>
+							<li>Disciplinary tribunals</li>
+							<li>Conduct hearings for professional standard bodies</li>
+						</ul>
+					</div>
+				</details>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

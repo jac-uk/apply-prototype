@@ -1,0 +1,43 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - Have you sat for at least 30 days in one or all of these appointments?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="least-30-days-appointment-router" method="post">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Have you sat for at least 30 days in one or all of these appointments?</h1>
+					</legend>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="least-30-days-appointment-yes" name="least-30-days-appointment" type="radio" value="Yes" data-aria-controls="conditional-least-30-days-appointment-yes" {{ checked("least-30-days-appointment", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="least-30-days-appointment-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-least-30-days-appointment-yes">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-label--m" for="least-30-days-appointment-details">Enter the number of sitting days for each of the appointments you have declared on this application, and powers and procedures in the office you hold. Include any further details of whether a legal qualification is required, the nature of your work.</label>
+								<textarea class="govuk-textarea" id="least-30-days-appointment-details" name="least-30-days-appointment-details" rows="10">{{ data['least-30-days-appointment-details'] }}</textarea>
+								<!-- <input class="govuk-input govuk-input--width-4" id="least-30-days-appointment-details" name="least-30-days-appointment-details" type="text" value="{{ data['least-30-days-appointment-details'] }}"> -->
+							 </div>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="least-30-days-appointment-no" name="least-30-days-appointment" type="radio" value="No" {{ checked("least-30-days-appointment", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="least-30-days-appointment-no">No</label>
+					  	</div>
+					</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
