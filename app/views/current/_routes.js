@@ -86,6 +86,17 @@ router.all('/submit-application/scj/ethnic-group-router', function (req, res) {
 	}
 })
 
+router.all('/submit-application/scj/location-router', function (req, res) {
+	
+	let locationPreference = req.session.data['location-preference']
+	
+	if (locationPreference === 'Both') {
+		res.redirect('birmingham')
+	} else {
+		res.redirect('task-list')
+	}
+})
+
 router.all('/submit-application/scj/fee-paid-salaried-judge-router', function (req, res) {
 	
 	let feePaidSalariedJudge = req.session.data['fee-paid-salaried-judge']

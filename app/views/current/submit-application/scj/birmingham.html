@@ -1,0 +1,43 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}Judical Appointments Commission - Submit an application - What is your preference for Birmingham?{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+
+{% if (data['edit'] == "true") %}
+<a href="/current/submit-application/scj/check-answers" class="govuk-back-link">Back</a> 
+<form action="check-answers" method="post">
+{% else %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+<form action="winchester" method="post">
+{% endif %}
+	<input type="hidden" value="{{ data['edit'] }}" name="edit">
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What is your preference for Birmingham?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="birmingham-first" name="birmingham" type="radio" value="First preference" {{ checked("birmingham", "First preference") }}>
+					  		<label class="govuk-label govuk-radios__label" for="birmingham-first">First preference</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="birmingham-second" name="birmingham" type="radio" value="Second preference" {{ checked("birmingham", "Second preference") }}>
+					  		<label class="govuk-label govuk-radios__label" for="birmingham-second">Second preference</label>
+						</div>
+				  	</div>
+				</fieldset>
+			</div>
+			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

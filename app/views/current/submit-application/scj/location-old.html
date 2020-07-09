@@ -10,35 +10,20 @@
 <form action="check-answers" method="post">
 {% else %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-<form action="location-router" method="post">
+<form action="task-list" method="post">
 {% endif %}
 	<input type="hidden" value="{{ data['edit'] }}" name="edit">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
 			<h1 class="govuk-heading-xl">Set location preferences</h1>
-			<p class="govuk-body-l">You must indicate which of the two posts you are applying for.</p>
-			<p class="govuk-body-l">If you apply for both, you must choose your preference, or you will be recommended for either position.</p>
+			<p class="govuk-body-l">You must indicate which of the 2 posts you wish to apply for.</p>
+			<p class="govuk-body-l">If you wish to apply for both posts you must select your preference. Please note that if you apply for both posts, you may be recommended to either post.</p>
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 						<h2 class="govuk-fieldset__heading">Which posts are you applying for?</h2>
 					</legend>
-					<div class="govuk-radios">
-						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="location" name="location-preference" type="radio" value="Birmingham" {{ checked("location-preference", "Birmingham") }}>
-					  		<label class="govuk-label govuk-radios__label" for="location">Birmingham</label>
-						</div>
-						<div class="govuk-radios__item">
-					  		<input class="govuk-radios__input" id="location-2" name="location-preference" type="radio" value="Winchester" {{ checked("location-preference", "Winchester") }}>
-					  		<label class="govuk-label govuk-radios__label" for="location-2">Winchester</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="location-3" name="location-preference" type="radio" value="Both" {{ checked("location-preference", "Both") }}>
-							<label class="govuk-label govuk-radios__label" for="location-3">Both</label>
-					  </div>
-					</div>
-					  
-					<!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 						<div class="govuk-checkboxes__item">
 							<input class="govuk-checkboxes__input" id="location-preference-conditional-1" name="location-preference" type="checkbox" value="Birmingham" {{ checked("location-preference", "Birmingham") }} data-aria-controls="conditional-location-preference-conditional">
 							  <label class="govuk-label govuk-checkboxes__label" for="location-preference-conditional-1">Birmingham</label>
@@ -87,7 +72,17 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
+					<!-- <div class="govuk-radios">
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="part-time-yes" name="part-time" type="radio" value="Yes" {{ checked("part-time", "Yes") }}>
+					  		<label class="govuk-label govuk-radios__label" for="part-time-yes">Yes</label>
+						</div>
+						<div class="govuk-radios__item">
+					  		<input class="govuk-radios__input" id="part-time-no" name="part-time" type="radio" value="No" {{ checked("part-time", "No") }}>
+					  		<label class="govuk-label govuk-radios__label" for="part-time-no">No</label>
+						</div>
+				  	</div> -->
 				</fieldset>
 			</div>
 			<button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
