@@ -632,6 +632,33 @@
 			</div>
 		</dl>
 
+		<h2 class="govuk-heading-m">Location preference</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Location</dt>
+				<dd class="govuk-summary-list__value">{{ data['location-preference'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="location">Change<span class="govuk-visually-hidden"> location preference</span></a>
+				</dd>
+			</div>
+			{% if data['location-preference'] === "Both" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Birmingham</dt>
+				<dd class="govuk-summary-list__value">{{ data['birmingham'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="birmingham">Change<span class="govuk-visually-hidden"> location preference</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Winchester</dt>
+				<dd class="govuk-summary-list__value">{{ data['winchester'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="winchester?edit=true">Change<span class="govuk-visually-hidden"> location preference</span></a>
+				</dd>
+			</div>
+			{% endif %}
+		</dl>
+
 		<h2 class="govuk-heading-l">Qualifications</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
