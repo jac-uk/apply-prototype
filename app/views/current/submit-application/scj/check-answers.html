@@ -632,16 +632,16 @@
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-m">Location preference</h2>
+		<h2 class="govuk-heading-l">Location preferences</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Location</dt>
 				<dd class="govuk-summary-list__value">{{ data['location-preference'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="location">Change<span class="govuk-visually-hidden"> location preference</span></a>
+					<a class="govuk-link" href="location">Change<span class="govuk-visually-hidden"> location preferences</span></a>
 				</dd>
 			</div>
-			{% if data['location-preference'] === "Both" %}
+			{% if data['location-preference'] == "Both" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Birmingham</dt>
 				<dd class="govuk-summary-list__value">{{ data['birmingham'] }}</dd>
@@ -841,10 +841,10 @@
 			</div>
 			{% else %}
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third">Disability</dt>
-				<dd class="govuk-summary-list__value">Prefer not to say</dd>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Can work for at least 4 years before reaching the retirement age of 70</dt>
+				<dd class="govuk-summary-list__value">Yes</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="disability?edit=true">Change<span class="govuk-visually-hidden"> disability</span></a>
+					<a class="govuk-link" href="reasonable-length-service?edit=true">Change<span class="govuk-visually-hidden"> reasonable length of service</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -946,13 +946,24 @@
 			</div>
 		</dl>
 
-		<h2 class="govuk-heading-l">Self-assessment competencies</h2>
+		<h2 class="govuk-heading-l">Statement of suitability</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Upload finished self assessment</dt>
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Upload finished statement of suitability</dt>
 				<dd class="govuk-summary-list__value">Your file has been received</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="self-assessment?edit=true">Change<span class="govuk-visually-hidden"> self-assessment competencies</span></a>
+					<a class="govuk-link" href="statement-suitability?edit=true">Change<span class="govuk-visually-hidden"> statement of suitability</span></a>
+				</dd>
+			</div>
+		</dl>
+
+		<h2 class="govuk-heading-l">Curriculum vitae (CV)</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third govuk-!-width-one-third">Upload your CV</dt>
+				<dd class="govuk-summary-list__value">Your file has been received</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="upload-cv?edit=true">Change<span class="govuk-visually-hidden"> curriculum vitae (CV)</span></a>
 				</dd>
 			</div>
 		</dl>
