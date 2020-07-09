@@ -634,6 +634,7 @@
 
 		<h2 class="govuk-heading-l">Location preferences</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			{% if data['location-preference'] == "Birmingham" or data['location-preference'] == "Winchester" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Location</dt>
 				<dd class="govuk-summary-list__value">{{ data['location-preference'] }}</dd>
@@ -641,7 +642,7 @@
 					<a class="govuk-link" href="location">Change<span class="govuk-visually-hidden"> location preferences</span></a>
 				</dd>
 			</div>
-			{% if data['location-preference'] == "Both" %}
+			{% elseif data['location-preference'] == "Both" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Birmingham</dt>
 				<dd class="govuk-summary-list__value">{{ data['birmingham'] }}</dd>
@@ -654,6 +655,14 @@
 				<dd class="govuk-summary-list__value">{{ data['winchester'] }}</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="winchester?edit=true">Change<span class="govuk-visually-hidden"> location preference</span></a>
+				</dd>
+			</div>
+			{% else %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Location</dt>
+				<dd class="govuk-summary-list__value">Birmingham</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="location">Change<span class="govuk-visually-hidden"> location preferences</span></a>
 				</dd>
 			</div>
 			{% endif %}
@@ -672,7 +681,6 @@
 					<a class="govuk-link" href="qualifications?edit=true">Change<span class="govuk-visually-hidden"> qualification</span></a>
 				</dd>
 			</div>
-
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Location</dt>
 				{% if data['where-qualified'] %}
@@ -684,7 +692,6 @@
 					<a class="govuk-link" href="qualifications?edit=true">Change<span class="govuk-visually-hidden"> location</span></a>
 				</dd>
 			</div>
-
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key govuk-!-width-one-third">Date qualified</dt>
 				{% if data['when-qualifications-month'] and data['when-qualifications-year'] %}
@@ -764,6 +771,95 @@
 				</dd>
 			</div>
 		</dl>
+
+
+
+		<h2 class="govuk-heading-l">Judical experience</h2>
+		{% if data['fee-paid-salaried-judge'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Fee-paid or salaried judge</dt>
+				{% if data['fee-paid-salaried-judge'] %}
+				<dd class="govuk-summary-list__value">{{ data['fee-paid-salaried-judge'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Yes</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="fee-paid-salaried-judge?edit=true">Change<span class="govuk-visually-hidden"> fee-paid or salaried judge</span></a>
+				</dd>
+			</div>
+			{% if data['fee-paid-salaried-judge'] == "Yes" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sat for at least 30 days</dt>
+				{% if data['sat-30-days'] == "Yes" %}
+				<dd class="govuk-summary-list__value">Yes - {{ data['sat-30-days-details'] }}</dd>
+				{% elseif data['sat-30-days'] == "No" %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Yes</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="sat-30-days?edit=true">Change<span class="govuk-visually-hidden"> sat for at least 30 days</span></a>
+				</dd>
+			</div>
+			{% endif %}
+			{% if data['sat-30-days'] == "No" or data['fee-paid-salaried-judge'] == "No" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Declared an appointment or appointments in a quasi-judicial body in this application</dt>
+				{% if data['quasi-judicial'] %}
+				<dd class="govuk-summary-list__value">{{ data['quasi-judicial'] }}</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Yes</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="quasi-judicial?edit=true">Change<span class="govuk-visually-hidden"> declared an appointment or appointments in a quasi-judicial body in this application</span></a>
+				</dd>
+			</div>
+			{% endif %}
+			{% if data['quasi-judicial'] == "Yes" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sat for at least 30 days in one or all of these appointments</dt>
+				{% if data['least-30-days-appointment'] == "Yes" %}
+				<dd class="govuk-summary-list__value">Yes - {{ data['least-30-days-appointment-details'] }}</dd>
+				{% elseif data['least-30-days-appointment'] == "No" %}
+				<dd class="govuk-summary-list__value">No</dd>
+				{% else %}
+				<dd class="govuk-summary-list__value">Yes</dd>
+				{% endif %}
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="least-30-days-appointment?edit=true">Change<span class="govuk-visually-hidden"> sat for at least 30 days in one or all of these appointments</span></a>
+				</dd>
+			</div>
+			{% endif %}
+			{% if data['least-30-days-appointment'] == "No" or data['quasi-judicial'] == "No" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Details of how you have acquired the necessary skills for this role in some other significant way</dt>
+				<dd class="govuk-summary-list__value">{{ data['acquired-skills-other-details'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="acquired-skills-other?edit=true">Change<span class="govuk-visually-hidden"> details of how you have acquired the necessary skills for this role in some other significant way</span></a>
+				</dd>
+			</div>
+			{% endif %}
+		</dl>
+		{% else %}
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Fee-paid or salaried judge</dt>
+				<dd class="govuk-summary-list__value">Yes</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="fee-paid-salaried-judge?edit=true">Change<span class="govuk-visually-hidden"> fee-paid or salaried judge</span></a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key govuk-!-width-one-third">Sat for at least 30 days</dt>
+				<dd class="govuk-summary-list__value">Yes - 46 days</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="sat-30-days?edit=true">Change<span class="govuk-visually-hidden"> sat for at least 30 days</span></a>
+				</dd>
+			</div>
+		</dl>
+		{% endif %}
+
 
 		<h2 class="govuk-heading-l">Gaps in employment</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9 clearfix">
